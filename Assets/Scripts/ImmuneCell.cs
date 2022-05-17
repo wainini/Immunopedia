@@ -8,5 +8,5 @@ public class ImmuneCell : ScriptableObject
     public double health;
     public double atk;
     public double atkRadius;
-    public double movSpd;
+    public float movSpd;
 }
