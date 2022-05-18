@@ -8,21 +8,21 @@ public class Neutrofil : MonoBehaviour
     public double health;
     public double atk;
 
-    private List<Transform> enemies = new List<Transform>();
+    private List<Transform> enemies;
 
     private void Start()
     {
         //Debug.Log(this.immuneCell.health + " " + this.immuneCell.atk);
         //health = immuneCell.health;
         //atk = immuneCell.atk;
-        enemies = null;
+        enemies = new List<Transform>();
     }
 
     private void Update()
     {
-        if(enemies != null)
+        if(enemies.Count != 0)
         {
-            Vector2.MoveTowards(transform.position, enemies[0].position, immuneCell.movSpd * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, enemies[0].position, immuneCell.movSpd * Time.deltaTime);
         }
     }
 
@@ -32,6 +32,7 @@ public class Neutrofil : MonoBehaviour
         {
             Transform enemyLocation = collision.gameObject.transform;
             enemies.Add(enemyLocation);
+            Debug.Log(enemies[0].position);
         }
     }
 }
