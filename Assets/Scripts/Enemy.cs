@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public List<Transform> waypoints = new List<Transform>();
+    public Transform waypointParent;
+    private List<Transform> waypoints = new List<Transform>();
     private Transform nextWaypoint;
     private int index = 0;
-    [SerializeField] private float speed = 0.5f;
+    [SerializeField] private float speed = 2f;
     // Start is called before the first frame update
     void Start()
     {
+        foreach (Transform waypoint in waypointParent)
+        {
+            waypoints.Add(waypoint);
+        }
         nextWaypoint = waypoints[index];
     }
 
@@ -26,8 +31,12 @@ public class Enemy : MonoBehaviour
             if(index < waypoints.Count)
             {
                 index++;
+                nextWaypoint = waypoints[index];
             }
-            nextWaypoint = waypoints[index];
+            else
+            {
+                transform.position = nextWaypoint.position;
+            }
         }
     }
 }

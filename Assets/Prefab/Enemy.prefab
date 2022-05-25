@@ -70,3 +70,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade14f0b1a58cbe4db62dd74b6fb0eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waypointParent: {fileID: 4696239376694321233, guid: cd61f40f210d19c43bd8267dbdcfde45, type: 3}
+  speed: 2
