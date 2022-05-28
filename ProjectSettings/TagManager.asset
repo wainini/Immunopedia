@@ -12,7 +12,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Deploy
   - 
   - 
   - 
@@ -41,4 +41,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: DeployArea
+    uniqueID: 1402945905
+    locked: 0
+  - name: Troops
+    uniqueID: 3353475599
     locked: 0
