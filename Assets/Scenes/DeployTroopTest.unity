@@ -570,6 +570,53 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
+--- !u!1 &746304889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 746304891}
+  - component: {fileID: 746304890}
+  m_Layer: 0
+  m_Name: TroopsPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &746304890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746304889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac4dcabb493a0164cbca8651316debcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availableTroops:
+  - {fileID: 3311371682759548328, guid: 16168a20c66c5e940b991850af9943df, type: 3}
+  - {fileID: 1121576477427649719, guid: d966d414a47941044a4c440403baccdb, type: 3}
+  - {fileID: 6353210354887204307, guid: 71dee6bc8e0d50e4cb643e1deb51b35e, type: 3}
+--- !u!4 &746304891
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746304889}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &890871623
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,8 +778,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1319102577}
-        m_TargetAssemblyTypeName: TroopsSelector, Assembly-CSharp
+      - m_Target: {fileID: 746304890}
+        m_TargetAssemblyTypeName: TroopsPool, Assembly-CSharp
         m_MethodName: SelectTroop
         m_Mode: 3
         m_Arguments:
@@ -1030,7 +1077,6 @@ GameObject:
   - component: {fileID: 1319102574}
   - component: {fileID: 1319102575}
   - component: {fileID: 1319102576}
-  - component: {fileID: 1319102577}
   m_Layer: 5
   m_Name: TroopsSelector
   m_TagString: Untagged
@@ -1099,22 +1145,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1319102577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1319102573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47c69c65eed57c247b1364fa17b06c06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  availableTroops:
-  - {fileID: 3311371682759548328, guid: 16168a20c66c5e940b991850af9943df, type: 3}
-  - {fileID: 1121576477427649719, guid: d966d414a47941044a4c440403baccdb, type: 3}
-  - {fileID: 6353210354887204307, guid: 71dee6bc8e0d50e4cb643e1deb51b35e, type: 3}
 --- !u!1 &1349598120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,8 +1231,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1319102577}
-        m_TargetAssemblyTypeName: TroopsSelector, Assembly-CSharp
+      - m_Target: {fileID: 746304890}
+        m_TargetAssemblyTypeName: TroopsPool, Assembly-CSharp
         m_MethodName: SelectTroop
         m_Mode: 3
         m_Arguments:
@@ -1591,8 +1621,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1319102577}
-        m_TargetAssemblyTypeName: TroopsSelector, Assembly-CSharp
+      - m_Target: {fileID: 746304890}
+        m_TargetAssemblyTypeName: TroopsPool, Assembly-CSharp
         m_MethodName: SelectTroop
         m_Mode: 3
         m_Arguments:

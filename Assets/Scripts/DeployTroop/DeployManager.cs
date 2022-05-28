@@ -8,9 +8,11 @@ public class DeployManager : MonoBehaviour
     [SerializeField] private LayerMask deployLayer;
     private Camera mainCam;
 
-    public static Func<GameObject> WhatTroop;
+    public static event Func<int> WhatTroop;
+    public delegate GameObject GetTroop(int index);
+    public static GetTroop SpawnTroop;
 
-    private GameObject troopToDeploy;
+    private int troopToDeploy;
 
     private void Start()
     {
@@ -25,15 +27,17 @@ public class DeployManager : MonoBehaviour
         {
             if(mouseRay)
             {
-                troopToDeploy = WhatTroop?.Invoke();
-                if(troopToDeploy == null)
+                troopToDeploy = (int)WhatTroop?.Invoke();
+                Debug.Log(troopToDeploy);
+                if(troopToDeploy == 69)
                 {
                     Debug.Log("No Troop Selected");
                 }
                 else
                 {
-                    Instantiate(troopToDeploy, new Vector3(mousePos.x, mousePos.y, 0f), Quaternion.identity);
-                    Debug.Log(troopToDeploy.name);
+                    GameObject troop = SpawnTroop?.Invoke(troopToDeploy);
+                    troop.SetActive(true);
+                    troop.transform.position = new Vector3(mousePos.x, mousePos.y, 0f);
                 }
             }
             else
