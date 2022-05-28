@@ -12,13 +12,13 @@ public class TroopsPool : MonoBehaviour
     private void OnEnable()
     {
         DeployManager.WhatTroop += ReturnTroopIndex;
-        DeployManager.SpawnTroop += GetTroopFromPool;
+        DeployManager.OnDeployTroop += GetTroopFromPool;
     }
 
     private void OnDisable()
     {
         DeployManager.WhatTroop -= ReturnTroopIndex;
-        DeployManager.SpawnTroop -= GetTroopFromPool;
+        DeployManager.OnDeployTroop -= GetTroopFromPool;
     }
 
     private void Start()

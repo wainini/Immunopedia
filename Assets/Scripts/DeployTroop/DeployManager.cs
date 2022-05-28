@@ -5,14 +5,21 @@ using System;
 
 public class DeployManager : MonoBehaviour
 {
-    [SerializeField] private LayerMask deployLayer;
-    private Camera mainCam;
-
     public static event Func<int> WhatTroop;
     public delegate GameObject GetTroop(int index);
-    public static GetTroop SpawnTroop;
+    public static GetTroop OnDeployTroop;
 
+    [SerializeField] private LayerMask deployLayer;
+
+    private Camera mainCam;
+    private Vector3 mousePos;
     private int troopToDeploy;
+
+    [Header("Deploy Cooldown")]
+    [SerializeField] private float deployCooldown = 0.5f;
+    private float timeLastDeployed;
+    private bool CanDeploy => timeLastDeployed + deployCooldown <= Time.unscaledTime;
+
 
     private void Start()
     {
@@ -20,24 +27,21 @@ public class DeployManager : MonoBehaviour
     }
     private void Update()
     {
-        Vector3 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D mouseRay = Physics2D.Raycast(mousePos, Vector2.zero, deployLayer);
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             if(mouseRay)
             {
                 troopToDeploy = (int)WhatTroop?.Invoke();
-                Debug.Log(troopToDeploy);
                 if(troopToDeploy == 69)
                 {
                     Debug.Log("No Troop Selected");
                 }
-                else
+                else if(CanDeploy)
                 {
-                    GameObject troop = SpawnTroop?.Invoke(troopToDeploy);
-                    troop.SetActive(true);
-                    troop.transform.position = new Vector3(mousePos.x, mousePos.y, 0f);
+                    GetAndDeployTroop();
                 }
             }
             else
@@ -45,5 +49,13 @@ public class DeployManager : MonoBehaviour
                 Debug.Log("Please deploy on red area");
             }
         }
+    }
+
+    private void GetAndDeployTroop()
+    {
+        GameObject troop = OnDeployTroop?.Invoke(troopToDeploy);
+        troop.SetActive(true);
+        troop.transform.position = new Vector3(mousePos.x, mousePos.y, 0f);
+        timeLastDeployed = Time.unscaledTime;
     }
 }
