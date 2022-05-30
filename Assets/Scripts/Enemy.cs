@@ -7,11 +7,15 @@ public class Enemy : MonoBehaviour
     private Transform waypointParent;
     private List<Transform> waypoints = new List<Transform>();
     private Transform nextWaypoint;
+    private Transform target;
+
     private int index = 0;
     [SerializeField] private float speed = 2f;
-    // Start is called before the first frame update
+    [SerializeField] private int enemyHealth = 10;
+    [SerializeField] private int enemyAtk = 3;
     void Start()
     {
+        target = null;
         waypointParent = GameObject.FindGameObjectWithTag("Waypoint").transform;
         foreach (Transform waypoint in waypointParent)
         {
@@ -23,21 +27,53 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector2.Distance(transform.position, nextWaypoint.position) > 0f)
+        if (target)
         {
-            transform.position = Vector2.MoveTowards(transform.position, nextWaypoint.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            if(Vector2.Distance(transform.position, target.position) < 0.5)
+            {
+                transform.position = this.transform.position;
+                Attack();
+            }
         }
         else
         {
-            if(index < waypoints.Count - 1)
+            if(Vector2.Distance(transform.position, nextWaypoint.position) > 0f)
             {
-                index++;
-                nextWaypoint = waypoints[index];
+                transform.position = Vector2.MoveTowards(transform.position, nextWaypoint.position, speed * Time.deltaTime);
             }
             else
             {
-                transform.position = nextWaypoint.position;
+                if(index < waypoints.Count - 1)
+                {
+                    index++;
+                    nextWaypoint = waypoints[index];
+                }
+                else
+                {
+                    transform.position = nextWaypoint.position;
+                }
             }
+        }
+    }
+
+    private void Attack()
+    {
+        //attack
+    }
+
+    public void SetTarget(Transform target)
+    {
+        this.target = target;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        enemyHealth -= damage;
+        if(enemyHealth <= 0)
+        {
+            enemyHealth = 0;
+            Destroy(this);
         }
     }
 }
