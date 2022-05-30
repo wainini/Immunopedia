@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public GameObject neutrofilPrefab;
     public GameObject enemyPrefab;
+
+    public Transform initialEnemySpawn;
     private void Start()
     {
         StartCoroutine("SpawnEnemies");
@@ -24,8 +26,13 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < 5; i++)
         {
-            Instantiate(enemyPrefab, new Vector2(-5f, 0f), Quaternion.identity);
+            Instantiate(enemyPrefab, initialEnemySpawn.position, Quaternion.identity);
             yield return new WaitForSeconds(5f);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(collision.gameObject);
     }
 }

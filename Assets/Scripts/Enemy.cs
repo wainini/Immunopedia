@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform waypointParent;
+    private Transform waypointParent;
     private List<Transform> waypoints = new List<Transform>();
     private Transform nextWaypoint;
     private int index = 0;
@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        waypointParent = GameObject.FindGameObjectWithTag("Waypoint").transform;
         foreach (Transform waypoint in waypointParent)
         {
             waypoints.Add(waypoint);
@@ -22,13 +23,13 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector2.Distance(transform.position, nextWaypoint.position) > 0.5)
+        if(Vector2.Distance(transform.position, nextWaypoint.position) > 0f)
         {
             transform.position = Vector2.MoveTowards(transform.position, nextWaypoint.position, speed * Time.deltaTime);
         }
         else
         {
-            if(index < waypoints.Count)
+            if(index < waypoints.Count - 1)
             {
                 index++;
                 nextWaypoint = waypoints[index];

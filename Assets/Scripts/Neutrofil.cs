@@ -5,8 +5,8 @@ using UnityEngine;
 public class Neutrofil : MonoBehaviour
 {
     public ImmuneCell immuneCell;
-    public double health;
-    public double atk;
+    private double health;
+    private double atk;
 
     private List<Transform> enemies;
 
