@@ -13,9 +13,12 @@ public class Neutrofil : MonoBehaviour
     [SerializeField] private SpriteRenderer healthBar;
     [SerializeField] private SpriteRenderer healthFill;
 
+    private double atkInterval = 1f;
+    private double currentAtkInterval;
     
     private void Start()
     {
+        currentAtkInterval = atkInterval;
         currentHealth = immuneCell.health;
         healthBar.size = healthFill.size;
         //Debug.Log(this.immuneCell.health + " " + this.immuneCell.atk);
@@ -26,6 +29,7 @@ public class Neutrofil : MonoBehaviour
 
     private void Update()
     {
+        currentAtkInterval -= Time.unscaledDeltaTime;
         if(enemies.Count != 0)
         {
             transform.position = Vector2.MoveTowards(transform.position, enemies.Peek().position, immuneCell.movSpd * Time.deltaTime);
@@ -34,7 +38,11 @@ public class Neutrofil : MonoBehaviour
                 transform.position = this.transform.position;
                 Enemy enemyObj = enemies.Peek().GetComponent<Enemy>();
                 enemyObj.SetTarget(this.transform);
-                Attack(enemyObj);
+                if(currentAtkInterval <= 0)
+                {
+                    Attack(enemyObj);
+                    currentAtkInterval = atkInterval;
+                }
             }
         }
     }
@@ -52,11 +60,25 @@ public class Neutrofil : MonoBehaviour
     private void Attack(Enemy enemy)
     {
         enemy.TakeDamage(immuneCell.atk);
+        if (enemy.IsDead())
+        {
+            enemies.Dequeue();
+        }
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        if(currentHealth <= 0)
+        {
+            currentHealth = 0;
+            Destroy(this.gameObject);
+        }
         healthFill.size = new Vector2(currentHealth * healthBar.size.x / immuneCell.health, healthBar.size.y);
+    }
+
+    public bool IsDead()
+    {
+        return (currentHealth <= 0) ? true : false;
     }
 }

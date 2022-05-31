@@ -158,6 +158,8 @@ MonoBehaviour:
   speed: 2
   enemyHealth: 10
   enemyAtk: 3
+  healthBar: {fileID: 1968074379464273849}
+  healthFill: {fileID: 6479822116928026551}
 --- !u!212 &-944778953371777782
 SpriteRenderer:
   m_ObjectHideFlags: 0
