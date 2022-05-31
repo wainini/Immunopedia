@@ -44,6 +44,10 @@ public class Neutrofil : MonoBehaviour
                     currentAtkInterval = atkInterval;
                 }
             }
+            if(enemies.Peek() == null)
+            {
+                enemies.Dequeue();
+            }
         }
     }
 
@@ -53,7 +57,7 @@ public class Neutrofil : MonoBehaviour
         {
             Transform enemyLocation = collision.gameObject.transform;
             enemies.Enqueue(enemyLocation);
-            Debug.Log(enemies.Peek().position);
+            //Debug.Log(enemies.Peek().position);
         }
     }
 

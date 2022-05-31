@@ -94,8 +94,8 @@ public class Enemy : MonoBehaviour
         if(currentHealth <= 0)
         {
             currentHealth = 0;
-            //this.enabled = false;
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
+            //Destroy(this.gameObject);
         }
         healthFill.size = new Vector2(currentHealth * healthBar.size.x / enemyHealth, healthBar.size.y);
     }
