@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 4211011440442647868}
   - component: {fileID: -1917489478467571191}
   - component: {fileID: -944778953371777782}
+  - component: {fileID: -4331616931426274323}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -211,6 +212,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &-4331616931426274323
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4211011440442647866}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7946664968255073243
 GameObject:
   m_ObjectHideFlags: 0

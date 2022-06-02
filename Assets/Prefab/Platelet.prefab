@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: -6223792736040752920}
   - component: {fileID: 4399265827715854478}
   m_Layer: 0
-  m_Name: SquareTroop
-  m_TagString: Untagged
+  m_Name: Platelet
+  m_TagString: Platelet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

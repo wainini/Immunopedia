@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private int lives;
+    
     public GameObject neutrofilPrefab;
     public GameObject enemyPrefab;
 
+    public Queue<GameObject> wounds = new Queue<GameObject>();
+
     public Transform initialEnemySpawn;
+
+    
     private void Start()
     {
+        var woundArr = GameObject.FindGameObjectsWithTag("Wound");
+        wounds = new Queue<GameObject>(woundArr);
+        Debug.Log("You have " + lives + " lives");
         StartCoroutine("SpawnEnemies");
     }
 
@@ -19,12 +28,22 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(neutrofilPrefab);
         }
+        if(wounds.Count != 0)
+        {
+            if (wounds.Peek().GetComponent<Wound>().IsWoundClosed())
+            {
+                wounds.Dequeue();
+            }
+        }
+        else
+        {
+            Win();
+        }
     }
 
     IEnumerator SpawnEnemies()
     {
-
-        for (int i = 0; i < 5; i++)
+        while (true)
         {
             Instantiate(enemyPrefab, initialEnemySpawn.position, Quaternion.identity);
             yield return new WaitForSeconds(5f);
@@ -33,6 +52,31 @@ public class GameManager : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(collision.gameObject);
+        Debug.Log(collision.gameObject.tag);
+        if(collision.gameObject.tag == "Enemy")
+        {
+            lives--;
+            Destroy(collision.gameObject);
+            Debug.Log("You have " + lives + " lives left");
+        }
+        if(lives <= 0)
+        {
+            GameOver();
+        }
+        
+    }
+
+    private void GameOver()
+    {
+        //game over
+        Debug.Log("You Died");
+        Time.timeScale = 0;
+    }
+
+    private void Win()
+    {
+        //win
+        Debug.Log("You Win");
+        Time.timeScale = 0;
     }
 }

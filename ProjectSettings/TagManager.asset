@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - Waypoint
   - Soldier
+  - Wound
+  - Platelet
   layers:
   - Default
   - TransparentFX

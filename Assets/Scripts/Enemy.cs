@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
         currentHealth = enemyHealth;
         healthBar.size = healthFill.size;
         target = null;
-        waypointParent = GameObject.FindGameObjectWithTag("Waypoint").transform;
+        waypointParent = GameObject.FindGameObjectWithTag("Wound").transform;
         foreach (Transform waypoint in waypointParent)
         {
             waypoints.Add(waypoint);
