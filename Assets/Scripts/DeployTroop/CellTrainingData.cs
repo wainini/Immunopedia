@@ -10,5 +10,5 @@ public class CellTrainingData : ScriptableObject
     public float cost;
     public float trainTime;
     public Sprite cellImage;
-    public GameObject troopPrefab;
+    public GameObject cellPrefab;
 }
