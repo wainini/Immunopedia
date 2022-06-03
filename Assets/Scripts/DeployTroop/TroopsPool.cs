@@ -23,7 +23,6 @@ public class TroopsPool : MonoBehaviour
 
     private void Start()
     { 
-
         for (int i = 0; i < availableTroops.Count; i++)
         {
             troopsPools[i] = new Queue<GameObject>();
@@ -68,5 +67,10 @@ public class TroopsPool : MonoBehaviour
             return 69;
         }
         return selectedTroop;
+    }
+
+    public void GetBuilding(GameObject troop)
+    {
+        availableTroops.Add(troop);
     }
 }

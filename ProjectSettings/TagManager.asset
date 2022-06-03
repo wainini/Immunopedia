@@ -51,3 +51,6 @@ TagManager:
   - name: Troops
     uniqueID: 3353475599
     locked: 0
+  - name: Bulding
+    uniqueID: 2930849329
+    locked: 0
