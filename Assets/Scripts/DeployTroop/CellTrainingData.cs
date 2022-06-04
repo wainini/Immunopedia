@@ -12,7 +12,6 @@ public class CellTrainingData : ScriptableObject
     public Sprite cellImage;
     public GameObject cellPrefab;
 }
-
 public class CellUIData
 {
     public CellTrainingData cellData;

@@ -17,5 +17,4 @@ public class Building : MonoBehaviour
         popUp.SetActive(false);
     }
 
-
 }

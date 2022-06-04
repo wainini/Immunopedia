@@ -13,6 +13,11 @@ public class CellsSelectDeploy : MonoBehaviour
 
     private GameObject selectedCell;
 
+    [SerializeField] private GameObject selectableUIPrefab;
+    private ToggleGroup layoutToggleGroup;
+    private GameObject selectedCellPrefab;
+
+
     private Camera mainCam;
     private Vector3 mousePos;
 
@@ -21,12 +26,12 @@ public class CellsSelectDeploy : MonoBehaviour
     [SerializeField] private float deployCooldown = 0.5f;
     private float timeLastDeployed;
     private bool CanDeploy => timeLastDeployed + deployCooldown <= Time.unscaledTime;
+
     private void Start()
     {
         selectorLayoutToggleGroup = selectorLayout.GetComponent<ToggleGroup>();
         mainCam = Camera.main;
     }
-
     private void Update()
     {
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
@@ -36,7 +41,7 @@ public class CellsSelectDeploy : MonoBehaviour
         {
             if (mouseRay)
             {
-                if (selectedCell == null)
+                if (selectedCellPrefab == null)
                 {
                     Debug.Log("No Troop Selected");
                 }
@@ -51,46 +56,23 @@ public class CellsSelectDeploy : MonoBehaviour
             }
         }
     }
-
     private void DeployCell()
     {
-        GameObject cellToDeploy = Instantiate(selectedCell);
+        GameObject cellToDeploy = Instantiate(selectedCellPrefab);
         cellToDeploy.transform.position = new Vector3(mousePos.x, mousePos.y, 0f);
         timeLastDeployed = Time.unscaledTime;
-        DepleteCell(selectedCell);
-    }
-
-    private void DepleteCell(GameObject cellPrefab)
-    {
-        int index = availableCells.FindIndex((x) => x.cellData.cellPrefab == cellPrefab);
-        availableCells[index].amount--;
-        if (availableCells[index].amount > 0)
-        {
-            availableCells[index].cellUI.GetComponentInChildren<TextMeshProUGUI>().text = availableCells[index].amount + "x";
-        }
-        else
-        {
-            RemoveCellSelector(index);
-        }
-    }
-
-    private void RemoveCellSelector(int index)
-    {
-        Destroy(availableCells[index].cellUI);
-        availableCells.RemoveAt(index);
-        selectedCell = null;
     }
 
     public void AddNewCell(CellTrainingData cellData)
     {
         if(availableCells.Count == 0)
         {
-            CreateNewCell(cellData);
+            AddNewCellToList(cellData);
         }
         else
         {
             CellUIData sameCell = availableCells.Find((x) => x.cellData == cellData);
-            if (sameCell == null) CreateNewCell(cellData);
+            if (sameCell == null) AddNewCellToList(cellData);
             else
             {
                 sameCell.amount++;
@@ -99,7 +81,7 @@ public class CellsSelectDeploy : MonoBehaviour
         }
     }
 
-    private void CreateNewCell(CellTrainingData cellData)
+    private void AddNewCellToList(CellTrainingData cellData)
     {
         GameObject newSelector = Instantiate(selectorPrefab, selectorLayout.transform);
         newSelector.GetComponentsInChildren<Image>()[2].sprite = cellData.cellImage;
