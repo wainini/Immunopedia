@@ -12,3 +12,17 @@ public class CellTrainingData : ScriptableObject
     public Sprite cellImage;
     public GameObject cellPrefab;
 }
+
+public class CellUIData
+{
+    public CellTrainingData cellData;
+    public GameObject cellUI;
+    public int amount;
+
+    public CellUIData(CellTrainingData cellData, GameObject cellUI, int amount)
+    {
+        this.cellData = cellData;
+        this.cellUI = cellUI;
+        this.amount = amount;
+    }
+}

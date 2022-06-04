@@ -6,98 +6,59 @@ using TMPro;
 
 public class CellsSelectDeploy : MonoBehaviour
 {
-    public class AvailableCellsData
-    {
-        public CellTrainingData cellData;
-        public GameObject selectableCellUI;
-        public int amount;
+    List<CellUIData> availableCells = new List<CellUIData>();
+    [SerializeField] private GameObject selectorLayout;
+    [SerializeField] private GameObject selectorPrefab;
+    private ToggleGroup selectorLayoutToggleGroup;
 
-        public AvailableCellsData(CellTrainingData cellData, GameObject selectableCellUI, int amount)
-        {
-            this.cellData = cellData;
-            this.selectableCellUI = selectableCellUI;
-            this.amount = amount;
-        }
-    }
-    private List<AvailableCellsData> availableCells = new List<AvailableCellsData>();
+    private GameObject selectedCell;
 
-    [SerializeField] private GameObject selectableUIPrefab;
-    private ToggleGroup layoutToggleGroup;
-    private GameObject selectedCellPrefab;
-
-
-    private Camera mainCam;
-    private Vector3 mousePos;
+    private Camera mainCamera;
 
     [Header("Deploy")]
     [SerializeField] private LayerMask deployLayer;
     [SerializeField] private float deployCooldown = 0.5f;
-    private float timeLastDeployed;
-    private bool CanDeploy => timeLastDeployed + deployCooldown <= Time.unscaledTime;
-
+    private float lastDeployed;
+    private bool CanDeploy => lastDeployed + deployCooldown <= Time.time;
     private void Start()
     {
-        layoutToggleGroup = GetComponent<ToggleGroup>();
-        mainCam = Camera.main;
+        selectorLayoutToggleGroup = selectorLayout.GetComponent<ToggleGroup>();
+        mainCamera = Camera.main;
     }
+
     private void Update()
     {
-        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-        RaycastHit2D mouseRay = Physics2D.Raycast(mousePos, Vector2.zero, deployLayer);
 
-        if (Input.GetKey(KeyCode.Mouse0))
-        {
-            if (mouseRay)
-            {
-                if (selectedCellPrefab == null)
-                {
-                    Debug.Log("No Troop Selected");
-                }
-                else if (CanDeploy)
-                {
-                    DeployCell();
-                }
-            }
-            else
-            {
-                Debug.Log("Please deploy on red area");
-            }
-        }
-    }
-    private void DeployCell()
-    {
-        GameObject cellToDeploy = Instantiate(selectedCellPrefab);
-        cellToDeploy.transform.position = new Vector3(mousePos.x, mousePos.y, 0f);
-        timeLastDeployed = Time.unscaledTime;
     }
 
-    public void SearchSameCell(CellTrainingData cellData)
+    public void AddNewCell(CellTrainingData cellData)
     {
         if(availableCells.Count == 0)
         {
-            AddNewCellToList(cellData);
+            CreateNewCell(cellData);
         }
         else
         {
-            AvailableCellsData sameCell = availableCells.Find((x) => x.cellData == cellData);
-            if(sameCell == null) AddNewCellToList(cellData);
+            CellUIData sameCell = availableCells.Find((x) => x.cellData == cellData);
+            if (sameCell == null) CreateNewCell(cellData);
             else
             {
                 sameCell.amount++;
-                sameCell.selectableCellUI.GetComponentInChildren<TextMeshProUGUI>().text = sameCell.amount + "x";
+                sameCell.cellUI.GetComponentInChildren<TextMeshProUGUI>().text = sameCell.amount + "x";
             }
         }
     }
 
-    private void AddNewCellToList(CellTrainingData cellData)
+    private void CreateNewCell(CellTrainingData cellData)
     {
-        GameObject newSelectableCellUI = Instantiate(selectableUIPrefab, this.transform);
-        newSelectableCellUI.GetComponentsInChildren<Image>()[2].sprite = cellData.cellImage;
-        newSelectableCellUI.GetComponentInChildren<TextMeshProUGUI>().text = "1x";
-        Toggle toggleComponent = newSelectableCellUI.GetComponentInChildren<Toggle>();
-        toggleComponent.onValueChanged.AddListener((x) => SelectCells(cellData.cellPrefab));
-        toggleComponent.group = layoutToggleGroup;
-        availableCells.Add(new AvailableCellsData(cellData, newSelectableCellUI, 1));
+        GameObject newSelector = Instantiate(selectorPrefab, selectorLayout.transform);
+        newSelector.GetComponentsInChildren<Image>()[2].sprite = cellData.cellImage;
+        newSelector.GetComponentInChildren<TextMeshProUGUI>().text = "1x";
+        Toggle toggleComponent = newSelector.GetComponent<Toggle>();
+        toggleComponent.onValueChanged.AddListener((x) => SelectCell(cellData.cellPrefab));
+        toggleComponent.group = selectorLayoutToggleGroup;
+        availableCells.Add(new CellUIData(cellData, newSelector, 1));
     }
-    public void SelectCells(GameObject cellPrefab) => selectedCellPrefab = (selectedCellPrefab == cellPrefab) ? null : cellPrefab;
+
+    private void SelectCell(GameObject cellPrefab) => selectedCell = (selectedCell == cellPrefab) ? null : cellPrefab;
 }

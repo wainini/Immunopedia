@@ -6,24 +6,11 @@ using TMPro;
 
 public class TrainCells : MonoBehaviour
 {
-    [SerializeField] private CellsSelectDeploy cellSelectorScript;
-    [SerializeField] private GameObject trainingLayout;
+    [SerializeField] private CellsSelectDeploy cellsSelectDeployScript;
+    [SerializeField] private GameObject cellInTrainingLayout;
     [SerializeField] private GameObject cellInTrainingPrefab;
-    public class InTrainingData
-    {
-        public CellTrainingData cellData;
-        public GameObject inTrainingUI;
-        public int amount;
 
-        public InTrainingData(CellTrainingData cellData, GameObject inTrainingUI, int amount)
-        {
-            this.cellData = cellData;
-            this.inTrainingUI = inTrainingUI;
-            this.amount = amount;
-        }
-    }
-
-    public List<InTrainingData> cellsInTrainingList = new List<InTrainingData>();
+    List<CellUIData> cellsInTrainingList = new List<CellUIData>();
 
     private RectTransform rt;
     public float minHeight = 400f;
@@ -32,7 +19,7 @@ public class TrainCells : MonoBehaviour
     private float currentCellTrainTime;
     private void Start()
     {
-        rt = trainingLayout.GetComponent<RectTransform>();
+        rt = cellInTrainingLayout.GetComponent<RectTransform>();
     }
 
     private void FixedUpdate()
@@ -40,8 +27,7 @@ public class TrainCells : MonoBehaviour
         currentCellTrainTime -= Time.fixedDeltaTime;
         if(currentCellTrainTime <= 0 && cellsInTrainingList.Count > 0)
         {
-            cellSelectorScript.SearchSameCell(cellsInTrainingList[0].cellData);
-            DecrementCellInTraining();
+            CellFinishedTraining();
         }
     }
 
@@ -55,9 +41,9 @@ public class TrainCells : MonoBehaviour
         }
         else if (cellsInTrainingList[listLength - 1].cellData == cellData)
         {
-            InTrainingData lastTrainedCell = cellsInTrainingList[listLength - 1];
+            CellUIData lastTrainedCell = cellsInTrainingList[listLength - 1];
             lastTrainedCell.amount += 1;
-            lastTrainedCell.inTrainingUI.GetComponentInChildren<TextMeshProUGUI>().text = lastTrainedCell.amount + "x";
+            lastTrainedCell.cellUI.GetComponentInChildren<TextMeshProUGUI>().text = lastTrainedCell.amount + "x";
         }
         else
         {
@@ -69,11 +55,11 @@ public class TrainCells : MonoBehaviour
 
     private void CreateNewUI(CellTrainingData cellData)
     {
-        GameObject cellInTraining = Instantiate(cellInTrainingPrefab, trainingLayout.transform);
+        GameObject cellInTraining = Instantiate(cellInTrainingPrefab, cellInTrainingLayout.transform);
         cellInTraining.GetComponentsInChildren<Image>()[1].sprite = cellData.cellImage;
         cellInTraining.GetComponentInChildren<TextMeshProUGUI>().text = "1x";
-        cellInTraining.GetComponentInChildren<Button>().onClick.AddListener(() => RemoveCellInTrainingUI(cellInTraining));
-        cellsInTrainingList.Add(new InTrainingData(cellData, cellInTraining, 1));
+        cellInTraining.GetComponentInChildren<Button>().onClick.AddListener(() => RemoveCellFromTraining(cellInTraining));
+        cellsInTrainingList.Add(new CellUIData(cellData, cellInTraining, 1));
     }
 
     private void UpdateLayoutHeight(int length)
@@ -82,9 +68,9 @@ public class TrainCells : MonoBehaviour
         rt.sizeDelta = new Vector2(rt.sizeDelta.x, Mathf.Max(minHeight, minHeight + howManyToAdd * heightToAdd));
     }
 
-    private void RemoveCellInTrainingUI(GameObject thisUI)
+    private void RemoveCellFromTraining(GameObject thisUI)
     {
-        int index = cellsInTrainingList.FindIndex((x) => x.inTrainingUI == thisUI);
+        int index = cellsInTrainingList.FindIndex((x) => x.cellUI == thisUI);
         cellsInTrainingList.RemoveAt(index);
         if(index == 0 && cellsInTrainingList.Count > 0)
         {
@@ -93,19 +79,19 @@ public class TrainCells : MonoBehaviour
         Destroy(thisUI);
     }
 
-    private void DecrementCellInTraining()
+    private void CellFinishedTraining()
     {
-        InTrainingData trainedCell = cellsInTrainingList[0];
+        CellUIData trainedCell = cellsInTrainingList[0];
         trainedCell.amount--;
-        if (trainedCell.amount > 0)
+        if(trainedCell.amount > 0)
         {
+            trainedCell.cellUI.GetComponentInChildren<TextMeshProUGUI>().text = trainedCell.amount + "x";
             currentCellTrainTime = trainedCell.cellData.trainTime;
-            trainedCell.inTrainingUI.GetComponentInChildren<TextMeshProUGUI>().text = trainedCell.amount + "x";
         }
         else
         {
-            RemoveCellInTrainingUI(trainedCell.inTrainingUI);
+            RemoveCellFromTraining(trainedCell.cellUI);
         }
+        cellsSelectDeployScript.AddNewCell(trainedCell.cellData);
     }
-
 }
