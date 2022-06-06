@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private int lives;
+    [SerializeField] private float spawnCooldown;
     
     public GameObject neutrofilPrefab;
     public GameObject enemyPrefab;
@@ -46,7 +47,7 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             Instantiate(enemyPrefab, initialEnemySpawn.position, Quaternion.identity);
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(spawnCooldown);
         }
     }
 

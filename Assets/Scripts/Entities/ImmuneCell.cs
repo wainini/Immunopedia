@@ -9,7 +9,6 @@ public class ImmuneCell : Entity
     [SerializeField] private CircleCollider2D radius;
 
     public Queue<Transform> enemies = new Queue<Transform>();
-
     public ImmuneCell()
     {
         radius.radius = atkRadius;
@@ -20,15 +19,13 @@ public class ImmuneCell : Entity
         enemies.Enqueue(enemy);
     }
 
+    public void SetTarget()
+    {
+        target = (enemies.Count != 0) ? enemies.Peek().GetComponent<Entity>() : null;
+    }
+
     public Transform GetTargetLocation()
     {
-        if(enemies.Count != 0)
-        {
-            return enemies.Peek();
-        }
-        else
-        {
-            return null;
-        }
+        return (enemies.Count != 0) ? enemies.Peek() : null; ;
     }
 }

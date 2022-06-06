@@ -13,10 +13,11 @@ public class Entity : ScriptableObject
     [SerializeField] private SpriteRenderer healthBar;
     [SerializeField] private SpriteRenderer healthFill;
 
-
-    private Entity target;
     private int currentHealth;
     private float currentAtkInterval;
+    
+    public Entity target { get; protected set; }
+
     public Entity()
     {
         healthBar.size = healthFill.size;
@@ -24,7 +25,7 @@ public class Entity : ScriptableObject
         currentHealth = maxHealth;
     }
 
-    private void TakeDamage(int damage)
+    protected virtual void TakeDamage(int damage, Entity enemy)
     {
         currentHealth -= damage;
         healthFill.size = new Vector2(currentHealth * healthBar.size.x / maxHealth, healthBar.size.y);
@@ -32,7 +33,11 @@ public class Entity : ScriptableObject
 
     public void Attack()
     {
-        target.TakeDamage(atk);
+        target.TakeDamage(atk, this);
+        if (IsDead())
+        {
+            target = null;
+        }
     }
 
     public bool IsDead()
@@ -53,10 +58,5 @@ public class Entity : ScriptableObject
     public void RestoreInterval()
     {
         currentAtkInterval = atkInterval;
-    }
-
-    public void SetTarget(Entity target)
-    {
-        this.target = target;
     }
 }
