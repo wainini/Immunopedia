@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName ="Entity/Immune Cell", menuName ="New Immune Cell")]
+[CreateAssetMenu(fileName = "New Immune Cell", menuName = "Entity/Immune Cell")]
 public class ImmuneCell : Entity
 {
     [SerializeField] private float atkRadius;

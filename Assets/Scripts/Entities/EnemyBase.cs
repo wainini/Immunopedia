@@ -2,37 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New Enemy", menuName = "Entity/Enemy")]
 public class EnemyBase : Entity
 {
-    [SerializeField] private Transform waypointParent;
-    private Queue<Transform> waypoints = new Queue<Transform>();
-    private Transform nextWaypoint;
-
-    public EnemyBase()
-    {
-        foreach (Transform waypoint in waypointParent)
-        {
-            waypoints.Enqueue(waypoint);
-        }
-        nextWaypoint = waypoints.Dequeue();
-    }
+    private Transform waypointParent;
+    private Queue<Transform> waypoints;
 
     public void SetWaypointParent(Transform parent)
     {
         waypointParent = parent;
+        SetWaypoints();
     }
 
-    public void NextWaypoint()
+    private void SetWaypoints()
     {
-        if(waypoints.Peek() != null)
+        waypoints = new Queue<Transform>();
+        foreach (Transform waypoint in waypointParent)
         {
-            nextWaypoint = waypoints.Dequeue();
+            waypoints.Enqueue(waypoint);
         }
     }
 
-    public Transform GetWaypoint()
+    public Queue<Transform> GetWaypoints()
     {
-        return (nextWaypoint == null) ? nextWaypoint : null;
+        return (waypoints.Count != 0) ? new Queue<Transform>(waypoints) : null;
     }
 
     protected override void TakeDamage(int damage, Entity enemy)

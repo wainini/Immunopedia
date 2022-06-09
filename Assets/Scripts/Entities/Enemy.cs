@@ -6,6 +6,14 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private EnemyBase enemyBase;
 
+    private Transform nextWaypoint;
+    private Queue<Transform> waypoints;
+
+    private void Start()
+    {
+        waypoints = enemyBase.GetWaypoints();
+        nextWaypoint = waypoints.Dequeue();
+    }
     void Update()
     {
         enemyBase.WaitForInterval();
@@ -20,14 +28,20 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            if(Vector2.Distance(transform.position, enemyBase.GetWaypoint().position) > 0f)
+            if(Vector2.Distance(transform.position, nextWaypoint.position) > 0f)
             {
-                transform.position = Vector2.MoveTowards(transform.position, enemyBase.GetWaypoint().position, enemyBase.movSpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, nextWaypoint.position, enemyBase.movSpeed * Time.deltaTime);
             }
             else
             {
-                enemyBase.NextWaypoint();
+                nextWaypoint = waypoints.Dequeue();
             }
         }
+    }
+
+
+    public void SetWaypoint(Transform parent)
+    {
+        enemyBase.SetWaypointParent(parent);
     }
 }

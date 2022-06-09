@@ -1073,7 +1073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &663055080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1086,10 +1086,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4dcabb493a0164cbca8651316debcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableTroops:
-  - {fileID: 4681344161063326597, guid: 9195eae06c8b4464399aa69a1d2b3dd4, type: 3}
-  - {fileID: 1121576477427649719, guid: d966d414a47941044a4c440403baccdb, type: 3}
-  - {fileID: 6353210354887204307, guid: 71dee6bc8e0d50e4cb643e1deb51b35e, type: 3}
+  selectorLayout: {fileID: 0}
+  selectorPrefab: {fileID: 0}
+  selectableUIPrefab: {fileID: 0}
+  deployLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  deployCooldown: 0.5
 --- !u!4 &663055081
 Transform:
   m_ObjectHideFlags: 0
@@ -1558,6 +1561,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plateletNeeded: 3
+  intervalBetweenSpawn: 5
+  initialDelay: 0
+  enemies:
+  - {fileID: 4211011440442647866, guid: c4376718bedf3c646988e837a976db81, type: 3}
 --- !u!1 &820173914
 GameObject:
   m_ObjectHideFlags: 0
@@ -2075,6 +2082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 3
+  spawnCooldown: 0
   neutrofilPrefab: {fileID: 4681344161063326597, guid: 9195eae06c8b4464399aa69a1d2b3dd4, type: 3}
   enemyPrefab: {fileID: 4211011440442647866, guid: c4376718bedf3c646988e837a976db81, type: 3}
   initialEnemySpawn: {fileID: 815453548}
@@ -2877,10 +2885,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e914e1f51cf6e6a43aaf611c7bed66a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deployLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  deployCooldown: 0.5
 --- !u!4 &1554286538
 Transform:
   m_ObjectHideFlags: 0
@@ -3391,10 +3395,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e914e1f51cf6e6a43aaf611c7bed66a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deployLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  deployCooldown: 0.5
 --- !u!1 &1793128320
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,7 +18,8 @@ public class Entity : ScriptableObject
     
     public Entity target { get; protected set; }
 
-    public Entity()
+
+    private void Awake()
     {
         healthBar.size = healthFill.size;
         currentAtkInterval = 0;

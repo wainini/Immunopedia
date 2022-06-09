@@ -111,7 +111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4211011440442647866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.25, y: -3.39, z: -0.5350456}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6487000417653188291}
@@ -156,11 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade14f0b1a58cbe4db62dd74b6fb0eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  enemyHealth: 10
-  enemyAtk: 3
-  healthBar: {fileID: 1968074379464273849}
-  healthFill: {fileID: 6479822116928026551}
+  enemyBase: {fileID: 11400000, guid: 53325c0d1415a11469e73a8a2e66002c, type: 2}
 --- !u!212 &-944778953371777782
 SpriteRenderer:
   m_ObjectHideFlags: 0

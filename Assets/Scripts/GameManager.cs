@@ -20,15 +20,11 @@ public class GameManager : MonoBehaviour
         var woundArr = GameObject.FindGameObjectsWithTag("Wound");
         wounds = new Queue<GameObject>(woundArr);
         Debug.Log("You have " + lives + " lives");
-        StartCoroutine("SpawnEnemies");
+        //StartCoroutine("SpawnEnemies");
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Instantiate(neutrofilPrefab);
-        }
         if(wounds.Count != 0)
         {
             if (wounds.Peek().GetComponent<Wound>().IsWoundClosed())
@@ -51,20 +47,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.tag);
-        if(collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
             lives--;
             Destroy(collision.gameObject);
             Debug.Log("You have " + lives + " lives left");
         }
-        if(lives <= 0)
+        if (lives <= 0)
         {
             GameOver();
         }
-        
     }
 
     private void GameOver()
