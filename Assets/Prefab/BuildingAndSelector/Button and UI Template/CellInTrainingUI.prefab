@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 8247021510039000285}
   - component: {fileID: 8247021510039000286}
   m_Layer: 5
-  m_Name: TroopInTraining
+  m_Name: CellInTrainingUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

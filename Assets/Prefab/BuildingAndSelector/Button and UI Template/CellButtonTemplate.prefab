@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 7966455208095012688}
   - component: {fileID: 7966455208095012689}
   m_Layer: 5
-  m_Name: TroopButtonTemplate
+  m_Name: CellButtonTemplate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

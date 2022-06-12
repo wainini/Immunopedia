@@ -13,11 +13,6 @@ public class CellsSelectDeploy : MonoBehaviour
 
     private GameObject selectedCell;
 
-    [SerializeField] private GameObject selectableUIPrefab;
-    private ToggleGroup layoutToggleGroup;
-    private GameObject selectedCellPrefab;
-
-
     private Camera mainCam;
     private Vector3 mousePos;
 
@@ -41,7 +36,7 @@ public class CellsSelectDeploy : MonoBehaviour
         {
             if (mouseRay)
             {
-                if (selectedCellPrefab == null)
+                if (selectedCell == null)
                 {
                     Debug.Log("No Troop Selected");
                 }
@@ -58,9 +53,31 @@ public class CellsSelectDeploy : MonoBehaviour
     }
     private void DeployCell()
     {
-        GameObject cellToDeploy = Instantiate(selectedCellPrefab);
+        GameObject cellToDeploy = Instantiate(selectedCell);
         cellToDeploy.transform.position = new Vector3(mousePos.x, mousePos.y, 0f);
         timeLastDeployed = Time.unscaledTime;
+        DepleteCell();
+    }
+
+    private void DepleteCell()
+    {
+        int index = availableCells.FindIndex((x) => x.cellData.cellPrefab == selectedCell);
+        availableCells[index].amount--;
+        if(availableCells[index].amount > 0)
+        {
+            availableCells[index].cellUI.GetComponentInChildren<TextMeshProUGUI>().text = availableCells[index].amount + "x";
+        }
+        else
+        {
+            RemoveSelectorUI(index);
+        }
+    }
+
+    private void RemoveSelectorUI(int index)
+    {
+        Destroy(availableCells[index].cellUI);
+        availableCells.RemoveAt(index);
+        selectedCell = null;
     }
 
     public void AddNewCell(CellTrainingData cellData)

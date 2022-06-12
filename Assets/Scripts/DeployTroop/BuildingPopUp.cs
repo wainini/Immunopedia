@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class Building : MonoBehaviour
+public class BuildingPopUp : MonoBehaviour
 {
     [SerializeField] private GameObject popUp;
     public void ViewPopUp()
