@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance { get; private set; }
+    
     [SerializeField] private int lives;
-    [SerializeField] private float spawnCooldown;
     
     public GameObject neutrofilPrefab;
     public GameObject enemyPrefab;
@@ -14,13 +15,20 @@ public class GameManager : MonoBehaviour
 
     public Transform initialEnemySpawn;
 
-    
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
+
     private void Start()
     {
         var woundArr = GameObject.FindGameObjectsWithTag("Wound");
         wounds = new Queue<GameObject>(woundArr);
         Debug.Log("You have " + lives + " lives");
-        //StartCoroutine("SpawnEnemies");
     }
 
     void Update()
@@ -38,27 +46,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    IEnumerator SpawnEnemies()
+    public void ReduceLive()
     {
-        while (true)
-        {
-            Instantiate(enemyPrefab, initialEnemySpawn.position, Quaternion.identity);
-            yield return new WaitForSeconds(spawnCooldown);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            lives--;
-            Destroy(collision.gameObject);
-            Debug.Log("You have " + lives + " lives left");
-        }
-        if (lives <= 0)
-        {
-            GameOver();
-        }
+        lives--;
+        if (lives <= 0) GameOver();
     }
 
     private void GameOver()
