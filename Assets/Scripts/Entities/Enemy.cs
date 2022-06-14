@@ -27,14 +27,15 @@ public class Enemy : MonoBehaviour
             }
         }
         else
-        {
-            if(Vector2.Distance(transform.position, nextWaypoint.position) > 0f)
+        { 
+            if(Vector2.Distance(transform.position, nextWaypoint.position) > 0.1f)
             {
                 transform.position = Vector2.MoveTowards(transform.position, nextWaypoint.position, enemyBase.movSpeed * Time.deltaTime);
             }
             else
             {
                 nextWaypoint = waypoints.Dequeue();
+                Debug.Log(nextWaypoint);
             }
         }
     }

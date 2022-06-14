@@ -21,19 +21,7 @@ public class Wound : MonoBehaviour
     {
         currentPlateletCount = 0;
         isWoundClosed = false;
-        foreach (GameObject enemy in enemies)
-        {
-            enemy.GetComponent<Enemy>().SetWaypoint(gameObject.transform);
-        }
         StartCoroutine(Spawn());
-    }
-
-    private void Update()
-    {
-        if(currentPlateletCount >= plateletNeeded)
-        {
-            isWoundClosed = true;
-        }
     }
 
     IEnumerator Spawn()
@@ -42,14 +30,21 @@ public class Wound : MonoBehaviour
         while (!isWoundClosed)
         {
             int index;
-            if(enemies.Count == 1)
-            {
+            
+            if (enemies.Count == 1) 
                 index = 0;
-            }
-            else
-            {
+            else 
                 index = Random.Range(0, enemies.Count);
-            }
+
+            Transform initWaypoint;
+            int waypointCount = WaypointManager.instance.initialWaypoints.Count;
+
+            if (waypointCount <= 1)
+                initWaypoint = WaypointManager.instance.initialWaypoints[0];
+            else
+                initWaypoint = WaypointManager.instance.initialWaypoints[Random.Range(0, waypointCount)];
+
+            enemies[index].GetComponent<Enemy>().SetWaypoint(initWaypoint);
             GameObject enemy = Instantiate(enemies[index], gameObject.transform);
             yield return new WaitForSeconds(intervalBetweenSpawn);
         }
@@ -60,22 +55,12 @@ public class Wound : MonoBehaviour
     {
         if (collision.gameObject.tag == "Platelet")
         {
-            Debug.Log("Closing wound");
             currentPlateletCount++;
+            if (currentPlateletCount >= plateletNeeded)
+            {
+                isWoundClosed = true;
+                GameManager.instance.CloseWound(this.gameObject);
+            }
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log(collision.gameObject.name);
-        if(collision.gameObject.name == "Platelet")
-        {
-            currentPlateletCount++;
-        }
-    }
-
-    public bool IsWoundClosed()
-    {
-        return isWoundClosed;
     }
 }

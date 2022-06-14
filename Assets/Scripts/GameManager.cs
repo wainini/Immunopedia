@@ -7,14 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
     
     [SerializeField] private int lives;
-    
-    public GameObject neutrofilPrefab;
-    public GameObject enemyPrefab;
-
-    public Queue<GameObject> wounds = new Queue<GameObject>();
-
-    public Transform initialEnemySpawn;
-
+    [HideInInspector] public List<GameObject> wounds = new List<GameObject>();
 
     private void Awake()
     {
@@ -27,29 +20,20 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         var woundArr = GameObject.FindGameObjectsWithTag("Wound");
-        wounds = new Queue<GameObject>(woundArr);
+        wounds = new List<GameObject>(woundArr);
         Debug.Log("You have " + lives + " lives");
-    }
-
-    void Update()
-    {
-        if(wounds.Count != 0)
-        {
-            if (wounds.Peek().GetComponent<Wound>().IsWoundClosed())
-            {
-                wounds.Dequeue();
-            }
-        }
-        else
-        {
-            Win();
-        }
     }
 
     public void ReduceLive()
     {
         lives--;
         if (lives <= 0) GameOver();
+    }
+
+    public void CloseWound(GameObject wound)
+    {
+        wounds.Remove(wound);
+        if (wounds.Count == 0) Win();
     }
 
     private void GameOver()
