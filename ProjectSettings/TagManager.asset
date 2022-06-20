@@ -49,11 +49,11 @@ TagManager:
   - name: DeployArea
     uniqueID: 1402945905
     locked: 0
-  - name: Troops
-    uniqueID: 3353475599
-    locked: 0
   - name: Bulding
     uniqueID: 2930849329
+    locked: 0
+  - name: Troops
+    uniqueID: 3353475599
     locked: 0
   - name: UI
     uniqueID: 769443885

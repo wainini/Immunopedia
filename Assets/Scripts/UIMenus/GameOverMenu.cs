@@ -5,15 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class GameOverMenu : MonoBehaviour
 {
+    private MenuManager menuManager;
+    private void Awake()
+    {
+        menuManager = MenuManager.instance;
+    }
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        PauseMenuManager.menuState = PauseMenuManager.MenuState.inGame;
     }
 
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
-        PauseMenuManager.menuState = PauseMenuManager.MenuState.inGame;
     }
 }

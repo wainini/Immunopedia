@@ -2,10 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
+    private MenuManager menuManager;
     [SerializeField] private GameObject settingsMenu;
+
+    private void Awake()
+    {
+        menuManager = MenuManager.instance;
+    }
 
     private void OnEnable()
     {
@@ -18,24 +26,20 @@ public class PauseMenu : MonoBehaviour
 
     public void Continue()
     {
-        gameObject.SetActive(false);
-        PauseMenuManager.menuState = PauseMenuManager.MenuState.inGame;
+        menuManager.CloseMenu();
     }
 
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        PauseMenuManager.menuState = PauseMenuManager.MenuState.inGame;
     }
 
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
-        PauseMenuManager.menuState = PauseMenuManager.MenuState.inGame;
     }
     public void Settings()
     {
-        settingsMenu.SetActive(true);
-        PauseMenuManager.menuState = PauseMenuManager.MenuState.inSettingsMenu;
+        menuManager.OpenMenu(settingsMenu);
     }
 }
