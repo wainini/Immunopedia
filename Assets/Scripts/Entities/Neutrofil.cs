@@ -2,35 +2,96 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Neutrofil : MonoBehaviour
+public class Neutrofil : MonoBehaviour, IEntityBehaviour
 {
+    [SerializeField] private SpriteRenderer healthFill;
+    [SerializeField] private SpriteRenderer healthBar;
+    [SerializeField] private CircleCollider2D radius;
+    private EntityStats stats;
+
     public ImmuneCell cellData;
+ 
+    private float currentAtkInterval;
+    private GameObject target;
+    private Queue<GameObject> enemies = new Queue<GameObject>();
+    private void Start()
+    {
+        stats = GetComponent<EntityStats>();
+        stats.SetHealthUI(healthBar, healthFill);
+        radius.radius = cellData.atkRadius;
+        target = null;
+    }
 
     private void Update()
     {
-        cellData.WaitForInterval();
-        if (cellData.target)
+        WaitForInterval();
+        if (target != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, cellData.GetTargetLocation().position, cellData.movSpeed * Time.deltaTime);
-            if (Vector2.Distance(transform.position, cellData.GetTargetLocation().position) < 0.5)
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, target.transform.position) < 0.5)
             {
-                cellData.SetTarget();
                 transform.position = this.transform.position;
-                if (cellData.IsReadyToAttack())
+                if (IsReadyToAttack())
                 {
-                    //Attack(enemyObj);
-                    cellData.Attack();
-                    cellData.RestoreInterval();
+                    Attack();
+                    RestoreInterval();
                 }
             }
+        }
+        else
+        {
+            Debug.Log("set target");
+            SetTarget();
+        }
+        if (IsDead())
+        {
+            Destroy(gameObject);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
-            cellData.AddEnemy(collision.gameObject.transform);
+            if (!enemies.Contains(collision.gameObject))
+            {
+                AddEnemy(collision.gameObject);
+            }
         }
+    }
+
+    public void AddEnemy(GameObject enemy)
+    {
+        enemies.Enqueue(enemy);
+    }
+
+    public void SetTarget()
+    {
+        target = (enemies.Count != 0) ? enemies.Dequeue(): null;
+    }
+
+    public void Attack()
+    {
+        target.GetComponent<EntityStats>().TakeDamage(stats.atk, gameObject);
+    }
+
+    public bool IsDead()
+    {
+        return (stats.currentHealth <= 0) ? true : false;
+    }
+
+    public bool IsReadyToAttack()
+    {
+        return (currentAtkInterval <= 0) ? true : false;
+    }
+
+    public void WaitForInterval()
+    {
+        currentAtkInterval = (currentAtkInterval > 0) ? currentAtkInterval - Time.unscaledDeltaTime : 0;
+    }
+
+    public void RestoreInterval()
+    {
+        currentAtkInterval = stats.atkInterval;
     }
 }

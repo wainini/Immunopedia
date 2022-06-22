@@ -44,8 +44,8 @@ public class Wound : MonoBehaviour
             else
                 initWaypoint = WaypointManager.instance.initialWaypoints[Random.Range(0, waypointCount)];
 
-            enemies[index].GetComponent<Enemy>().SetWaypoint(initWaypoint);
             GameObject enemy = Instantiate(enemies[index], gameObject.transform);
+            enemy.GetComponent<EnemyWaypoints>().SetWaypointParent(initWaypoint);
             yield return new WaitForSeconds(intervalBetweenSpawn);
         }
 

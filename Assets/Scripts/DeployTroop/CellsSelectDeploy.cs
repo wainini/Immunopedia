@@ -38,7 +38,7 @@ public class CellsSelectDeploy : MonoBehaviour
             {
                 if (selectedCell == null)
                 {
-                    Debug.Log("No Troop Selected");
+                    //Debug.Log("No Troop Selected");
                 }
                 else if (CanDeploy)
                 {
