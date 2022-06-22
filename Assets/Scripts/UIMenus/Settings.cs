@@ -6,10 +6,12 @@ using UnityEngine.UI;
 
 public class Settings : MonoBehaviour
 {
+    private MenuManager menuManager;
     [SerializeField] private AudioMixer mixer;
     [SerializeField] private Slider master, bgm, sfx;
     private void Awake()
     {
+        menuManager = MenuManager.instance;
         master.value = PlayerPrefs.GetFloat("MasterVol", 1);
         bgm.value = PlayerPrefs.GetFloat("BGMVol", 1);
         sfx.value = PlayerPrefs.GetFloat("SFXVol", 1);
@@ -17,8 +19,7 @@ public class Settings : MonoBehaviour
 
     public void ExitSettings()
     {
-        this.gameObject.SetActive(false);
-        PauseMenuManager.menuState = PauseMenuManager.MenuState.inPauseMenu;
+        menuManager.CloseMenu();
     }
 
     public void SetMasterVol(float value)

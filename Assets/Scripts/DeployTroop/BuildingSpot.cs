@@ -9,7 +9,7 @@ public class BuildingSpot : MonoBehaviour
     void Start()
     {
         buildingManager = FindObjectOfType<BuildingManager>();
-        GetComponent<Button>().onClick.AddListener(() => buildingManager.ViewPopUp(transform));
+        GetComponent<Button>().onClick.AddListener(() => buildingManager.ViewPopUp(transform.parent.transform));
     }
 
 }

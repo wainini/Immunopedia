@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildingManager : MonoBehaviour
 {
@@ -31,7 +32,8 @@ public class BuildingManager : MonoBehaviour
 
     public void ConstructBuilding(GameObject buildingPrefab)
     {
-        Instantiate(buildingPrefab, selectedSpot.position, Quaternion.identity, this.transform);
+        GameObject building = Instantiate(buildingPrefab, Vector2.zero, Quaternion.identity, this.transform);
+        building.GetComponentInChildren<Button>().transform.position = selectedSpot.position;
         Destroy(selectedSpot.gameObject);
         ExitPopUp();
     }
