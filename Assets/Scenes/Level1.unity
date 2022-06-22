@@ -2023,21 +2023,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5784088019950557057, guid: 8a30229c06ea0374eb3865cd02a8eb37, type: 3}
   m_PrefabInstance: {fileID: 141668251}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1395117259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1395117258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 097b551f2844b054290f18a39bf892e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Solvers: []
-  m_Weight: 1
-  m_SolverEditorData: []
 --- !u!95 &1395117260
 Animator:
   serializedVersion: 3
