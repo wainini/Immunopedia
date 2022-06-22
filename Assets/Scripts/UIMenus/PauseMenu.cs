@@ -10,9 +10,16 @@ public class PauseMenu : MonoBehaviour
     private MenuManager menuManager;
     [SerializeField] private GameObject settingsMenu;
 
+    [SerializeField] private AudioMixer mixer;
+    [SerializeField] private Slider master, bgm, sfx;
+
+    private AreYouSure dialogPopUp;
     private void Awake()
     {
         menuManager = MenuManager.instance;
+        master.value = PlayerPrefs.GetFloat("MasterVol", 1);
+        bgm.value = PlayerPrefs.GetFloat("BGMVol", 1);
+        sfx.value = PlayerPrefs.GetFloat("SFXVol", 1);
     }
 
     private void OnEnable()
@@ -29,17 +36,56 @@ public class PauseMenu : MonoBehaviour
         menuManager.CloseMenu();
     }
 
-    public void RestartLevel()
+    public void RestartLevelDialog()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        menuManager.OpenDialogPopUp();
+        dialogPopUp = (dialogPopUp) ? dialogPopUp : AreYouSure.instance;
+        dialogPopUp.OpenDialogPopUp("Are you sure you want to restart the level?", RestartLevel);
     }
 
-    public void MainMenu()
+    public void MainMenuDialog()
     {
-        SceneManager.LoadScene(0);
+        menuManager.OpenDialogPopUp();
+        dialogPopUp = (dialogPopUp) ? dialogPopUp : AreYouSure.instance;
+        dialogPopUp.OpenDialogPopUp("Are you sure you want to go back to main menu?", MainMenu);
+    }
+
+    private void RestartLevel(bool yes)
+    {
+        if(yes) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        menuManager.CloseMenu();
+        dialogPopUp.RemoveListener();
+    }
+
+    private void MainMenu(bool yes)
+    {
+        if(yes) SceneManager.LoadScene(0);
+
+        menuManager.CloseMenu();
+        dialogPopUp.RemoveListener();
     }
     public void Settings()
     {
         menuManager.OpenMenu(settingsMenu);
+    }
+
+    public void Almanac()
+    {
+        Debug.Log("open sesame");
+    }
+
+    public void SetBGMVol(float value)
+    {
+
+        float volume = Mathf.Log10(value) * 20;
+        mixer.SetFloat("BGMVol", volume);
+        PlayerPrefs.SetFloat("BGMVol", value);
+    }
+    public void SetSFXVol(float value)
+    {
+        float volume = Mathf.Log10(value) * 20;
+        mixer.SetFloat("SFXVol", volume);
+        PlayerPrefs.SetFloat("SFXVol", value);
     }
 }
