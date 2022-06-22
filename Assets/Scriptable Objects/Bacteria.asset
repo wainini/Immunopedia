@@ -7,14 +7,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d165717328dda584697d793300a0ccf8, type: 3}
-  m_Name: Neutrofil
+  m_Script: {fileID: 11500000, guid: 8264c80d7de076b42bb53ad1ae45ed5a, type: 3}
+  m_Name: Bacteria
   m_EditorClassIdentifier: 
   movSpeed: 3
-  maxHealth: 1
-  atk: 3
-  atkInterval: 2
+  maxHealth: 5
+  atk: 2
+  atkInterval: 5
   blockCount: 1
-  atkRadius: 5

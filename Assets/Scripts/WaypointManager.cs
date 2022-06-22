@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaypointManager : MonoBehaviour
 {
     public static WaypointManager instance { get; private set; }
-    public List<Transform> initialWaypoints;
+    [HideInInspector] public List<Transform> initialWaypoints;
     void Awake()
     {
         if (instance == null) instance = this;
