@@ -9,6 +9,7 @@ public class Entity : ScriptableObject
     public float movSpeed;
     public int maxHealth;
     public int atk;
+    public int defense;
     public float atkInterval;
     public int blockCount;
 

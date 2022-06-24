@@ -7,6 +7,7 @@ public class EntityStats : MonoBehaviour
     [SerializeField] private Entity baseStat;
     public int currentHealth { get; private set; }
     public int atk { get; private set; }
+    public int defense { get; private set; }
     public float atkInterval { get; private set; }
     public float movSpeed { get; private set; }
     public GameObject localTarget { get; private set; }
@@ -17,15 +18,22 @@ public class EntityStats : MonoBehaviour
     {
         currentHealth = baseStat.maxHealth;
         atk = baseStat.atk;
+        defense = baseStat.defense;
         atkInterval = baseStat.atkInterval;
         movSpeed = baseStat.movSpeed;
         localTarget = null;
     }
 
+    public void ReduceDef(int eosiAmount)
+    {
+        int reduction = 100 - (20 * eosiAmount);
+        defense -= (defense * reduction);
+        defense = (defense <= 0) ? 0 : defense;
+    }
+
     public void TakeDamage(int damage, GameObject target)
     {
-        currentHealth -= damage;
-        Debug.Log(gameObject.name + " current helth: " + currentHealth);
+        currentHealth -= (damage - defense);
         localTarget = target;
         UpdateHealthUI(currentHealth);
     }
