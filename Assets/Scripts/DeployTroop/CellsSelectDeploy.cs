@@ -62,6 +62,7 @@ public class CellsSelectDeploy : MonoBehaviour
     }
     private void DeployCell()
     {
+        AudioManager.instance.PlaySound("DeployCell", SoundOutput.sfx);
         GameObject cellToDeploy = Instantiate(selectedCell);
         cellToDeploy.transform.position = new Vector3(mousePos.x, mousePos.y, 0f);
         timeLastDeployed = Time.unscaledTime;

@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class BoneMarrow : MonoBehaviour
 {
     private BuildingManager buildingManager;
-    void Start()
+    private void Start()
     {
+        AudioManager.instance.PlaySound("BuildBoneMarrow", SoundOutput.sfx);
         buildingManager = BuildingManager.instance;
         GetComponent<Button>().onClick.AddListener(() => buildingManager.OpenPopUp(transform));
     }
