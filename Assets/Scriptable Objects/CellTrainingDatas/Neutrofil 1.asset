@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Neutrofil 1
   m_EditorClassIdentifier: 
   cellName: asiap
-  cost: 69
+  cost: 2
   trainTime: 2
   cellImage: {fileID: 21300000, guid: 56b242b08a8caad4c8ebe90c39d9fa66, type: 3}
   cellPrefab: {fileID: 3311371682759548328, guid: 16168a20c66c5e940b991850af9943df, type: 3}

@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
 {
     private MenuManager menuManager;
     [SerializeField] private GameObject settingsMenu;
-
+    [SerializeField] private GameObject almanacMenu;
     [SerializeField] private AudioMixer mixer;
     [SerializeField] private Slider master, bgm, sfx;
 
@@ -72,7 +72,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Almanac()
     {
-        Debug.Log("open sesame");
+        menuManager.OpenMenu(almanacMenu);
     }
 
     public void SetBGMVol(float value)

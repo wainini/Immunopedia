@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class TrainCells : MonoBehaviour
 {
+    public event Action<float> OnTimeUpdated;
+
     private CellsSelectDeploy cellSelectorScript;
     [SerializeField] private GameObject trainingLayout;
     [SerializeField] private GameObject cellInTrainingPrefab;
@@ -13,43 +16,78 @@ public class TrainCells : MonoBehaviour
     public List<CellUIData> cellsInTrainingList = new List<CellUIData>();
 
     private RectTransform rt;
-    public float minHeight = 400f;
+    public float minHeight = 250f;
     public float heightToAdd = 130f;
 
-    private float currentCellTrainTime;
+    private BuildingManager buildingManager;
     private void Start()
     {
+        buildingManager = BuildingManager.instance;
         cellSelectorScript = FindObjectOfType<CellsSelectDeploy>();
         rt = trainingLayout.GetComponent<RectTransform>();
+
+        if(trainingLayout == null) { 
+        }
     }
 
     private void FixedUpdate()
     {
-        currentCellTrainTime -= Time.fixedDeltaTime;
-        if(currentCellTrainTime <= 0 && cellsInTrainingList.Count > 0)
+        OnTimeUpdated?.Invoke(1);
+        for (int i = 0; i<cellsInTrainingList.Count; i++)
         {
-            cellSelectorScript.AddNewCell(cellsInTrainingList[0].cellData);
-            DecrementCellInTraining();
+            CellUIData cell = cellsInTrainingList[i];
+            cell.currentTime -= Time.fixedDeltaTime;
+
+            Slider progressBar = cell.cellUI.GetComponentInChildren<Slider>();
+            progressBar.value = cell.cellData.trainTime - cell.currentTime;
+            progressBar.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = Mathf.FloorToInt(cell.currentTime) + "s";
+            if (cell.currentTime <= 0)
+            {
+                cellSelectorScript.AddNewCell(cell.cellData, cell.amount);
+                RemoveCellInTrainingUI(cell.cellUI);
+            }
         }
     }
 
+
     public void TrainCell(CellTrainingData cellData)
     {
-        int listLength = cellsInTrainingList.Count;
-        if (listLength == 0)
+        if(buildingManager.resource < cellData.cost)
         {
-            CreateNewUI(cellData);
-            currentCellTrainTime = cellData.trainTime;
-        }
-        else if (cellsInTrainingList[listLength - 1].cellData == cellData)
-        {
-            CellUIData lastTrainedCell = cellsInTrainingList[listLength - 1];
-            lastTrainedCell.amount += 1;
-            lastTrainedCell.cellUI.GetComponentInChildren<TextMeshProUGUI>().text = lastTrainedCell.amount + "x";
+            Debug.Log("You don't have enough resources");
+            return;
         }
         else
         {
+            buildingManager.resource -= cellData.cost;
+        }
+        int listLength = cellsInTrainingList.Count;
+        CellUIData sameCell = null;
+        if (listLength == 0)
+        {
             CreateNewUI(cellData);
+        }
+        else
+        {
+            foreach (CellUIData cell in cellsInTrainingList)
+            {
+                if (cell.cellData == cellData && cell.currentTime == cellData.trainTime)
+                {
+
+                    sameCell = cell;
+                    break;
+                }
+            }
+
+            if(sameCell != null)
+            {
+                sameCell.amount += 1;
+                sameCell.cellUI.GetComponentInChildren<TextMeshProUGUI>().text = sameCell.amount + "x";
+            }
+            else
+            {
+                CreateNewUI(cellData);
+            }
         }
 
         UpdateLayoutHeight(cellsInTrainingList.Count);
@@ -61,6 +99,11 @@ public class TrainCells : MonoBehaviour
         cellInTraining.GetComponentsInChildren<Image>()[1].sprite = cellData.cellImage;
         cellInTraining.GetComponentInChildren<TextMeshProUGUI>().text = "1x";
         cellInTraining.GetComponentInChildren<Button>().onClick.AddListener(() => RemoveCellInTrainingUI(cellInTraining));
+        Slider progressBar = cellInTraining.GetComponentInChildren<Slider>();
+        progressBar.maxValue = cellData.trainTime;
+        progressBar.minValue = 0;
+        progressBar.value = 0;
+        progressBar.GetComponentInChildren<TextMeshProUGUI>().text = cellData.trainTime + "s";
         cellsInTrainingList.Add(new CellUIData(cellData, cellInTraining, 1));
     }
 
@@ -74,26 +117,7 @@ public class TrainCells : MonoBehaviour
     {
         int index = cellsInTrainingList.FindIndex((x) => x.cellUI == thisUI);
         cellsInTrainingList.RemoveAt(index);
-        if(index == 0 && cellsInTrainingList.Count > 0)
-        {
-            currentCellTrainTime = cellsInTrainingList[0].cellData.trainTime;
-        }
         Destroy(thisUI);
-    }
-
-    private void DecrementCellInTraining()
-    {
-        CellUIData trainedCell = cellsInTrainingList[0];
-        trainedCell.amount--;
-        if (trainedCell.amount > 0)
-        {
-            currentCellTrainTime = trainedCell.cellData.trainTime;
-            trainedCell.cellUI.GetComponentInChildren<TextMeshProUGUI>().text = trainedCell.amount + "x";
-        }
-        else
-        {
-            RemoveCellInTrainingUI(trainedCell.cellUI);
-        }
     }
 
 }

@@ -8,8 +8,8 @@ public class BuildingSpot : MonoBehaviour
     private BuildingManager buildingManager;
     void Start()
     {
-        buildingManager = FindObjectOfType<BuildingManager>();
-        GetComponent<Button>().onClick.AddListener(() => buildingManager.ViewPopUp(transform.parent.transform));
+        buildingManager = BuildingManager.instance;
+        GetComponent<Button>().onClick.AddListener(() => buildingManager.OpenPopUp(transform.parent.transform));
     }
 
 }

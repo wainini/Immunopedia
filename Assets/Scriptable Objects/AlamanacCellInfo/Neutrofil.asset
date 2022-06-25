@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 568ca38f946352f4c806e609fae19ac6, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d0860ec6dbb84040b99e69b5e4061ab, type: 3}
   m_Name: Neutrofil
   m_EditorClassIdentifier: 
-  cellName: Neutrofil
-  cost: 5
-  trainTime: 1
-  cellImage: {fileID: 21300000, guid: f9dfc77258a90564d8f33f659e7d8ffa, type: 3}
-  cellPrefab: {fileID: 4681344161063326597, guid: 9195eae06c8b4464399aa69a1d2b3dd4, type: 3}
+  cellName: Nyeutrofil
+  cellButtonImage: {fileID: 21300000, guid: f9dfc77258a90564d8f33f659e7d8ffa, type: 3}
+  cellInfoImage: {fileID: 21300000, guid: f9dfc77258a90564d8f33f659e7d8ffa, type: 3}
+  cellDesc: Lorem ipsum dolor si Jamet

@@ -9,8 +9,8 @@ public class DemolishButton : MonoBehaviour
     private BuildingManager buildingManager;
     private void Start()
     {
-        buildingManager = FindObjectOfType<BuildingManager>();
-        GetComponent<Button>().onClick.AddListener(() => buildingManager.DemolishBuilding(transform.parent.parent.parent));
+        buildingManager = BuildingManager.instance;
+        GetComponent<Button>().onClick.AddListener(() => buildingManager.DemolishBuilding());
     }
 
 

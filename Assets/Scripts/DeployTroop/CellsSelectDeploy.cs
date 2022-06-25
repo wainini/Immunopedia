@@ -34,11 +34,20 @@ public class CellsSelectDeploy : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Mouse0))
         {
+            //if(selectedCell != null && mouseRay)
+            //{
+            //    if (CanDeploy)
+            //    {
+            //        DeployCell();
+            //    }
+
+            //}
+            //else if(selectedCell == null)
             if (mouseRay)
             {
                 if (selectedCell == null)
                 {
-                    //Debug.Log("No Troop Selected");
+                    Debug.Log("No Troop Selected");
                 }
                 else if (CanDeploy)
                 {
@@ -80,20 +89,23 @@ public class CellsSelectDeploy : MonoBehaviour
         selectedCell = null;
     }
 
-    public void AddNewCell(CellTrainingData cellData)
+    public void AddNewCell(CellTrainingData cellData, int amount)
     {
-        if(availableCells.Count == 0)
+        for(int i = 0; i < amount; i++)
         {
-            AddNewCellToList(cellData);
-        }
-        else
-        {
-            CellUIData sameCell = availableCells.Find((x) => x.cellData == cellData);
-            if (sameCell == null) AddNewCellToList(cellData);
+            if(availableCells.Count == 0)
+            {
+                AddNewCellToList(cellData);
+            }
             else
             {
-                sameCell.amount++;
-                sameCell.cellUI.GetComponentInChildren<TextMeshProUGUI>().text = sameCell.amount + "x";
+                CellUIData sameCell = availableCells.Find((x) => x.cellData == cellData);
+                if (sameCell == null) AddNewCellToList(cellData);
+                else
+                {
+                    sameCell.amount++;
+                    sameCell.cellUI.GetComponentInChildren<TextMeshProUGUI>().text = sameCell.amount + "x";
+                }
             }
         }
     }
