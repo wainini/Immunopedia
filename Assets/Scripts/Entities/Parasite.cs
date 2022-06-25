@@ -17,6 +17,7 @@ public class Parasite : MonoBehaviour, IEntityBehaviour
 
     private void Start()
     {
+        blockingEosi = new List<Eosinophil>();
         isEosi = false;
         defReduced = false;
         stats = GetComponent<EntityStats>();

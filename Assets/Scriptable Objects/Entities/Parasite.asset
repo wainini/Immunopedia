@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8264c80d7de076b42bb53ad1ae45ed5a, type: 3}
   m_Name: Parasite
   m_EditorClassIdentifier: 
-  movSpeed: 0
-  maxHealth: 0
+  movSpeed: 0.4
+  maxHealth: 1000
   atk: 0
-  defense: 0
+  defense: 750
   atkInterval: 0
-  blockCount: 0
+  blockCount: 5

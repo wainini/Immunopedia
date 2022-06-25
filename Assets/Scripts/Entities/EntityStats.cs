@@ -26,13 +26,14 @@ public class EntityStats : MonoBehaviour
 
     public void ReduceDef(int eosiAmount)
     {
-        int reduction = 100 - (20 * eosiAmount);
-        defense -= (defense * reduction);
+        float reduction = (5 - (1 * (float)eosiAmount))/5;
+        defense = (int)(baseStat.defense * reduction);
         defense = (defense <= 0) ? 0 : defense;
     }
 
     public void TakeDamage(int damage, GameObject target)
     {
+        if (damage <= defense) return;
         currentHealth -= (damage - defense);
         localTarget = target;
         UpdateHealthUI(currentHealth);
