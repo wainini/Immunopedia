@@ -15,12 +15,16 @@ public class ScoreManager : MonoBehaviour
         availableScore = PlayerPrefs.GetInt(SceneManager.GetActiveScene().name);
     }
 
-    public int GetScore(int currentScore)
+    public void SetScore(int currentScore)
     {
         if (currentScore > availableScore)
         {
             PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, currentScore);
         }
-        return currentScore;
+    }
+
+    public int GetScore(int currentScore)
+    {
+        return (currentScore - availableScore >= 0)? currentScore - availableScore  : 0;
     }
 }

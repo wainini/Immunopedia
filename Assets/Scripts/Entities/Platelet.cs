@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class Platelet : MonoBehaviour
 {
-    [SerializeField] private Transform woundPosition;
     [SerializeField] private float speed = 3f;
-
+    
+    private Transform woundPosition;
     private bool isClosingWound = false;
-
-    private void Start()
-    {
-        woundPosition = GameObject.Find("Wound").transform;
-    }
 
     private void Update()
     {
+        if (!woundPosition)
+        {
+            woundPosition = GameManager.instance.wounds.Peek().transform;
+        }
         if (!isClosingWound)
         {        
             transform.position = Vector2.MoveTowards(transform.position, woundPosition.position, speed * Time.deltaTime);
