@@ -7,11 +7,12 @@ public class CreateTroopButtons : MonoBehaviour
 {
     [SerializeField] private GameObject buttonsLayout;
     [SerializeField] private TrainCells trainCellScript;
-    [SerializeField] private List<CellTrainingData> cellDatas;
+    private List<CellTrainingData> cellDatas;
     [SerializeField] private GameObject buttonPrefab;
 
     private void Awake()
     {
+        cellDatas = BuildingManager.instance.cellDatas;
         foreach(CellTrainingData cellData in cellDatas)
         {
             GameObject button = Instantiate(buttonPrefab, buttonsLayout.transform);
@@ -20,6 +21,15 @@ public class CreateTroopButtons : MonoBehaviour
             button.name = cellData.cellName;
             button.GetComponent<Button>().onClick.AddListener(() => trainCellScript.TrainCell(cellData));
         }
+    }
+
+    private void OnEnable()
+    {
+        Time.timeScale = 0f;
+    }
+    private void OnDisable()
+    {
+        Time.timeScale = 1f;
     }
 
 }

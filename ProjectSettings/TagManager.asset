@@ -9,6 +9,7 @@ TagManager:
   - Wound
   - Platelet
   - Waypoint
+  - BoneMarrowPopUp
   layers:
   - Default
   - TransparentFX
