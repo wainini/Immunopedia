@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 428650494}
   - component: {fileID: 428650493}
   - component: {fileID: 428650495}
+  - component: {fileID: 428650496}
   m_Layer: 6
   m_Name: Map
   m_TagString: Untagged
@@ -317,6 +318,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 19.2, y: 10.699785}
   m_EdgeRadius: 0
+--- !u!210 &428650496
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428650492}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &456985071
 GameObject:
   m_ObjectHideFlags: 0

@@ -69,8 +69,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1895897943
+  m_SortingLayer: 4
   m_SortingOrder: 3
   m_Sprite: {fileID: -3555345117540132228, guid: 6efbac3eabf8c994b927cd4691e186fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8899892355855802503}
   m_Bounds:
-    m_Center: {x: 0.0044648647, y: 0.0014657974, z: 0}
+    m_Center: {x: 0.0044630766, y: 0.0014653206, z: 0}
     m_Extent: {x: 1.0705354, y: 0.25853524, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -172,8 +172,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1895897943
+  m_SortingLayer: 4
   m_SortingOrder: 5
   m_Sprite: {fileID: 7015111422274496581, guid: 6efbac3eabf8c994b927cd4691e186fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8899892355855802503}
   m_Bounds:
-    m_Center: {x: -0.00058981776, y: 0.0018548667, z: 0}
+    m_Center: {x: -0.0005899966, y: 0.0018539131, z: 0}
     m_Extent: {x: 0.44099015, y: 0.29235545, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -275,8 +275,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1895897943
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: -2048413113498087201, guid: 6efbac3eabf8c994b927cd4691e186fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -309,7 +309,7 @@ MonoBehaviour:
   - {fileID: 8899892355855802503}
   - {fileID: 315226254135196768}
   m_Bounds:
-    m_Center: {x: 0, y: 0.00000047683716, z: 0}
+    m_Center: {x: -0.0000019073486, y: 0, z: 0}
     m_Extent: {x: 2.9750009, y: 2.855001, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -499,8 +499,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1895897943
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: -823535834865379339, guid: 6efbac3eabf8c994b927cd4691e186fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -530,7 +530,7 @@ MonoBehaviour:
   - {fileID: 8899892355855802503}
   - {fileID: 315226254135196768}
   m_Bounds:
-    m_Center: {x: -0.001060009, y: 0.0011851788, z: 0}
+    m_Center: {x: -0.001060009, y: 0.0011847019, z: 0}
     m_Extent: {x: 2.4419909, y: 2.390306, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -603,8 +603,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1895897943
+  m_SortingLayer: 4
   m_SortingOrder: 6
   m_Sprite: {fileID: 3447135354019598505, guid: 6efbac3eabf8c994b927cd4691e186fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -637,8 +637,8 @@ MonoBehaviour:
   - {fileID: 2066875431487010240}
   - {fileID: 7749807999126784070}
   m_Bounds:
-    m_Center: {x: -0.002233982, y: 0.0036056042, z: 0}
-    m_Extent: {x: 4.0172353, y: 2.9113955, z: 0}
+    m_Center: {x: -0.002234459, y: 0.0036046505, z: 0}
+    m_Extent: {x: 4.0172358, y: 2.9113955, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &4935339345267755921
@@ -774,8 +774,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1895897943
+  m_SortingLayer: 4
   m_SortingOrder: 4
   m_Sprite: {fileID: 5465547400735518697, guid: 6efbac3eabf8c994b927cd4691e186fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -804,7 +804,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8899892355855802503}
   m_Bounds:
-    m_Center: {x: 0.0011901855, y: -0.0017493963, z: 0}
+    m_Center: {x: 0.0011899471, y: -0.0017498732, z: 0}
     m_Extent: {x: 0.9764303, y: 0.24767038, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
