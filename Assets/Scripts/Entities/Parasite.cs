@@ -11,15 +11,10 @@ public class Parasite : MonoBehaviour, IEntityBehaviour
     private Transform nextWaypoint;
     private Queue<Transform> waypoints;
     private List<Eosinophil> blockingEosi;
-
-    private bool isEosi;
-    private bool defReduced;
-
+    private int eosiAmount;
     private void Start()
     {
         blockingEosi = new List<Eosinophil>();
-        isEosi = false;
-        defReduced = false;
         stats = GetComponent<EntityStats>();
         stats.SetHealthUI(healthBar, healthFill);
         waypoints = GetComponent<EnemyWaypoints>().GetWaypoints();
@@ -35,16 +30,26 @@ public class Parasite : MonoBehaviour, IEntityBehaviour
         {
             nextWaypoint = waypoints.Dequeue();
         }
+
         if (IsDead())
         {
             Destroy(gameObject);
         }
+        if(blockingEosi.Count != 0)
+        {
+            ReduceStats(blockingEosi[0].defenseReduction, blockingEosi[0].movSpeedReduction);
+            
+        }
+        else
+        {
+            stats.RestoreStats();
+        }
     }
 
-    public void ReduceDef()
+    private void ReduceStats(float defReductionPercentage, float spdReductionPercentage)
     {
-        int eosiAmount = blockingEosi.Count;
-        stats.ReduceDef(eosiAmount);
+        eosiAmount = blockingEosi.Count;
+        stats.ReduceStats(eosiAmount, defReductionPercentage, spdReductionPercentage);
     }
 
     public void AddEosi(Eosinophil eosi)

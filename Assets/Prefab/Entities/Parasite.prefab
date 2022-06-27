@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseStat: {fileID: 11400000, guid: 78d0f24357b48404e932dbe9a597898f, type: 2}
+  hpSealReduction: 2
 --- !u!114 &7175585043548208509
 MonoBehaviour:
   m_ObjectHideFlags: 0

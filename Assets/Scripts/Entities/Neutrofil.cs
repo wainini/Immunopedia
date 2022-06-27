@@ -12,14 +12,16 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     public ImmuneCell cellData;
  
     private float currentAtkInterval;
+    private bool isAttacking;
     private GameObject target;
-    private Queue<GameObject> enemies = new Queue<GameObject>();
+    private List<GameObject> enemies = new List<GameObject>();
     private void Start()
     {
         stats = GetComponent<EntityStats>();
         stats.SetHealthUI(healthBar, healthFill);
         radius.radius = cellData.atkRadius;
         target = null;
+        isAttacking = false;
     }
 
     private void Update()
@@ -27,12 +29,14 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
         WaitForInterval();
         if (target != null)
         {
+            if(!isAttacking) CheckPriority();
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
             if (Vector2.Distance(transform.position, target.transform.position) < 0.5)
             {
                 transform.position = this.transform.position;
                 if (IsReadyToAttack())
                 {
+                    isAttacking = true;
                     Attack();
                     RestoreInterval();
                 }
@@ -40,13 +44,14 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
         }
         else
         {
-            Debug.Log("set target");
             SetTarget();
+            isAttacking = false;
         }
         if (IsDead())
         {
             Destroy(gameObject);
         }
+        ClearDeadEnemies();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -59,15 +64,33 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
             }
         }
     }
+    private void ClearDeadEnemies()
+    {
+        foreach (GameObject go in enemies)
+        {
+            if (go == null) enemies.Remove(go);
+        }
+    }
+    private void CheckPriority()
+    {
+        foreach (GameObject go in enemies)
+        {
+            if (go.GetComponent<Bacteria>() != null)
+            {
+                target = go;
+                return;
+            }
+        }
+    }
 
     public void AddEnemy(GameObject enemy)
     {
-        enemies.Enqueue(enemy);
+        enemies.Add(enemy);
     }
 
     public void SetTarget()
     {
-        target = (enemies.Count != 0) ? enemies.Dequeue(): null;
+        target = (enemies.Count != 0) ? enemies[0] : null;
     }
 
     public void Attack()

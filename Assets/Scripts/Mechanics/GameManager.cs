@@ -26,9 +26,9 @@ public class GameManager : MonoBehaviour
         currentLives = maxLives;
     }
 
-    public void ReduceLive()
+    public void ReduceLive(int reductionAmount)
     {
-        currentLives--;
+        currentLives -= reductionAmount;
         if (currentLives <= 0) GameOver();
     }
 

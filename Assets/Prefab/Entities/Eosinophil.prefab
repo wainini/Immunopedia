@@ -217,6 +217,8 @@ MonoBehaviour:
   healthBar: {fileID: 144981609708399034}
   radius: {fileID: 1662545220776241855}
   cellData: {fileID: 11400000, guid: 12a2e11bc20570a48b85f51de8415959, type: 2}
+  defenseReduction: 0.2
+  movSpeedReduction: 0.33
 --- !u!114 &5366047509851145835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseStat: {fileID: 11400000, guid: 12a2e11bc20570a48b85f51de8415959, type: 2}
+  hpSealReduction: 0
 --- !u!50 &5366047509851145833
 Rigidbody2D:
   serializedVersion: 4

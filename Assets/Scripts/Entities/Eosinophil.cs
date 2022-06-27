@@ -7,19 +7,24 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
     [SerializeField] private SpriteRenderer healthFill;
     [SerializeField] private SpriteRenderer healthBar;
     [SerializeField] private CircleCollider2D radius;
-    private EntityStats stats;
-
     public ImmuneCell cellData;
+    [Header("Fill in value in decimals")]
+    public float defenseReduction;
+    public float movSpeedReduction;
 
     private float currentAtkInterval;
+    private bool isAttacking;
+    private EntityStats stats;
     private GameObject target;
-    private Queue<GameObject> enemies = new Queue<GameObject>();
+    [SerializeField]private List<GameObject> enemies = new List<GameObject>();
+    
     private void Start()
     {
         stats = GetComponent<EntityStats>();
         stats.SetHealthUI(healthBar, healthFill);
         radius.radius = cellData.atkRadius;
         target = null;
+        isAttacking = false;
     }
 
     private void Update()
@@ -27,12 +32,14 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
         WaitForInterval();
         if (target != null)
         {
+            if (!isAttacking) CheckPriority();
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
             if (Vector2.Distance(transform.position, target.transform.position) < 0.5)
             {
                 transform.position = this.transform.position;
                 if (IsReadyToAttack())
                 {
+                    isAttacking = true;
                     Attack();
                     RestoreInterval();
                 }
@@ -41,11 +48,13 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
         else
         {
             SetTarget();
+            isAttacking = false;
         }
         if (IsDead())
         {
             Destroy(gameObject);
         }
+        ClearDeadEnemies();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -59,14 +68,36 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
         }
     }
 
+    private void ClearDeadEnemies()
+    {
+        foreach (GameObject go in enemies)
+        {
+            if (go == null) enemies.Remove(go);
+        }
+    }
+
+    private void CheckPriority()
+    {
+        foreach (GameObject go in enemies)
+        {
+            if(go.GetComponent<Parasite>() != null)
+            {
+                target = go;
+                //enemies.Remove(go);
+                return;
+            }
+        }
+    }
+
     public void AddEnemy(GameObject enemy)
     {
-        enemies.Enqueue(enemy);
+        enemies.Add(enemy);
     }
 
     public void SetTarget()
     {
-        target = (enemies.Count != 0) ? enemies.Dequeue() : null;
+        target = (enemies.Count != 0) ? enemies[0] : null;
+        //enemies.RemoveAt(0);
     }
 
     public void Attack()
@@ -78,9 +109,9 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
         }
         else
         {
+            Parasite parasite = target.GetComponent<Parasite>();
             newAtk = stats.atk * 3;
-            target.GetComponent<Parasite>().AddEosi(this);
-            target.GetComponent<Parasite>().ReduceDef();
+            parasite.AddEosi(this);
         }
         target.GetComponent<EntityStats>().TakeDamage(newAtk, gameObject);
     }
