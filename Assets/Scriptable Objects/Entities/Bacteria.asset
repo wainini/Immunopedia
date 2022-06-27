@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Bacteria
   m_EditorClassIdentifier: 
   movSpeed: 3
-  maxHealth: 5
-  atk: 2
+  maxHealth: 50
+  atk: 50
+  defense: 10
   atkInterval: 5
   blockCount: 1

@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Neutrofil : MonoBehaviour, IEntityBehaviour
+public class Eosinophil : MonoBehaviour, IEntityBehaviour
 {
     [SerializeField] private SpriteRenderer healthFill;
     [SerializeField] private SpriteRenderer healthBar;
     [SerializeField] private CircleCollider2D radius;
-    private EntityStats stats;
-
     public ImmuneCell cellData;
- 
+    [Header("Fill in value in decimals")]
+    public float defenseReduction;
+    public float movSpeedReduction;
+
     private float currentAtkInterval;
     private bool isAttacking;
+    private EntityStats stats;
     private GameObject target;
-    private List<GameObject> enemies = new List<GameObject>();
+    [SerializeField]private List<GameObject> enemies = new List<GameObject>();
+    
     private void Start()
     {
         stats = GetComponent<EntityStats>();
@@ -29,7 +32,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
         WaitForInterval();
         if (target != null)
         {
-            if(!isAttacking) CheckPriority();
+            if (!isAttacking) CheckPriority();
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
             if (Vector2.Distance(transform.position, target.transform.position) < 0.5)
             {
@@ -64,6 +67,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
             }
         }
     }
+
     private void ClearDeadEnemies()
     {
         foreach (GameObject go in enemies)
@@ -71,13 +75,15 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
             if (go == null) enemies.Remove(go);
         }
     }
+
     private void CheckPriority()
     {
         foreach (GameObject go in enemies)
         {
-            if (go.GetComponent<Bacteria>() != null)
+            if(go.GetComponent<Parasite>() != null)
             {
                 target = go;
+                //enemies.Remove(go);
                 return;
             }
         }
@@ -91,11 +97,23 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     public void SetTarget()
     {
         target = (enemies.Count != 0) ? enemies[0] : null;
+        //enemies.RemoveAt(0);
     }
 
     public void Attack()
     {
-        target.GetComponent<EntityStats>().TakeDamage(stats.atk, gameObject);
+        int newAtk;
+        if(target.GetComponent<Parasite>() == null)
+        {
+            newAtk = stats.atk * 4 / 5;
+        }
+        else
+        {
+            Parasite parasite = target.GetComponent<Parasite>();
+            newAtk = stats.atk * 3;
+            parasite.AddEosi(this);
+        }
+        target.GetComponent<EntityStats>().TakeDamage(newAtk, gameObject);
     }
 
     public bool IsDead()

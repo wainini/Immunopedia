@@ -6,9 +6,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
     
-    [SerializeField] private int lives;
+    [SerializeField] private int maxLives;
     [HideInInspector] public List<GameObject> wounds = new List<GameObject>();
 
+    private int currentLives;
+    private int score;
     private void Awake()
     {
         if(instance == null)
@@ -21,13 +23,13 @@ public class GameManager : MonoBehaviour
     {
         var woundArr = GameObject.FindGameObjectsWithTag("Wound");
         wounds = new List<GameObject>(woundArr);
-        Debug.Log("You have " + lives + " lives");
+        currentLives = maxLives;
     }
 
-    public void ReduceLive()
+    public void ReduceLive(int reductionAmount)
     {
-        lives--;
-        if (lives <= 0) GameOver();
+        currentLives -= reductionAmount;
+        if (currentLives <= 0) GameOver();
     }
 
     public void CloseWound(GameObject wound)
@@ -41,12 +43,22 @@ public class GameManager : MonoBehaviour
         //game over
         Debug.Log("You Died");
         Time.timeScale = 0;
+        score = 0;
     }
 
     private void Win()
     {
         //win
-        Debug.Log("You Win");
         Time.timeScale = 0;
+        if(currentLives == maxLives)
+        {
+            score = 3;
+        }else if ((float)currentLives / (float)maxLives >= 0.5f)
+        {
+            score = 2;
+        }else if((float)currentLives / (float)maxLives < 0.5f)
+        {
+            score = 1;
+        }
     }
 }

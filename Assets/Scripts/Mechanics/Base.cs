@@ -9,7 +9,7 @@ public class Base : MonoBehaviour
         if(collision.gameObject.tag == "Enemy")
         {
             Destroy(collision.gameObject);
-            GameManager.instance.ReduceLive();
+            GameManager.instance.ReduceLive(collision.gameObject.GetComponent<EntityStats>().hpSealReduction);
         }
     }
 }
