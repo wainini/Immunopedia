@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class CellsSelectDeploy : MonoBehaviour
 {
@@ -43,6 +44,11 @@ public class CellsSelectDeploy : MonoBehaviour
 
             //}
             //else if(selectedCell == null)
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                Debug.Log("A");
+                return;
+            }
             if (mouseRay)
             {
                 if (selectedCell == null)

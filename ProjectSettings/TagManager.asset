@@ -47,6 +47,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 307983523
+    locked: 0
+  - name: Road
+    uniqueID: 257619075
+    locked: 0
   - name: DeployArea
     uniqueID: 1402945905
     locked: 0

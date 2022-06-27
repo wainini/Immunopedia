@@ -47,6 +47,14 @@ public class TrainCells : MonoBehaviour
                 RemoveCellInTrainingUI(cell.cellUI);
             }
         }
+        if(GetComponentInChildren<BoneMarrow>() == null)
+        {
+            for(int i = 0; i < cellsInTrainingList.Count; i++)
+            {
+                Destroy(cellsInTrainingList[i].cellUI);
+                cellsInTrainingList.RemoveAt(i);
+            }
+        }
     }
 
 
@@ -116,6 +124,10 @@ public class TrainCells : MonoBehaviour
     private void RemoveCellInTrainingUI(GameObject thisUI)
     {
         int index = cellsInTrainingList.FindIndex((x) => x.cellUI == thisUI);
+        if(cellsInTrainingList[index].currentTime > 0)
+        {
+            buildingManager.resource += cellsInTrainingList[index].cellData.cost;
+        }
         cellsInTrainingList.RemoveAt(index);
         Destroy(thisUI);
     }
