@@ -21,16 +21,6 @@ public class PauseMenu : MonoBehaviour
         bgm.value = PlayerPrefs.GetFloat("BGMVol", 1);
         sfx.value = PlayerPrefs.GetFloat("SFXVol", 1);
     }
-
-    private void OnEnable()
-    {
-        Time.timeScale = 0f;
-    }
-    private void OnDisable()
-    {
-        Time.timeScale = 1f;
-    }
-
     public void Continue()
     {
         menuManager.CloseMenu();

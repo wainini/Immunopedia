@@ -55,16 +55,26 @@ public class Wound : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Platelet")
+    //    {
+    //        currentPlateletCount++;
+    //        if (currentPlateletCount >= plateletNeeded)
+    //        {
+    //            isWoundClosed = true;
+    //            GameManager.instance.CloseWound(this.gameObject);
+    //        }
+    //    }
+    //}
+
+    public void AddPlatelet()
     {
-        if (collision.gameObject.tag == "Platelet")
+        currentPlateletCount++;
+        if (currentPlateletCount >= plateletNeeded)
         {
-            currentPlateletCount++;
-            if (currentPlateletCount >= plateletNeeded)
-            {
-                isWoundClosed = true;
-                GameManager.instance.CloseWound(this.gameObject);
-            }
+            isWoundClosed = true;
+            GameManager.instance.CloseWound(this.gameObject);
         }
     }
 }
