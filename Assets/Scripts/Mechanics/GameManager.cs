@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
-    
+
+    public event Action<int> OnReduceLive;
+
     [SerializeField] private int maxLives;
     [HideInInspector] public Queue<GameObject> wounds;
 
@@ -30,12 +33,14 @@ public class GameManager : MonoBehaviour
         var woundArr = GameObject.FindGameObjectsWithTag("Wound");
         wounds = new Queue<GameObject>(woundArr);
         currentLives = maxLives;
+        OnReduceLive?.Invoke(currentLives);
     }
 
     public void ReduceLive(int reductionAmount)
     {
         currentLives -= reductionAmount;
         if (currentLives <= 0) GameOver();
+        OnReduceLive?.Invoke(currentLives);
     }
 
     public void CloseWound(GameObject wound)
