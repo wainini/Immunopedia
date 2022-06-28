@@ -49,8 +49,10 @@ public class EntityStats : MonoBehaviour
 
     public void TakeDamage(int damage, GameObject target)
     {
-        if (damage <= defense) return;
-        currentHealth -= (damage - defense);
+        if (damage > defense)
+        {
+            currentHealth -= (damage - defense);
+        }
         localTarget = target;
         UpdateHealthUI(currentHealth);
     }

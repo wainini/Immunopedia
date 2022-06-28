@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Neutrofil : MonoBehaviour, IEntityBehaviour
@@ -52,6 +53,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
             Destroy(gameObject);
         }
         ClearDeadEnemies();
+        Debug.Log("Current enemy count: " + enemies.Count);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -64,12 +66,21 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
             }
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            if (enemies.Contains(collision.gameObject))
+            {
+                enemies.Remove(collision.gameObject);
+            }
+        }
+    }
+
     private void ClearDeadEnemies()
     {
-        foreach (GameObject go in enemies)
-        {
-            if (go == null) enemies.Remove(go);
-        }
+        enemies = enemies.Where(i => i != null).ToList();
     }
     private void CheckPriority()
     {
@@ -95,6 +106,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
 
     public void Attack()
     {
+        Debug.Log("attack");
         target.GetComponent<EntityStats>().TakeDamage(stats.atk, gameObject);
     }
 

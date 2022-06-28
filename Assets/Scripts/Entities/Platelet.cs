@@ -27,7 +27,12 @@ public class Platelet : MonoBehaviour
         {
             //initialize close wound
             transform.position = this.transform.position;
-            //Debug.Log("Closing wound");
+            isClosingWound = true;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        isClosingWound = false;
     }
 }

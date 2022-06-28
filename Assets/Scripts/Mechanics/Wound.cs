@@ -12,13 +12,17 @@ public class Wound : MonoBehaviour
 
     private int currentPlateletCount;
     private bool isWoundClosed;
+    private List<Transform> initialWaypoints;
 
-    private Wound()
-    {
-        enemies = new List<GameObject>();
-    }
     private void Start()
     {
+        enemies = new List<GameObject>();
+        initialWaypoints = new List<Transform>();
+        var waypoints = GetComponentInChildren<Transform>();
+        foreach (GameObject waypoint in waypoints)
+        {
+            initialWaypoints.Add(waypoint.transform);
+        }
         currentPlateletCount = 0;
         isWoundClosed = false;
         StartCoroutine(Spawn());
@@ -37,12 +41,12 @@ public class Wound : MonoBehaviour
                 index = Random.Range(0, enemies.Count);
 
             Transform initWaypoint;
-            int waypointCount = WaypointManager.instance.initialWaypoints.Count;
+            int waypointCount = initialWaypoints.Count;
 
             if (waypointCount <= 1)
-                initWaypoint = WaypointManager.instance.initialWaypoints[0];
+                initWaypoint = initialWaypoints[0];
             else
-                initWaypoint = WaypointManager.instance.initialWaypoints[Random.Range(0, waypointCount)];
+                initWaypoint = initialWaypoints[Random.Range(0, waypointCount)];
 
             GameObject enemy = Instantiate(enemies[index], gameObject.transform);
             enemy.GetComponent<EnemyWaypoints>().SetWaypointParent(initWaypoint);
