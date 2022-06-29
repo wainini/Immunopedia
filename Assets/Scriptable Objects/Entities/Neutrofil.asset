@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d165717328dda584697d793300a0ccf8, type: 3}
   m_Name: Neutrofil
   m_EditorClassIdentifier: 
+  maxHealth: 50
+  atk: 20
+  defense: 15
   movSpeed: 1
-  maxHealth: 30
-  atk: 10
-  defense: 20
   atkInterval: 2
   blockCount: 1
   atkRadius: 5

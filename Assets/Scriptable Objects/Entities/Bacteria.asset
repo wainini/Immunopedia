@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8264c80d7de076b42bb53ad1ae45ed5a, type: 3}
   m_Name: Bacteria
   m_EditorClassIdentifier: 
-  movSpeed: 3
   maxHealth: 50
-  atk: 50
+  atk: 20
   defense: 10
+  movSpeed: 0.6
   atkInterval: 5
   blockCount: 1
