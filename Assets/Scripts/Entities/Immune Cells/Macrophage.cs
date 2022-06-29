@@ -1,23 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class Eosinophil : MonoBehaviour, IEntityBehaviour
+public class Macrophage : MonoBehaviour, IEntityBehaviour
 {
     [SerializeField] private SpriteRenderer healthFill;
     [SerializeField] private SpriteRenderer healthBar;
     [SerializeField] private CircleCollider2D radius;
+    private EntityStats stats;
+
     public ImmuneCell cellData;
-    [Header("Fill in value in decimals")]
-    public float defenseReduction;
-    public float movSpeedReduction;
 
     private float currentAtkInterval;
     private bool isAttacking;
-    private EntityStats stats;
     private GameObject target;
-    [SerializeField]private List<GameObject> enemies = new List<GameObject>();
-    
+    private List<GameObject> enemies = new List<GameObject>();
     private void Start()
     {
         stats = GetComponent<EntityStats>();
@@ -26,7 +24,6 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
         target = null;
         isAttacking = false;
     }
-
     private void Update()
     {
         WaitForInterval();
@@ -68,22 +65,28 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
         }
     }
 
-    private void ClearDeadEnemies()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        foreach (GameObject go in enemies)
+        if (collision.gameObject.tag == "Enemy")
         {
-            if (go == null) enemies.Remove(go);
+            if (enemies.Contains(collision.gameObject))
+            {
+                enemies.Remove(collision.gameObject);
+            }
         }
     }
 
+    private void ClearDeadEnemies()
+    {
+        enemies = enemies.Where(i => i != null).ToList();
+    }
     private void CheckPriority()
     {
         foreach (GameObject go in enemies)
         {
-            if(go.GetComponent<Parasite>() != null)
+            if (go.GetComponent<Bacteria>() != null)
             {
                 target = go;
-                //enemies.Remove(go);
                 return;
             }
         }
@@ -97,23 +100,11 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
     public void SetTarget()
     {
         target = (enemies.Count != 0) ? enemies[0] : null;
-        //enemies.RemoveAt(0);
     }
 
     public void Attack()
     {
-        int newAtk;
-        if(target.GetComponent<Parasite>() == null)
-        {
-            newAtk = stats.atk * 4 / 5;
-        }
-        else
-        {
-            Parasite parasite = target.GetComponent<Parasite>();
-            newAtk = stats.atk * 3;
-            parasite.AddEosi(this);
-        }
-        target.GetComponent<EntityStats>().TakeDamage(newAtk, gameObject);
+        target.GetComponent<EntityStats>().TakeDamage(stats.atk, gameObject);
     }
 
     public bool IsDead()

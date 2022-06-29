@@ -24,11 +24,12 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
         radius.radius = cellData.atkRadius;
         target = null;
         isAttacking = false;
+        currentAtkInterval = 0;
     }
 
     private void Update()
     {
-        WaitForInterval();
+        if(currentAtkInterval > 0) WaitForInterval();
         if (target != null)
         {
             if(!isAttacking) CheckPriority();
@@ -65,7 +66,6 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
             Destroy(gameObject);
         }
         ClearDeadEnemies();
-        Debug.Log("Current enemy count: " + enemies.Count);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -96,14 +96,20 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     }
     private void CheckPriority()
     {
+        float minDistance = float.PositiveInfinity;
+        GameObject tempTarget = null;
         foreach (GameObject go in enemies)
         {
             if (go.GetComponent<Bacteria>() != null)
             {
-                target = go;
-                return;
+                if (Vector2.Distance(go.transform.position, gameObject.transform.position) < minDistance)
+                {
+                    minDistance = Vector2.Distance(go.transform.position, gameObject.transform.position);
+                    tempTarget = go;
+                }
             }
         }
+        target = tempTarget;
     }
 
     public void AddEnemy(GameObject enemy)
@@ -113,12 +119,22 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
 
     public void SetTarget()
     {
-        target = (enemies.Count != 0) ? enemies[0] : null;
+        GameObject tempTarget = null;
+        float minDistance = float.PositiveInfinity;
+        foreach (GameObject enemy in enemies)
+        {
+            if(Vector2.Distance(enemy.transform.position, gameObject.transform.position) < minDistance)
+            {
+                minDistance = Vector2.Distance(enemy.transform.position, gameObject.transform.position);
+                tempTarget = enemy;
+            }
+            print("distance: " + minDistance + "\nenemy pos: " + enemy.name);
+        }
+        target = tempTarget;
     }
 
     public void Attack()
     {
-        Debug.Log("attack");
         target.GetComponent<EntityStats>().TakeDamage(stats.atk, gameObject);
     }
 
