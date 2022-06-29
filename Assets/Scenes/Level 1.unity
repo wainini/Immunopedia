@@ -845,6 +845,7 @@ GameObject:
   - component: {fileID: 191231235}
   - component: {fileID: 191231234}
   - component: {fileID: 191231233}
+  - component: {fileID: 191231236}
   m_Layer: 6
   m_Name: Map
   m_TagString: Untagged
@@ -945,6 +946,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &191231236
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191231232}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1001 &308382088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1075,7 +1087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5675868817274652010, guid: cc3d6404e6678e14e947fd873541495b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5675868817274652010, guid: cc3d6404e6678e14e947fd873541495b, type: 3}
       propertyPath: m_LocalRotation.w
