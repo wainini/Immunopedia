@@ -6,14 +6,11 @@ using TMPro;
 public class LivesUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
-    private GameManager gameManager;
+    [SerializeField] private GameManager gameManager;
 
-    private void Awake()
+    private void Start()
     {
         gameManager = GameManager.instance;
-    }
-    private void OnEnable()
-    {
         gameManager.OnReduceLive += ChangeLiveText;
     }
 
@@ -26,4 +23,5 @@ public class LivesUI : MonoBehaviour
     {
         text.text = "Lives: " + currLives;
     }
+
 }
