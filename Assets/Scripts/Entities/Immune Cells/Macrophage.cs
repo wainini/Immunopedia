@@ -16,6 +16,7 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
     private bool isAttacking;
     private GameObject target;
     private List<GameObject> enemies = new List<GameObject>();
+    private List<GameObject> blockedEnemies = new List<GameObject>();
     private void Start()
     {
         stats = GetComponent<EntityStats>();
@@ -23,13 +24,18 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
         radius.radius = cellData.atkRadius;
         target = null;
         isAttacking = false;
+        currentAtkInterval = 0;
     }
     private void Update()
     {
-        WaitForInterval();
+        if(currentAtkInterval > 0) WaitForInterval();
         if (target != null)
         {
-            if (!isAttacking) CheckPriority();
+            if(blockedEnemies.Count < stats.blockCount)
+            {
+                Taunt();
+                CheckPriority();
+            }
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
             if (Vector2.Distance(transform.position, target.transform.position) < 0.5)
             {
@@ -76,9 +82,33 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
         }
     }
 
+
+    private void Taunt()
+    {
+        int enemyCount = enemies.Count;
+        for (int i = 0; i < enemyCount - 1; i++)
+        {
+            for (int j = i; j < enemyCount; j++)
+            {
+                if (Vector2.Distance(enemies[i].transform.position, gameObject.transform.position) > Vector2.Distance(enemies[j].transform.position, gameObject.transform.position))
+                {
+                    GameObject temp = enemies[i];
+                    enemies[i] = enemies[j];
+                    enemies[j] = temp;
+                }
+            }
+        }
+        int tauntAmount = (enemyCount < stats.blockCount) ? enemyCount : stats.blockCount;
+        for (int i = 0; i < tauntAmount; i++)
+        {
+            blockedEnemies.Add(enemies[i]);
+        }
+    }
+
     private void ClearDeadEnemies()
     {
         enemies = enemies.Where(i => i != null).ToList();
+        blockedEnemies = blockedEnemies.Where(i => i != null).ToList();
     }
     private void CheckPriority()
     {
