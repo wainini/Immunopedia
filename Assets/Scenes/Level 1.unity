@@ -1236,6 +1236,10 @@ PrefabInstance:
       propertyPath: selectBuildingPopUp
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8311458224548620209, guid: ee26eb36faeeb3046a23d3f0d0fb2b18, type: 3}
+      propertyPath: cellDatas.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: d69f92dcfea5f844394191d3a6ca9657, type: 2}
     - target: {fileID: 8311458224548620218, guid: ee26eb36faeeb3046a23d3f0d0fb2b18, type: 3}
       propertyPath: m_Name
       value: ClickableObjectCanvas

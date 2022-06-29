@@ -5,14 +5,13 @@ using UnityEngine;
 
 public class Neutrofil : MonoBehaviour, IEntityBehaviour
 {
-    [SerializeField] private Animator anim;
     [SerializeField] private SpriteRenderer healthFill;
     [SerializeField] private SpriteRenderer healthBar;
     [SerializeField] private CircleCollider2D radius;
     private EntityStats stats;
 
     public ImmuneCell cellData;
- 
+
     private float currentAtkInterval;
     private bool isAttacking;
     private GameObject target;
@@ -29,30 +28,19 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
 
     private void Update()
     {
-        if(currentAtkInterval > 0) WaitForInterval();
+        if (currentAtkInterval > 0) WaitForInterval();
         if (target != null)
         {
-            if(!isAttacking) CheckPriority();
-            transform.parent.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
-
-            anim.SetBool("IsMoving", true);
-            if(transform.position.x <= target.transform.position.x)
-            {
-                transform.rotation = Quaternion.Euler(new Vector3(0, 180f, 0));
-            }
-            else
-            {
-                transform.rotation = Quaternion.identity;
-            }
-
+            if (!isAttacking) CheckPriority();
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
             if (Vector2.Distance(transform.position, target.transform.position) < 0.5)
             {
                 transform.position = this.transform.position;
-                anim.SetBool("IsMoving", false);
                 if (IsReadyToAttack())
                 {
                     isAttacking = true;
-                    anim.SetBool("IsAttacking", true);
+                    Attack();
+                    RestoreInterval();
                 }
             }
         }
@@ -123,7 +111,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
         float minDistance = float.PositiveInfinity;
         foreach (GameObject enemy in enemies)
         {
-            if(Vector2.Distance(enemy.transform.position, gameObject.transform.position) < minDistance)
+            if (Vector2.Distance(enemy.transform.position, gameObject.transform.position) < minDistance)
             {
                 minDistance = Vector2.Distance(enemy.transform.position, gameObject.transform.position);
                 tempTarget = enemy;
@@ -136,12 +124,6 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     public void Attack()
     {
         target.GetComponent<EntityStats>().TakeDamage(stats.atk, gameObject);
-    }
-
-    public void FinishAttack()
-    {
-        anim.SetBool("IsAttacking", false);
-        RestoreInterval();
     }
 
     public bool IsDead()
