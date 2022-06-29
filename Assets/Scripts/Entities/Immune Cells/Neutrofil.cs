@@ -84,14 +84,20 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     }
     private void CheckPriority()
     {
+        float minDistance = float.PositiveInfinity;
+        GameObject tempTarget = null;
         foreach (GameObject go in enemies)
         {
             if (go.GetComponent<Bacteria>() != null)
             {
-                target = go;
-                return;
+                if (Vector2.Distance(go.transform.position, gameObject.transform.position) < minDistance)
+                {
+                    minDistance = Vector2.Distance(go.transform.position, gameObject.transform.position);
+                    tempTarget = go;
+                }
             }
         }
+        target = tempTarget;
     }
 
     public void AddEnemy(GameObject enemy)
@@ -102,7 +108,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     public void SetTarget()
     {
         GameObject tempTarget = null;
-        float minDistance = 99f;
+        float minDistance = float.PositiveInfinity;
         foreach (GameObject enemy in enemies)
         {
             if(Vector2.Distance(enemy.transform.position, gameObject.transform.position) < minDistance)
@@ -110,6 +116,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
                 minDistance = Vector2.Distance(enemy.transform.position, gameObject.transform.position);
                 tempTarget = enemy;
             }
+            print("distance: " + minDistance + "\nenemy pos: " + enemy.name);
         }
         target = tempTarget;
     }
