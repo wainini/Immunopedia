@@ -46,7 +46,6 @@ public class CellsSelectDeploy : MonoBehaviour
             //else if(selectedCell == null)
             if (EventSystem.current.IsPointerOverGameObject())
             {
-                Debug.Log("A");
                 return;
             }
             if (mouseRay)
