@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Neutrofil : MonoBehaviour, IEntityBehaviour
+public class Macrophage : MonoBehaviour, IEntityBehaviour
 {
     [SerializeField] private SpriteRenderer healthFill;
     [SerializeField] private SpriteRenderer healthBar;
@@ -11,7 +11,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     private EntityStats stats;
 
     public ImmuneCell cellData;
- 
+
     private float currentAtkInterval;
     private bool isAttacking;
     private GameObject target;
@@ -24,13 +24,12 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
         target = null;
         isAttacking = false;
     }
-
     private void Update()
     {
         WaitForInterval();
         if (target != null)
         {
-            if(!isAttacking) CheckPriority();
+            if (!isAttacking) CheckPriority();
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
             if (Vector2.Distance(transform.position, target.transform.position) < 0.5)
             {
@@ -53,7 +52,6 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
             Destroy(gameObject);
         }
         ClearDeadEnemies();
-        Debug.Log("Current enemy count: " + enemies.Count);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -106,7 +104,6 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
 
     public void Attack()
     {
-        Debug.Log("attack");
         target.GetComponent<EntityStats>().TakeDamage(stats.atk, gameObject);
     }
 
