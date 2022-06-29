@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 568ca38f946352f4c806e609fae19ac6, type: 3}
-  m_Name: Neutrofil
+  m_Name: Eosinophil
   m_EditorClassIdentifier: 
-  cellName: Neutrofil
-  cost: 5
-  trainTime: 1
-  cellImage: {fileID: 21300000, guid: 3d6488594f5aa2e4a87130570a04c690, type: 3}
-  cellPrefab: {fileID: 4681344161063326597, guid: 9195eae06c8b4464399aa69a1d2b3dd4, type: 3}
+  cellName: Eosinophil
+  cost: 2
+  trainTime: 2
+  cellImage: {fileID: 21300000, guid: eb5e66b2a7e73fd45ae212fb8b2398d3, type: 3}
+  cellPrefab: {fileID: 5366047509851145832, guid: a7a044cc628fd9e439e92b37896a5e0e, type: 3}

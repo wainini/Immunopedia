@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 568ca38f946352f4c806e609fae19ac6, type: 3}
-  m_Name: Neutrofil
+  m_Name: Macrophage
   m_EditorClassIdentifier: 
-  cellName: Neutrofil
-  cost: 5
-  trainTime: 1
-  cellImage: {fileID: 21300000, guid: 3d6488594f5aa2e4a87130570a04c690, type: 3}
-  cellPrefab: {fileID: 4681344161063326597, guid: 9195eae06c8b4464399aa69a1d2b3dd4, type: 3}
+  cellName: Macrophage
+  cost: 6
+  trainTime: 3
+  cellImage: {fileID: 21300000, guid: ffe2d613b4f13e940a16381c74c0c60b, type: 3}
+  cellPrefab: {fileID: 0}

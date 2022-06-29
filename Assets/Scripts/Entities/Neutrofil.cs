@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Neutrofil : MonoBehaviour, IEntityBehaviour
 {
+    [SerializeField] private Animator anim;
     [SerializeField] private SpriteRenderer healthFill;
     [SerializeField] private SpriteRenderer healthBar;
     [SerializeField] private CircleCollider2D radius;
@@ -31,15 +32,26 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
         if (target != null)
         {
             if(!isAttacking) CheckPriority();
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
+            transform.parent.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
+
+            anim.SetBool("IsMoving", true);
+            if(transform.position.x <= target.transform.position.x)
+            {
+                transform.rotation = Quaternion.Euler(new Vector3(0, 180f, 0));
+            }
+            else
+            {
+                transform.rotation = Quaternion.identity;
+            }
+
             if (Vector2.Distance(transform.position, target.transform.position) < 0.5)
             {
                 transform.position = this.transform.position;
+                anim.SetBool("IsMoving", false);
                 if (IsReadyToAttack())
                 {
                     isAttacking = true;
-                    Attack();
-                    RestoreInterval();
+                    anim.SetBool("IsAttacking", true);
                 }
             }
         }
@@ -108,6 +120,12 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     {
         Debug.Log("attack");
         target.GetComponent<EntityStats>().TakeDamage(stats.atk, gameObject);
+    }
+
+    public void FinishAttack()
+    {
+        anim.SetBool("IsAttacking", false);
+        RestoreInterval();
     }
 
     public bool IsDead()
