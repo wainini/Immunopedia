@@ -28,7 +28,7 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
     }
     private void Update()
     {
-        if(currentAtkInterval > 0) WaitForInterval();
+        WaitForInterval();
         if (target != null)
         {
             if(blockedEnemies.Count < stats.blockCount)
@@ -102,6 +102,7 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
         for (int i = 0; i < tauntAmount; i++)
         {
             blockedEnemies.Add(enemies[i]);
+            enemies[i].GetComponent<EntityStats>().TakeDamage(0, gameObject);
         }
     }
 
@@ -112,12 +113,21 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
     }
     private void CheckPriority()
     {
-        foreach (GameObject go in enemies)
+        foreach (GameObject go in blockedEnemies.ToList())
         {
-            if (go.GetComponent<Bacteria>() != null)
+            if (go.GetComponent<Bacteria>() == null)
             {
-                target = go;
-                return;
+                foreach (GameObject enemy in enemies.ToList())
+                {
+                    if(enemy.GetComponent<Bacteria>() && !blockedEnemies.Contains(enemy))
+                    {
+                        Debug.Log("found another bacteria");
+                        blockedEnemies.Remove(go);
+                        blockedEnemies.Add(enemy);
+                        enemy.GetComponent<EntityStats>().TakeDamage(0, gameObject);
+                        break;
+                    }
+                }
             }
         }
     }
@@ -129,7 +139,18 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
 
     public void SetTarget()
     {
-        target = (enemies.Count != 0) ? enemies[0] : null;
+        GameObject tempTarget = null;
+        float minDistance = float.PositiveInfinity;
+        foreach (GameObject enemy in enemies)
+        {
+            if (Vector2.Distance(enemy.transform.position, gameObject.transform.position) < minDistance)
+            {
+                minDistance = Vector2.Distance(enemy.transform.position, gameObject.transform.position);
+                tempTarget = enemy;
+            }
+            print("distance: " + minDistance + "\nenemy pos: " + enemy.name);
+        }
+        target = tempTarget;
     }
 
     public void Attack()

@@ -26,11 +26,15 @@ public class Bacteria : MonoBehaviour, IEntityBehaviour
         WaitForInterval();
         if (stats.localTarget != null)
         {
-            transform.position = this.transform.position;
-            if (IsReadyToAttack())
+            transform.position = Vector2.MoveTowards(transform.position, stats.localTarget.transform.position, stats.movSpeed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, stats.localTarget.transform.position) < 0.5)
             {
-                Attack();
-                RestoreInterval();
+                transform.position = this.transform.position;
+                if (IsReadyToAttack())
+                {
+                    Attack();
+                    RestoreInterval();
+                }
             }
         }
         else
