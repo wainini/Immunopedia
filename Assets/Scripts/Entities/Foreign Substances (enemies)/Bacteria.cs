@@ -28,11 +28,18 @@ public class Bacteria : MonoBehaviour, IEntityBehaviour
         if (stats.localTarget != null)
         {
             CalculateRotation();
-            anim.SetBool("IsMoving", false);
-            transform.parent.position = this.transform.position;
-            if (IsReadyToAttack())
+            if(Vector2.Distance(transform.position, stats.localTarget.transform.position) > 0.5f)
             {
-                anim.SetBool("IsAttacking", true);
+                transform.parent.position = Vector2.MoveTowards(transform.position, stats.localTarget.transform.position, stats.movSpeed * Time.deltaTime);
+            }
+            else
+            {
+                anim.SetBool("IsMoving", false);
+                transform.parent.position = this.transform.position;
+                if (IsReadyToAttack())
+                {
+                    anim.SetBool("IsAttacking", true);
+                }
             }
         }
         else
@@ -52,7 +59,6 @@ public class Bacteria : MonoBehaviour, IEntityBehaviour
         }
         if (IsDead())
         {
-            Debug.Log(gameObject.name + " is ded");
             Destroy(transform.parent.gameObject);
         }
     }

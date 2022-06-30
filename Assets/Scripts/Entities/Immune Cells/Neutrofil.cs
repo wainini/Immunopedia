@@ -129,7 +129,6 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
                 minDistance = Vector2.Distance(enemy.transform.position, gameObject.transform.position);
                 tempTarget = enemy;
             }
-            print("distance: " + minDistance + "\nenemy pos: " + enemy.name);
         }
         target = tempTarget;
     }
