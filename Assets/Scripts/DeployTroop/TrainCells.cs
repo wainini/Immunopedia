@@ -11,13 +11,14 @@ public class TrainCells : MonoBehaviour
 
     private CellsSelectDeploy cellSelectorScript;
     [SerializeField] private GameObject trainingLayout;
+    private ScrollRect trainingScrollRect;
     [SerializeField] private GameObject cellInTrainingPrefab;
 
     public List<CellUIData> cellsInTrainingList = new List<CellUIData>();
 
     private RectTransform rt;
-    public float minHeight = 250f;
-    public float heightToAdd = 130f;
+    public float minWidth = 500f;
+    public float widthToAdd = 107f;
 
     private BuildingManager buildingManager;
     private void Start()
@@ -26,8 +27,7 @@ public class TrainCells : MonoBehaviour
         cellSelectorScript = FindObjectOfType<CellsSelectDeploy>();
         rt = trainingLayout.GetComponent<RectTransform>();
 
-        if(trainingLayout == null) { 
-        }
+        trainingScrollRect = trainingLayout.transform.parent.parent.GetComponent<ScrollRect>();
     }
 
     private void FixedUpdate()
@@ -97,8 +97,9 @@ public class TrainCells : MonoBehaviour
                 CreateNewUI(cellData);
             }
         }
-
-        UpdateLayoutHeight(cellsInTrainingList.Count);
+        //Update and reset the scroll rect everytime a new UI instantiated
+        UpdateLayourWidth(cellsInTrainingList.Count);
+        trainingScrollRect.horizontalNormalizedPosition = 0;
     }
 
     private void CreateNewUI(CellTrainingData cellData)
@@ -115,10 +116,9 @@ public class TrainCells : MonoBehaviour
         cellsInTrainingList.Add(new CellUIData(cellData, cellInTraining, 1));
     }
 
-    private void UpdateLayoutHeight(int length)
+    private void UpdateLayourWidth(int length)
     {
-        int howManyToAdd = (length % 2 == 1) ? ((length - 6) / 2 + 1) : ((length - 6) / 2);
-        rt.sizeDelta = new Vector2(rt.sizeDelta.x, Mathf.Max(minHeight, minHeight + howManyToAdd * heightToAdd));
+        rt.sizeDelta = new Vector2(Mathf.Max(minWidth, length * widthToAdd), rt.sizeDelta.y);
     }
 
     private void RemoveCellInTrainingUI(GameObject thisUI)
@@ -130,6 +130,7 @@ public class TrainCells : MonoBehaviour
         }
         cellsInTrainingList.RemoveAt(index);
         Destroy(thisUI);
+        UpdateLayourWidth(cellsInTrainingList.Count);
     }
 
 }

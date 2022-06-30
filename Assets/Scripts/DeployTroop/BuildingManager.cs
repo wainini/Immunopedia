@@ -38,11 +38,11 @@ public class BuildingManager : MonoBehaviour
 
     private void Update()
     {
-        if(popUpResourceText == null)
-        {
-            popUpResourceText = boneMarrowPopUp.transform.Find("Resource").GetComponent<TextMeshProUGUI>();
-        }
-        popUpResourceText.text = Mathf.FloorToInt(resource).ToString();
+        //if(popUpResourceText == null)
+        //{
+        //    popUpResourceText = boneMarrowPopUp.transform.Find("Resource").GetComponent<TextMeshProUGUI>();
+        //}
+        //popUpResourceText.text = Mathf.FloorToInt(resource).ToString();
         resourceText.text = Mathf.FloorToInt(resource).ToString();
     }
 

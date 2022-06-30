@@ -56,14 +56,14 @@ TagManager:
   - name: DeployArea
     uniqueID: 1402945905
     locked: 0
+  - name: Bulding
+    uniqueID: 2930849329
+    locked: 0
   - name: Cell
     uniqueID: 2399069353
     locked: 0
   - name: Bacteria
     uniqueID: 3796179873
-    locked: 0
-  - name: Bulding
-    uniqueID: 2930849329
     locked: 0
   - name: UI
     uniqueID: 769443885

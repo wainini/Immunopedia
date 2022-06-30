@@ -10,6 +10,7 @@ public class CellTrainingData : ScriptableObject
     public float cost;
     public float trainTime;
     public Sprite cellImage;
+    public Sprite cellUnlockedImage;
     public GameObject cellPrefab;
 }
 public class CellUIData
