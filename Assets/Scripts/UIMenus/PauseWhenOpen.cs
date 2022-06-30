@@ -16,6 +16,9 @@ public class PauseWhenOpen : MonoBehaviour
 
     private void OnDisable()
     {
-        gameSpeedScript.SetGameSpeed(gameSpeedScript.currentGameSpeed);
+        if (gameSpeedScript != null)
+            gameSpeedScript.SetGameSpeed(gameSpeedScript.currentGameSpeed);
+        else
+            GameSpeed.instance.SetGameSpeed(GameSpeed.instance.currentGameSpeed);
     }
 }
