@@ -7,7 +7,7 @@ public class AlmanacCellInfo : ScriptableObject
 {
     public string cellName;
     public Sprite cellButtonImage;
-    public Sprite cellInfoImage;
     public string cellDesc;
-
+    public GameObject cellPrefab;
+    public bool isEnemy;
 }

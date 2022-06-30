@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d0860ec6dbb84040b99e69b5e4061ab, type: 3}
-  m_Name: Jamet
+  m_Name: Eosinophil
   m_EditorClassIdentifier: 
-  cellName: Jamet
-  cellButtonImage: {fileID: 21300000, guid: 56b242b08a8caad4c8ebe90c39d9fa66, type: 3}
-  cellInfoImage: {fileID: 21300000, guid: 56b242b08a8caad4c8ebe90c39d9fa66, type: 3}
-  cellDesc: halo, aku jamet aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  cellName: Eosinophil
+  cellButtonImage: {fileID: 21300000, guid: eb5e66b2a7e73fd45ae212fb8b2398d3, type: 3}
+  cellDesc: Eosinophil
+  cellPrefab: {fileID: 4673210084086762389, guid: 970e21d013134dc4abc696367e7f2068, type: 3}
+  isEnemy: 0

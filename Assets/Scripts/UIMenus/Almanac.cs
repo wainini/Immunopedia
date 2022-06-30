@@ -7,10 +7,12 @@ using TMPro;
 public class Almanac : MonoBehaviour
 {
     private BuildingManager buildingManager;
+    [SerializeField] private Sprite enemyBackground;
     [SerializeField] private GameObject cellInfoPanel;
     [SerializeField] private GameObject buttonLayout;
     [SerializeField] private GameObject buttonPrefab;
     [SerializeField] private List<AlmanacCellInfo> almanacCellInfos;
+    [SerializeField] private Transform cellAnimationPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,11 @@ public class Almanac : MonoBehaviour
         {
             GameObject button = Instantiate(buttonPrefab, buttonLayout.transform);
             button.GetComponentsInChildren<Image>()[1].sprite = cellInfo.cellButtonImage;
-            button.GetComponentInChildren<TextMeshProUGUI>().text = cellInfo.cellName;
+            if (cellInfo.isEnemy)
+            {
+                button.GetComponent<Image>().sprite = enemyBackground;
+            }
+            //button.GetComponentInChildren<TextMeshProUGUI>().text = cellInfo.cellName;
             button.name = cellInfo.cellName;
             button.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(cellInfo));
         }
@@ -27,7 +33,11 @@ public class Almanac : MonoBehaviour
 
     public void OnButtonClick(AlmanacCellInfo cellInfo)
     {
-        cellInfoPanel.GetComponentsInChildren<Image>()[1].sprite = cellInfo.cellInfoImage;
+        GameObject cellAnimation = Instantiate(cellInfo.cellPrefab, cellInfoPanel.transform);
+        cellAnimation.transform.position = cellAnimationPos.transform.position;
+        Destroy(cellAnimationPos.gameObject);
+        cellAnimationPos = cellAnimation.transform;
+        //cellInfoPanel.GetComponentsInChildren<Image>()[1].sprite = cellInfo.cellInfoImage;
         cellInfoPanel.GetComponentInChildren<TextMeshProUGUI>().text = cellInfo.cellDesc;
     }
 }

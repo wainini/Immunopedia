@@ -42,11 +42,13 @@ public class MenuManager : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.sceneUnloaded += OnSceneUnloaded;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDisable()
     {
         SceneManager.sceneUnloaded -= OnSceneUnloaded;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private void Update()
@@ -62,6 +64,11 @@ public class MenuManager : MonoBehaviour
                 CloseMenu();
             }
         }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode a)
+    {
+        GetComponent<Canvas>().worldCamera = Camera.main;
     }
 
     private void OnSceneUnloaded(Scene scene)

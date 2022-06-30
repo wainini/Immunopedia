@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d0860ec6dbb84040b99e69b5e4061ab, type: 3}
-  m_Name: Neutrofil
+  m_Name: Bacteria
   m_EditorClassIdentifier: 
-  cellName: Neutrofil
-  cellButtonImage: {fileID: 21300000, guid: 3d6488594f5aa2e4a87130570a04c690, type: 3}
-  cellInfoImage: {fileID: 21300000, guid: 3d6488594f5aa2e4a87130570a04c690, type: 3}
-  cellDesc: Neutrofil
-  cellPrefab: {fileID: 4673210084086762389, guid: 88560d442c1e8744fa0adf0969c188d3, type: 3}
+  cellName: Bacteria
+  cellButtonImage: {fileID: 21300000, guid: b60dc55151ffdc344ae91ec1877de7ed, type: 3}
+  cellDesc: Bacteria
+  cellPrefab: {fileID: 4673210084086762389, guid: 445018c387074e744a955d8582bd5e97, type: 3}
+  isEnemy: 1

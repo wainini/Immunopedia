@@ -71,3 +71,9 @@ TagManager:
   - name: PopUpUI
     uniqueID: 3213998227
     locked: 0
+  - name: MenuUI
+    uniqueID: 24022871
+    locked: 0
+  - name: AlmanacGoyang2
+    uniqueID: 1282979563
+    locked: 0

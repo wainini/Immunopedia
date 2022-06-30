@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8311458224548620221}
   - component: {fileID: 8311458224548620209}
   - component: {fileID: 751160934}
+  - component: {fileID: 5580169813001237429}
   m_Layer: 5
   m_Name: ClickableObjectCanvas
   m_TagString: Untagged
@@ -140,3 +141,15 @@ MonoBehaviour:
   cellInTrainingPrefab: {fileID: 8247021510039000273, guid: 740d4ca41796aa64a96439f05a686ecd, type: 3}
   minWidth: 500
   widthToAdd: 130
+--- !u!114 &5580169813001237429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8311458224548620218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e1793e6bf62cde4186410bcae1c0c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
