@@ -72,6 +72,11 @@ public class Wound : MonoBehaviour
     //    }
     //}
 
+    private void OnDestroy()
+    {
+        Debug.Log("destroyed");
+    }
+
     public void AddPlatelet()
     {
         currentPlateletCount++;
