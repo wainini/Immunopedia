@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d165717328dda584697d793300a0ccf8, type: 3}
   m_Name: Eosinophil
   m_EditorClassIdentifier: 
-  movSpeed: 1
   maxHealth: 5
   atk: 20
   defense: 0
+  movSpeed: 1
   atkInterval: 0
   blockCount: 1
   atkRadius: 3

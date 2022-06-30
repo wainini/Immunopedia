@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Neutrofil : MonoBehaviour, IEntityBehaviour
 {
+    [SerializeField] private Animator anim;
     [SerializeField] private SpriteRenderer healthFill;
     [SerializeField] private SpriteRenderer healthBar;
     [SerializeField] private CircleCollider2D radius;
@@ -20,7 +21,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     {
         stats = GetComponent<EntityStats>();
         stats.SetHealthUI(healthBar, healthFill);
-        radius.radius = cellData.atkRadius;
+        radius.radius = cellData.atkRadius / transform.localScale.x; //karena scale badannya gak 1
         target = null;
         isAttacking = false;
         currentAtkInterval = 0;
@@ -32,15 +33,27 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
         if (target != null)
         {
             if (!isAttacking) CheckPriority();
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
+            transform.parent.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
+
+            //Rotation and Moving Anim
+            anim.SetBool("IsMoving", true);
+            if(transform.position.x > target.transform.position.x)
+            {
+                transform.rotation = Quaternion.identity;
+            }
+            else if (transform.position.x < target.transform.position.x)
+            {
+                transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+            }
+
             if (Vector2.Distance(transform.position, target.transform.position) < 0.5)
             {
-                transform.position = this.transform.position;
+                anim.SetBool("IsMoving", false);
+                transform.parent.position = this.transform.position;
                 if (IsReadyToAttack())
                 {
                     isAttacking = true;
-                    Attack();
-                    RestoreInterval();
+                    anim.SetBool("IsAttacking", true);
                 }
             }
         }
@@ -51,7 +64,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
         }
         if (IsDead())
         {
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
         ClearDeadEnemies();
     }
@@ -121,9 +134,17 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
         target = tempTarget;
     }
 
-    public void Attack()
+    public void Attack() //Called using animation event
     {
+        if (target == null) return;
         target.GetComponent<EntityStats>().TakeDamage(stats.atk, gameObject);
+        //play sound or smth, idk
+    }
+
+    public void FinishAttackAnim() //Called using animation event
+    {
+        anim.SetBool("IsAttacking", false);
+        RestoreInterval();
     }
 
     public bool IsDead()

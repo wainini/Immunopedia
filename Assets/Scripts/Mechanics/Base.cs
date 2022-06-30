@@ -8,7 +8,7 @@ public class Base : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            Destroy(collision.gameObject);
+            Destroy(collision.transform.parent.gameObject);
             GameManager.instance.ReduceLive(collision.gameObject.GetComponent<EntityStats>().hpSealReduction);
         }
     }

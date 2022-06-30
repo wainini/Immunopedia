@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bacteria : MonoBehaviour, IEntityBehaviour
 {
+    [SerializeField] private Animator anim;
     [SerializeField] private SpriteRenderer healthFill;
     [SerializeField] private SpriteRenderer healthBar;
 
@@ -26,18 +27,23 @@ public class Bacteria : MonoBehaviour, IEntityBehaviour
         WaitForInterval();
         if (stats.localTarget != null)
         {
-            transform.position = this.transform.position;
+            CalculateRotation();
+            anim.SetBool("IsMoving", false);
+            transform.parent.position = this.transform.position;
             if (IsReadyToAttack())
             {
-                Attack();
-                RestoreInterval();
+                anim.SetBool("IsAttacking", true);
             }
         }
         else
         {
             if (Vector2.Distance(transform.position, nextWaypoint.position) > 0.1f)
             {
-                transform.position = Vector2.MoveTowards(transform.position, nextWaypoint.position, stats.movSpeed * Time.deltaTime);
+                transform.parent.position = Vector2.MoveTowards(transform.position, nextWaypoint.position, stats.movSpeed * Time.deltaTime);
+                //Rotation and Moving Anim
+                anim.SetBool("IsMoving", true);
+                CalculateRotation();
+
             }
             else
             {
@@ -47,13 +53,32 @@ public class Bacteria : MonoBehaviour, IEntityBehaviour
         if (IsDead())
         {
             Debug.Log(gameObject.name + " is ded");
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 
-    public void Attack()
+    private void CalculateRotation()
+    {
+        if (transform.position.x > nextWaypoint.transform.position.x)
+        {
+            transform.rotation = Quaternion.identity;
+        }
+        else if (transform.position.x < nextWaypoint.transform.position.x)
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+        }
+    }
+
+    public void Attack() //Called using animation event
     {
         stats.localTarget.GetComponent<EntityStats>().TakeDamage(stats.atk, gameObject);
+        //play sound or smth, idk
+    }
+
+    public void FinishAttackAnim() //Called using animation event
+    {
+        anim.SetBool("IsAttacking", false);
+        RestoreInterval();
     }
 
     public bool IsDead()
