@@ -31,10 +31,13 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
         WaitForInterval();
         if (target != null)
         {
-            if(blockedEnemies.Count < stats.blockCount)
+            if(blockedEnemies.Count < stats.blockCount || !isAttacking)
             {
-                Taunt();
+                ///<summary>
+                ///reminder buat benerin CheckPriority sm Taunt
+                /// </summary>
                 CheckPriority();
+                Taunt();
             }
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
             if (Vector2.Distance(transform.position, target.transform.position) < 0.5)
@@ -85,6 +88,38 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
 
     private void Taunt()
     {
+        //int enemyCount = enemies.Count;
+        //for (int i = 0; i < enemyCount - 1; i++)
+        //{
+        //    for (int j = i; j < enemyCount; j++)
+        //    {
+        //        if (Vector2.Distance(enemies[i].transform.position, gameObject.transform.position) > Vector2.Distance(enemies[j].transform.position, gameObject.transform.position))
+        //        {
+        //            GameObject temp = enemies[i];
+        //            enemies[i] = enemies[j];
+        //            enemies[j] = temp;
+        //        }
+        //    }
+        //}
+        //int tauntAmount = (enemyCount < stats.blockCount) ? enemyCount : stats.blockCount;
+        //for (int i = 0; i < tauntAmount; i++)
+        //{
+        //    blockedEnemies.Add(enemies[i]);
+        //    enemies[i].GetComponent<EntityStats>().TakeDamage(0, gameObject);
+        //}
+        foreach (GameObject enemy in blockedEnemies)
+        {
+            enemy.GetComponent<EntityStats>().TakeDamage(0, this.gameObject);
+        }
+    }
+
+    private void ClearDeadEnemies()
+    {
+        enemies = enemies.Where(i => i != null).ToList();
+        blockedEnemies = blockedEnemies.Where(i => i != null).ToList();
+    }
+    private void CheckPriority()
+    {
         int enemyCount = enemies.Count;
         for (int i = 0; i < enemyCount - 1; i++)
         {
@@ -98,38 +133,26 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
                 }
             }
         }
-        int tauntAmount = (enemyCount < stats.blockCount) ? enemyCount : stats.blockCount;
-        for (int i = 0; i < tauntAmount; i++)
+        if(enemies.Count > stats.blockCount)
         {
-            blockedEnemies.Add(enemies[i]);
-            enemies[i].GetComponent<EntityStats>().TakeDamage(0, gameObject);
-        }
-    }
-
-    private void ClearDeadEnemies()
-    {
-        enemies = enemies.Where(i => i != null).ToList();
-        blockedEnemies = blockedEnemies.Where(i => i != null).ToList();
-    }
-    private void CheckPriority()
-    {
-        foreach (GameObject go in blockedEnemies.ToList())
-        {
-            if (go.GetComponent<Bacteria>() == null)
+            Debug.Log("there are more than 1 enemies detected");
+            foreach (GameObject enemy in enemies)
             {
-                foreach (GameObject enemy in enemies.ToList())
+                if(enemy.GetComponent<Bacteria>() != null && !blockedEnemies.Contains(enemy))
                 {
-                    if(enemy.GetComponent<Bacteria>() && !blockedEnemies.Contains(enemy))
-                    {
-                        Debug.Log("found another bacteria");
-                        blockedEnemies.Remove(go);
-                        blockedEnemies.Add(enemy);
-                        enemy.GetComponent<EntityStats>().TakeDamage(0, gameObject);
-                        break;
-                    }
+                    blockedEnemies.Add(enemy);
                 }
+                if (blockedEnemies.Count >= stats.blockCount) break;
             }
         }
+        else
+        {
+            foreach (GameObject enemy in enemies)
+            {
+                blockedEnemies.Add(enemy);
+            }
+        }
+        target = blockedEnemies[0];
     }
 
     public void AddEnemy(GameObject enemy)

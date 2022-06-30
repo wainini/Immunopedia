@@ -52,9 +52,9 @@ public class EntityStats : MonoBehaviour
         if (damage > defense)
         {
             currentHealth -= (damage - defense);
+            UpdateHealthUI(currentHealth);
         }
         localTarget = target;
-        UpdateHealthUI(currentHealth);
     }
 
     public void SetHealthUI(SpriteRenderer bar, SpriteRenderer fill)
