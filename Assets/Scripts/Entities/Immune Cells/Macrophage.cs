@@ -28,21 +28,23 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
     }
     private void Update()
     {
-        WaitForInterval();
+        ClearDeadEnemies();
+        if (currentAtkInterval > 0) WaitForInterval();
         if (target != null)
         {
             if(blockedEnemies.Count < stats.blockCount || !isAttacking)
             {
+                print("COK!");
                 ///<summary>
                 ///reminder buat benerin CheckPriority sm Taunt
                 /// </summary>
                 CheckPriority();
                 Taunt();
             }
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
+            transform.parent.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
             if (Vector2.Distance(transform.position, target.transform.position) < 0.5)
             {
-                transform.position = this.transform.position;
+                transform.parent.position = this.transform.position;
                 if (IsReadyToAttack())
                 {
                     isAttacking = true;
@@ -58,9 +60,8 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
         }
         if (IsDead())
         {
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
-        ClearDeadEnemies();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -149,7 +150,8 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
         {
             foreach (GameObject enemy in enemies)
             {
-                blockedEnemies.Add(enemy);
+                if (!blockedEnemies.Contains(enemy)) blockedEnemies.Add(enemy);
+
             }
         }
         target = blockedEnemies[0];

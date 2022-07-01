@@ -29,6 +29,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
 
     private void Update()
     {
+        ClearDeadEnemies();
         if (currentAtkInterval > 0) WaitForInterval();
         if (target != null)
         {
@@ -66,7 +67,6 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
         {
             Destroy(transform.parent.gameObject);
         }
-        ClearDeadEnemies();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

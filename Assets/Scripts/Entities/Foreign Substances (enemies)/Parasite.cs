@@ -22,9 +22,9 @@ public class Parasite : MonoBehaviour, IEntityBehaviour
     }
     void Update()
     {
-        if (Vector2.Distance(transform.position, nextWaypoint.position) > 0.1f)
+        if (Vector2.Distance(transform.parent.position, nextWaypoint.position) > 0.1f)
         {
-            transform.position = Vector2.MoveTowards(transform.position, nextWaypoint.position, stats.movSpeed * Time.deltaTime);
+            transform.parent.position = Vector2.MoveTowards(transform.parent.position, nextWaypoint.position, stats.movSpeed * Time.deltaTime);
         }
         else
         {
@@ -33,7 +33,7 @@ public class Parasite : MonoBehaviour, IEntityBehaviour
 
         if (IsDead())
         {
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
         if(blockingEosi.Count != 0)
         {

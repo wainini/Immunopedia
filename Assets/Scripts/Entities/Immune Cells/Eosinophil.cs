@@ -31,7 +31,8 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
 
     private void Update()
     {
-        WaitForInterval();
+        ClearDeadEnemies();
+        if (currentAtkInterval > 0) WaitForInterval();
         if (target != null)
         {
             if (!isAttacking) CheckPriority();
@@ -68,7 +69,6 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
         {
             Destroy(transform.parent.gameObject);
         }
-        ClearDeadEnemies();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -93,7 +93,7 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
         GameObject tempTarget = target;
         foreach (GameObject go in enemies)
         {
-            if (go.GetComponent<Bacteria>() != null)
+            if (go.GetComponent<Parasite>() != null)
             {
                 if (Vector2.Distance(go.transform.position, gameObject.transform.position) < minDistance)
                 {

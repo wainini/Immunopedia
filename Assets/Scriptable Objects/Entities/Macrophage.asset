@@ -18,4 +18,4 @@ MonoBehaviour:
   movSpeed: 0.7
   atkInterval: 2
   blockCount: 2
-  atkRadius: 3
+  atkRadius: 7

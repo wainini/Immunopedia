@@ -13,10 +13,6 @@ public class Platelet : MonoBehaviour
     private void Update()
     {
         woundPosition = GameManager.instance.wounds.Peek().transform;
-        //if (woundPosition == null)
-        //{
-        //    woundPosition = GameManager.instance.wounds.Peek().transform;
-        //}
         if (!isClosingWound)
         {
             anim.SetBool("IsMoving", true);
