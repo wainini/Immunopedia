@@ -138,6 +138,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
         if (target == null) return;
         target.GetComponent<EntityStats>().TakeDamage(stats.atk, gameObject);
         //play sound or smth, idk
+        AudioManager.instance.PlaySound("NeutroEosiHit", SoundOutput.sfx);
     }
 
     public void FinishAttackAnim() //Called using animation event

@@ -64,6 +64,26 @@ MonoBehaviour:
     Volume: 1
     Pitch: 1
     loop: 0
+  - name: BacteriaHit
+    Clip: {fileID: 8300000, guid: b076756d75bc2d34abffe381ff3c3abc, type: 3}
+    Volume: 1
+    Pitch: 1
+    loop: 0
+  - name: MacrophageHit
+    Clip: {fileID: 8300000, guid: e71d72a0b259b25449d42ffb519ced8a, type: 3}
+    Volume: 1
+    Pitch: 1
+    loop: 0
+  - name: NeutroEosiHit
+    Clip: {fileID: 8300000, guid: 20a11a44e3d7f4a40a627d445c6069da, type: 3}
+    Volume: 1
+    Pitch: 1
+    loop: 0
+  - name: EnemyBreach
+    Clip: {fileID: 8300000, guid: 9eb39cfd0b9e6cb41a1dd7d64f6a9fb8, type: 3}
+    Volume: 1
+    Pitch: 1
+    loop: 0
 --- !u!1 &6863437259192208105
 GameObject:
   m_ObjectHideFlags: 0
