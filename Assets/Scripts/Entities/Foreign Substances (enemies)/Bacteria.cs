@@ -65,11 +65,11 @@ public class Bacteria : MonoBehaviour, IEntityBehaviour
 
     private void CalculateRotation()
     {
-        if (transform.position.x > nextWaypoint.transform.position.x)
+        if (transform.position.x < nextWaypoint.transform.position.x)
         {
             transform.rotation = Quaternion.identity;
         }
-        else if (transform.position.x < nextWaypoint.transform.position.x)
+        else if (transform.position.x > nextWaypoint.transform.position.x)
         {
             transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
         }

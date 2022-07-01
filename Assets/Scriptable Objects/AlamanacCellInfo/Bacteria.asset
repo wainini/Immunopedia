@@ -15,5 +15,5 @@ MonoBehaviour:
   cellName: Bacteria
   cellButtonImage: {fileID: 21300000, guid: b60dc55151ffdc344ae91ec1877de7ed, type: 3}
   cellDesc: Bacteria
-  cellPrefab: {fileID: 4673210084086762389, guid: 445018c387074e744a955d8582bd5e97, type: 3}
+  cellPrefab: {fileID: 4673210084086762389, guid: 20bdd0070b6494743aa3b73dbecb8d7f, type: 3}
   isEnemy: 1
