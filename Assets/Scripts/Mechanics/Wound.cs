@@ -75,7 +75,7 @@ public class Wound : MonoBehaviour
     public void AddPlatelet()
     {
         currentPlateletCount++;
-        if (currentPlateletCount >= plateletNeeded)
+        if (currentPlateletCount == plateletNeeded)
         {
             isWoundClosed = true;
             GameManager.instance.CloseWound(this.gameObject);

@@ -12,10 +12,11 @@ public class Platelet : MonoBehaviour
 
     private void Update()
     {
-        if (!woundPosition)
-        {
-            woundPosition = GameManager.instance.wounds.Peek().transform;
-        }
+        woundPosition = GameManager.instance.wounds.Peek().transform;
+        //if (woundPosition == null)
+        //{
+        //    woundPosition = GameManager.instance.wounds.Peek().transform;
+        //}
         if (!isClosingWound)
         {
             anim.SetBool("IsMoving", true);
@@ -25,7 +26,7 @@ public class Platelet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Wound")
+        if (collision.gameObject.tag == "Wound")
         {
             anim.SetBool("IsHealing", true);
             //initialize close wound
