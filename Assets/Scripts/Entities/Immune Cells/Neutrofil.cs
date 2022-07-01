@@ -98,7 +98,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     private void CheckPriority()
     {
         float minDistance = float.PositiveInfinity;
-        GameObject tempTarget = null;
+        GameObject tempTarget = target;
         foreach (GameObject go in enemies)
         {
             if (go.GetComponent<Bacteria>() != null)

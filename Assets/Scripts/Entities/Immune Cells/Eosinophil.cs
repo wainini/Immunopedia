@@ -89,14 +89,20 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
 
     private void CheckPriority()
     {
+        float minDistance = float.PositiveInfinity;
+        GameObject tempTarget = target;
         foreach (GameObject go in enemies)
         {
-            if(go.GetComponent<Parasite>() != null)
+            if (go.GetComponent<Bacteria>() != null)
             {
-                target = go;
-                return;
+                if (Vector2.Distance(go.transform.position, gameObject.transform.position) < minDistance)
+                {
+                    minDistance = Vector2.Distance(go.transform.position, gameObject.transform.position);
+                    tempTarget = go;
+                }
             }
         }
+        target = tempTarget;
     }
 
     public void AddEnemy(GameObject enemy)
@@ -106,7 +112,17 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
 
     public void SetTarget()
     {
-        target = (enemies.Count != 0) ? enemies[0] : null;
+        GameObject tempTarget = null;
+        float minDistance = float.PositiveInfinity;
+        foreach (GameObject enemy in enemies)
+        {
+            if (Vector2.Distance(enemy.transform.position, gameObject.transform.position) < minDistance)
+            {
+                minDistance = Vector2.Distance(enemy.transform.position, gameObject.transform.position);
+                tempTarget = enemy;
+            }
+        }
+        target = tempTarget;
     }
 
     public void Attack() //Called using animation event
