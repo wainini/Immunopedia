@@ -10,6 +10,7 @@ public class Base : MonoBehaviour
         {
             Destroy(collision.transform.parent.gameObject);
             GameManager.instance.ReduceLive(collision.gameObject.GetComponent<EntityStats>().hpSealReduction);
+            AudioManager.instance.PlaySound("EnemyBreach", SoundOutput.sfx);
         }
     }
 }

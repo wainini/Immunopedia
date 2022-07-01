@@ -79,6 +79,7 @@ public class Bacteria : MonoBehaviour, IEntityBehaviour
     {
         stats.localTarget.GetComponent<EntityStats>().TakeDamage(stats.atk, gameObject);
         //play sound or smth, idk
+        AudioManager.instance.PlaySound("BacteriaHit", SoundOutput.sfx);
     }
 
     public void FinishAttackAnim() //Called using animation event

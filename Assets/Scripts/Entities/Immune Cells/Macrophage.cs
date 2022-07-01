@@ -181,6 +181,7 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
     public void Attack()
     {
         target.GetComponent<EntityStats>().TakeDamage(stats.atk, gameObject);
+        AudioManager.instance.PlaySound("MacrophageHit", SoundOutput.sfx);
     }
 
     public bool IsDead()
