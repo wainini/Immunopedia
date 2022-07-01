@@ -41,14 +41,17 @@ public class MenuManager : MonoBehaviour
 
     private void OnEnable()
     {
-        SceneManager.sceneUnloaded += OnSceneUnloaded;
+        Debug.Log("A");
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDisable()
     {
-        SceneManager.sceneUnloaded -= OnSceneUnloaded;
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        if(instance == this)
+        {
+            Debug.Log("b");
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
     }
 
     private void Update()
@@ -69,6 +72,7 @@ public class MenuManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode a)
     {
         GetComponent<Canvas>().worldCamera = Camera.main;
+        CloseAllMenu();
     }
 
     private void OnSceneUnloaded(Scene scene)
@@ -90,9 +94,11 @@ public class MenuManager : MonoBehaviour
     public void CloseAllMenu()
     {
         if (MenuStack.Count <= 0) return;
-        for(int i = 0; i < MenuStack.Count; i++)
+        int count = MenuStack.Count;
+        for(int i = 0; i < count; i++)
         {
-            MenuStack.Pop().SetActive(false);
+            GameObject menu = MenuStack.Pop();
+            if (menu != null) menu.SetActive(false);
         }
     }
 

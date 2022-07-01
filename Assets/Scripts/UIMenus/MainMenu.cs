@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     private MenuManager menuManager;
     [SerializeField] private AudioMixer mixer;
     [SerializeField] private GameObject settingsMenu;
+    [SerializeField] private GameObject levelSelector;
 
     private void Awake()
     {
@@ -27,5 +28,10 @@ public class MainMenu : MonoBehaviour
     public void Settings()
     {
         menuManager.OpenMenu(settingsMenu);
+    }
+
+    public void LevelSelector()
+    {
+        menuManager.OpenMenu(levelSelector);
     }
 }

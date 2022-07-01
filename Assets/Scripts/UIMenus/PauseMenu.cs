@@ -42,18 +42,18 @@ public class PauseMenu : MonoBehaviour
 
     private void RestartLevel(bool yes)
     {
-        if(yes) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
-        menuManager.CloseMenu();
         dialogPopUp.RemoveListener();
+        if(yes) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        else menuManager.CloseMenu();
+
     }
 
     private void MainMenu(bool yes)
     {
-        if(yes) SceneManager.LoadScene(0);
-
-        menuManager.CloseMenu();
         dialogPopUp.RemoveListener();
+        if(yes) SceneManager.LoadScene(0);
+        else menuManager.CloseMenu();
+
     }
     public void Settings()
     {
