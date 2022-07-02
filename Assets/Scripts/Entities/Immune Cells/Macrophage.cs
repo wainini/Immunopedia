@@ -34,14 +34,11 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
         {
             if(blockedEnemies.Count < stats.blockCount || !isAttacking)
             {
-                print("COK!");
-                ///<summary>
-                ///reminder buat benerin CheckPriority sm Taunt
-                /// </summary>
                 CheckPriority();
                 Taunt();
             }
-            transform.parent.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
+            //if(!anim.SetBool("IsAttacking"))
+                transform.parent.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
             if (Vector2.Distance(transform.position, target.transform.position) < 0.5)
             {
                 transform.parent.position = this.transform.position;
@@ -89,25 +86,6 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
 
     private void Taunt()
     {
-        //int enemyCount = enemies.Count;
-        //for (int i = 0; i < enemyCount - 1; i++)
-        //{
-        //    for (int j = i; j < enemyCount; j++)
-        //    {
-        //        if (Vector2.Distance(enemies[i].transform.position, gameObject.transform.position) > Vector2.Distance(enemies[j].transform.position, gameObject.transform.position))
-        //        {
-        //            GameObject temp = enemies[i];
-        //            enemies[i] = enemies[j];
-        //            enemies[j] = temp;
-        //        }
-        //    }
-        //}
-        //int tauntAmount = (enemyCount < stats.blockCount) ? enemyCount : stats.blockCount;
-        //for (int i = 0; i < tauntAmount; i++)
-        //{
-        //    blockedEnemies.Add(enemies[i]);
-        //    enemies[i].GetComponent<EntityStats>().TakeDamage(0, gameObject);
-        //}
         foreach (GameObject enemy in blockedEnemies)
         {
             enemy.GetComponent<EntityStats>().TakeDamage(0, this.gameObject);

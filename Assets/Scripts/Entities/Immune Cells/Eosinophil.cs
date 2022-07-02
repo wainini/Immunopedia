@@ -36,7 +36,8 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
         if (target != null)
         {
             if (!isAttacking) CheckPriority();
-            transform.parent.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
+            if(!anim.GetBool("IsAttacking"))
+                transform.parent.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
 
             //Rotation and Moving Anim
             anim.SetBool("IsMoving", true);
