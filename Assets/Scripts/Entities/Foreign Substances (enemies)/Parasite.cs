@@ -25,6 +25,16 @@ public class Parasite : MonoBehaviour, IEntityBehaviour
         if (Vector2.Distance(transform.parent.position, nextWaypoint.position) > 0.1f)
         {
             transform.parent.position = Vector2.MoveTowards(transform.parent.position, nextWaypoint.position, stats.movSpeed * Time.deltaTime);
+            //Rotation and Moving Anim
+            //anim.SetBool("IsMoving", true);
+            if (transform.position.x > nextWaypoint.transform.position.x)
+            {
+                transform.rotation = Quaternion.identity;
+            }
+            else if (transform.position.x < nextWaypoint.transform.position.x)
+            {
+                transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+            }
         }
         else
         {

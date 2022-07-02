@@ -11,7 +11,7 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] private AudioMixer mixer;
     [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private GameObject settingMenu;
+    [SerializeField] private GameObject almanacMenu;
     [SerializeField] private GameObject dialogPopUp;
 
     private Stack<GameObject> MenuStack = new Stack<GameObject>();
@@ -105,5 +105,10 @@ public class MenuManager : MonoBehaviour
     public void OpenDialogPopUp()
     {
         OpenMenu(dialogPopUp);
+    }
+
+    public void OpenAlmanac()
+    {
+        OpenMenu(almanacMenu);
     }
 }

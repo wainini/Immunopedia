@@ -34,4 +34,9 @@ public class MainMenu : MonoBehaviour
     {
         menuManager.OpenMenu(levelSelector);
     }
+
+    public void Almanac()
+    {
+        menuManager.OpenAlmanac();
+    }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Macrophage : MonoBehaviour, IEntityBehaviour
 {
+    [SerializeField] private Animator anim;
     [SerializeField] private SpriteRenderer healthFill;
     [SerializeField] private SpriteRenderer healthBar;
     [SerializeField] private CircleCollider2D radius;
@@ -38,15 +39,25 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
                 Taunt();
             }
             //if(!anim.SetBool("IsAttacking"))
-                transform.parent.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
+            transform.parent.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
+            //Rotation and Moving Anim
+            anim.SetBool("IsMoving", true);
+            if (transform.position.x > target.transform.position.x)
+            {
+                transform.rotation = Quaternion.identity;
+            }
+            else if (transform.position.x < target.transform.position.x)
+            {
+                transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+            }
             if (Vector2.Distance(transform.position, target.transform.position) < 0.5)
             {
+                anim.SetBool("IsMoving", false);
                 transform.parent.position = this.transform.position;
                 if (IsReadyToAttack())
                 {
                     isAttacking = true;
-                    Attack();
-                    RestoreInterval();
+                    anim.SetBool("IsAttacking", true);
                 }
             }
         }
@@ -156,10 +167,17 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
         target = tempTarget;
     }
 
-    public void Attack()
+    public void Attack() //Called using animation event
     {
+        if (target == null) return;
         target.GetComponent<EntityStats>().TakeDamage(stats.atk, gameObject);
         AudioManager.instance.PlaySound("MacrophageHit", SoundOutput.sfx);
+    }
+
+    public void FinishAttackAnim() //Called using animation event
+    {
+        anim.SetBool("IsAttacking", false);
+        RestoreInterval();
     }
 
     public bool IsDead()

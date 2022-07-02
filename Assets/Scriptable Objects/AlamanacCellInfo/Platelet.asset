@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellName: Platelet
   cellButtonImage: {fileID: 21300000, guid: 2e46df48dcbbc3a46a409c7f74339e51, type: 3}
-  cellInfoImage: {fileID: 21300000, guid: 2e46df48dcbbc3a46a409c7f74339e51, type: 3}
-  cellDesc: Platelet
+  cellDesc: Platelet, atau yang lebih dikenal sebagai keping darah / trombosit, adalah
+    sel darah yang bertugas untuk menutup luka dan melakukan proses pembekuan darah.
   cellPrefab: {fileID: 4673210084086762389, guid: 445018c387074e744a955d8582bd5e97, type: 3}
+  isEnemy: 0
