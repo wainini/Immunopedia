@@ -2,29 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class BGMManager : MonoBehaviour
 {
-    AudioSource audioSrc;
-    public AudioMixerGroup bgm, sfx;
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnEnable()
     {
-        audioSrc = GetComponent<AudioSource>();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(SceneManager.GetActiveScene().buildIndex == 0)
         {
-            audioSrc.outputAudioMixerGroup = bgm;
-            audioSrc.PlayOneShot(audioSrc.clip);
+            AudioManager.instance.PlaySound("MainMenuBGM", SoundOutput.bgm);
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        else
         {
-            audioSrc.outputAudioMixerGroup = sfx;
-            audioSrc.PlayOneShot(audioSrc.clip);
+            AudioManager.instance.PlaySound("GameplayBGM", SoundOutput.bgm);
         }
     }
 }

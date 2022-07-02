@@ -84,11 +84,13 @@ public class MenuManager : MonoBehaviour
     {
         menu.SetActive(true);
         MenuStack.Push(menu);
+        AudioManager.instance.PlaySound("ButtonClick", SoundOutput.sfx);
     }
 
     public void CloseMenu()
     {
         MenuStack.Pop().SetActive(false);
+        AudioManager.instance.PlaySound("ButtonClick", SoundOutput.sfx);
     }
 
     public void CloseAllMenu()

@@ -45,7 +45,6 @@ public class PauseMenu : MonoBehaviour
         dialogPopUp.RemoveListener();
         if(yes) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         else menuManager.CloseMenu();
-
     }
 
     private void MainMenu(bool yes)
@@ -53,7 +52,6 @@ public class PauseMenu : MonoBehaviour
         dialogPopUp.RemoveListener();
         if(yes) SceneManager.LoadScene(0);
         else menuManager.CloseMenu();
-
     }
     public void Settings()
     {
