@@ -34,7 +34,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
         if (target != null)
         {
             if (!isAttacking) CheckPriority();
-            if(!anim.GetBool("IsAttacking"))
+            if(!anim.GetBool("IsAttacking") && anim.GetBool("IsMoving"))
                 transform.parent.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
 
             //Rotation and Moving Anim
@@ -48,7 +48,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
                 transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
             }
 
-            if (Vector2.Distance(transform.position, target.transform.position) < 0.5)
+            if (Vector2.Distance(transform.position, target.transform.position) < 1f)
             {
                 anim.SetBool("IsMoving", false);
                 transform.parent.position = this.transform.position;

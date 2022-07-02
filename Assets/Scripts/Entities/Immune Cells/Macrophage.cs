@@ -38,8 +38,8 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
                 CheckPriority();
                 Taunt();
             }
-            //if(!anim.SetBool("IsAttacking"))
-            transform.parent.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
+            if (!anim.GetBool("IsAttacking") && anim.GetBool("IsMoving"))
+                transform.parent.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
             //Rotation and Moving Anim
             anim.SetBool("IsMoving", true);
             if (transform.position.x > target.transform.position.x)
@@ -50,7 +50,7 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
             {
                 transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
             }
-            if (Vector2.Distance(transform.position, target.transform.position) < 0.5)
+            if (Vector2.Distance(transform.position, target.transform.position) < 1f)
             {
                 anim.SetBool("IsMoving", false);
                 transform.parent.position = this.transform.position;

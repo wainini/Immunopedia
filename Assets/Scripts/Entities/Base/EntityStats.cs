@@ -62,7 +62,7 @@ public class EntityStats : MonoBehaviour
             currentHealth -= (damage - defense);
             UpdateHealthUI(currentHealth);
         }
-        localTarget = target;
+        if(!localTarget) localTarget = target;
     }
 
     public void SetHealthUI(SpriteRenderer bar, SpriteRenderer fill)
