@@ -44,7 +44,7 @@ public class Bacteria : MonoBehaviour, IEntityBehaviour
         }
         else
         {
-            if (Vector2.Distance(transform.position, nextWaypoint.position) > 0.1f)
+            if (Vector2.Distance(transform.position, nextWaypoint.position) > 0.1f && !anim.GetBool("IsAttacking"))
             {
                 transform.parent.position = Vector2.MoveTowards(transform.position, nextWaypoint.position, stats.movSpeed * Time.deltaTime);
                 //Rotation and Moving Anim

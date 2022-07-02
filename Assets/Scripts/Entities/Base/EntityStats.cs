@@ -18,6 +18,7 @@ public class EntityStats : MonoBehaviour
 
     private SpriteRenderer healthBar;
     private SpriteRenderer healthFill;
+    private List<SpriteRenderer> sprites;
     private void Awake()
     {
         currentHealth = baseStat.maxHealth;
@@ -27,6 +28,12 @@ public class EntityStats : MonoBehaviour
         movSpeed = baseStat.movSpeed;
         blockCount = baseStat.blockCount;
         localTarget = null;
+        sprites = new List<SpriteRenderer>();
+        foreach (Transform sprite in gameObject.transform)
+        {
+            if(sprite.gameObject.GetComponent<SpriteRenderer>() != null)
+                sprites.Add(sprite.GetComponent<SpriteRenderer>());
+        }
     }
 
     public void RestoreStats()
@@ -49,6 +56,7 @@ public class EntityStats : MonoBehaviour
 
     public void TakeDamage(int damage, GameObject target)
     {
+        StartCoroutine(ColorChange());
         if (damage > defense)
         {
             currentHealth -= (damage - defense);
@@ -67,5 +75,20 @@ public class EntityStats : MonoBehaviour
     public void UpdateHealthUI(int currentHealth)
     {
         healthFill.size = new Vector2(((float)currentHealth / (float)baseStat.maxHealth) * healthBar.size.x, healthFill.size.y);
+    }
+
+    IEnumerator ColorChange()
+    {
+        foreach (SpriteRenderer sprite in sprites)
+        {
+            sprite.color = Color.red;
+        }
+
+        yield return new WaitForSeconds(0.3f);
+        
+        foreach (SpriteRenderer sprite in sprites)
+        {
+            sprite.color = Color.white;
+        }
     }
 }
