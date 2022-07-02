@@ -72,5 +72,6 @@ public class Almanac : MonoBehaviour
         cellAnimationPos = cellAnimation.transform;
         //cellInfoPanel.GetComponentsInChildren<Image>()[1].sprite = cellInfo.cellInfoImage;
         cellInfoPanel.GetComponentInChildren<TextMeshProUGUI>().text = cellInfo.cellDesc;
+        cellInfoPanel.GetComponentInChildren<ScrollRect>().verticalNormalizedPosition = 1;
     }
 }

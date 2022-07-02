@@ -12,7 +12,7 @@ public class Settings : MonoBehaviour
     private void Awake()
     {
         menuManager = MenuManager.instance;
-        master.value = PlayerPrefs.GetFloat("MasterVol", 1);
+        //master.value = PlayerPrefs.GetFloat("MasterVol", 1);
         bgm.value = PlayerPrefs.GetFloat("BGMVol", 1);
         sfx.value = PlayerPrefs.GetFloat("SFXVol", 1);
     }

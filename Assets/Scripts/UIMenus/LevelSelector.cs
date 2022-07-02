@@ -65,4 +65,9 @@ public class LevelSelector : MonoBehaviour
         button.uiRT.GetComponentInChildren<Button>().onClick.AddListener(
             () => SceneManager.LoadScene(button.name));
     }
+
+    public void ExitLevelSelector()
+    {
+        MenuManager.instance.CloseMenu();
+    }
 }
