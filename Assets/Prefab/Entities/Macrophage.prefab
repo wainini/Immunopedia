@@ -340,6 +340,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6830243124379481874, guid: c18b57ff34fc6d14b93a5b5c95553247, type: 3}
   m_PrefabInstance: {fileID: 5743568510190156456}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &3538882504076047587 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9127076542815194699, guid: c18b57ff34fc6d14b93a5b5c95553247, type: 3}
+  m_PrefabInstance: {fileID: 5743568510190156456}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &7659035889711166093
 Rigidbody2D:
   serializedVersion: 4
@@ -389,6 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 869b1b5c11ecac74dbfd9a42213e1a8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 3538882504076047587}
   healthFill: {fileID: 182701394012287000}
   healthBar: {fileID: 7948774283240653021}
   radius: {fileID: 8912914951415963655}
