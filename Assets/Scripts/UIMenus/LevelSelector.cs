@@ -20,7 +20,7 @@ public class LevelSelector : MonoBehaviour
     [SerializeField] private List<LevelButtons> levelButtons = new List<LevelButtons>();
     private void Awake()
     {
-        //PlayerPrefs.SetInt("Level 1", 3);
+        //PlayerPrefs.SetInt("Level 1", 1);
         //PlayerPrefs.SetInt("Level 2", 1);
         //PlayerPrefs.SetInt("Level 3", 0);
         //PlayerPrefs.SetInt("Level 4", 0);
@@ -47,7 +47,7 @@ public class LevelSelector : MonoBehaviour
                 }
                 unlockNext = true;
             }
-            else if(unlockNext)
+            else if(unlockNext || button.name == "Level 1")
             {
                 button.uiRT.gameObject.SetActive(true);
                 AddListenerToButton(button);

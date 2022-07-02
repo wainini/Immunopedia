@@ -14,11 +14,16 @@ public class CreateTroopButtons : MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.SetInt("Neutrofil", 1);
-        PlayerPrefs.SetInt("Platelet", 1);
+        if (SceneManager.GetActiveScene().name == "Level 1")
+        {
+            PlayerPrefs.SetInt("Neutrofil", 1);
+            PlayerPrefs.SetInt("Platelet", 1);
+            PlayerPrefs.SetInt("Bacteria", 1);
+        }
         if (SceneManager.GetActiveScene().name == "Level 5")
         {
             PlayerPrefs.SetInt("Eosinophil", 1);
+            PlayerPrefs.SetInt("Parasite", 1);
         }
         if (SceneManager.GetActiveScene().name == "Level 9")
         {
