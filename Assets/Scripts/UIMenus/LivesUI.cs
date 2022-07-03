@@ -8,15 +8,14 @@ public class LivesUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private GameManager gameManager;
 
-    private void Start()
+    private void OnEnable()
     {
-        gameManager = GameManager.instance;
-        gameManager.OnReduceLive += ChangeLiveText;
+        GameManager.instance.OnReduceLive += ChangeLiveText;
     }
 
     private void OnDisable()
     {
-        gameManager.OnReduceLive -= ChangeLiveText;
+        GameManager.instance.OnReduceLive -= ChangeLiveText;
     }
 
     private void ChangeLiveText(int currLives)

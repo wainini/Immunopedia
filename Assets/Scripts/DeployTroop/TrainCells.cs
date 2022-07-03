@@ -126,7 +126,7 @@ public class TrainCells : MonoBehaviour
         int index = cellsInTrainingList.FindIndex((x) => x.cellUI == thisUI);
         if(cellsInTrainingList[index].currentTime > 0)
         {
-            buildingManager.resource += cellsInTrainingList[index].cellData.cost;
+            buildingManager.resource += cellsInTrainingList[index].cellData.cost * cellsInTrainingList[index].amount;
         }
         cellsInTrainingList.RemoveAt(index);
         Destroy(thisUI);
