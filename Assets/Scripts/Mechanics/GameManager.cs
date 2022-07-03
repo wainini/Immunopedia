@@ -13,8 +13,10 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public Queue<GameObject> wounds;
 
     private int currentLives;
-    private int score;
+    public int score;
     private int totalScores;
+
+    private bool won = false;
     private void Awake()
     {
         if(instance == null)
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (won) return;
         CheckWinCondition();
     }
 
@@ -75,13 +78,12 @@ public class GameManager : MonoBehaviour
         Debug.Log("You Died");
         Time.timeScale = 0;
         score = 0;
+        MenuManager.instance.OpenLoseMenu();
     }
 
     private void Win()
     {
-        //win
-
-
+        won = true;
         Debug.Log("You Won");
         Time.timeScale = 0;
         if(currentLives == maxLives)
@@ -94,6 +96,10 @@ public class GameManager : MonoBehaviour
         {
             score = 1;
         }
+        //this playthrough score
+        MenuManager.instance.OpenWinMenu();
+
+        //this playthrough score vs playthrough sebelumnya
         score = GetComponent<ScoreManager>().GetScore(score);
         totalScores += score;
         PlayerPrefs.SetInt("Total Stars", totalScores);

@@ -54,7 +54,7 @@ public class AudioManager : MonoBehaviour
         {
             SoundClip s = sfxClips.Find((sound) => sound.name == name);
             SetSourceValues(s, sfxSource);
-            bgmSource.pitch = pitch;
+            sfxSource.pitch = pitch;
             sfxSource.PlayOneShot(s.Clip);
         }
     }

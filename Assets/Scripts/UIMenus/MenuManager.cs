@@ -12,6 +12,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private AudioMixer mixer;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject almanacMenu;
+    [SerializeField] private GameObject winMenu;
+    [SerializeField] private GameObject loseMenu;
     [SerializeField] private GameObject dialogPopUp;
 
     private Stack<GameObject> MenuStack = new Stack<GameObject>();
@@ -84,13 +86,13 @@ public class MenuManager : MonoBehaviour
     {
         menu.SetActive(true);
         MenuStack.Push(menu);
-        AudioManager.instance.PlaySound("ButtonClick", SoundOutput.sfx);
+        //AudioManager.instance.PlaySound("ButtonClick", SoundOutput.sfx, new Vector2(0.8f, 1.2f));
     }
 
     public void CloseMenu()
     {
         MenuStack.Pop().SetActive(false);
-        AudioManager.instance.PlaySound("ButtonClick", SoundOutput.sfx);
+        AudioManager.instance.PlaySound("ButtonClick", SoundOutput.sfx, new Vector2(0.8f, 1.2f));
     }
 
     public void CloseAllMenu()
@@ -112,5 +114,20 @@ public class MenuManager : MonoBehaviour
     public void OpenAlmanac()
     {
         OpenMenu(almanacMenu);
+    }
+
+    public void OpenWinMenu()
+    {
+        OpenMenu(winMenu);
+    }
+
+    public void OpenLoseMenu()
+    {
+        OpenMenu(loseMenu);
+    }
+
+    public void OnButtonHoverSound()
+    {
+        AudioManager.instance.PlaySound("ButtonHover", SoundOutput.sfx, new Vector2(0.5f, 1.5f));
     }
 }

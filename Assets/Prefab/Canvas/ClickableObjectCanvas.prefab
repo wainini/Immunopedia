@@ -119,7 +119,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d69f92dcfea5f844394191d3a6ca9657, type: 2}
   - {fileID: 11400000, guid: 8afb985d45e9d9042a7380dba00a9872, type: 2}
   - {fileID: 11400000, guid: b6352ed580704ee4d96ccdafc5b5c57a, type: 2}
-  resource: 9999
+  resource: 0
   resourceText: {fileID: 0}
   buildingSpotPopUp: {fileID: 0}
   boneMarrowPopUp: {fileID: 0}
