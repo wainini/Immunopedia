@@ -128,7 +128,7 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
             Debug.Log("there are more than 1 enemies detected");
             foreach (GameObject enemy in enemies)
             {
-                if(enemy.GetComponent<Bacteria>() != null && !blockedEnemies.Contains(enemy) && !enemy.GetComponent<EntityStats>().localTarget)
+                if(enemy.GetComponent<Bacteria>() != null && !blockedEnemies.Contains(enemy) || !enemy.GetComponent<EntityStats>().localTarget)
                 {
                     blockedEnemies.Add(enemy);
                 }
@@ -139,7 +139,7 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
         {
             foreach (GameObject enemy in enemies)
             {
-                if (!blockedEnemies.Contains(enemy) && !enemy.GetComponent<EntityStats>().localTarget) blockedEnemies.Add(enemy);
+                if (!blockedEnemies.Contains(enemy) || !enemy.GetComponent<EntityStats>().localTarget) blockedEnemies.Add(enemy);
 
             }
         }
@@ -162,7 +162,6 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
                 minDistance = Vector2.Distance(enemy.transform.position, gameObject.transform.position);
                 tempTarget = enemy;
             }
-            print("distance: " + minDistance + "\nenemy pos: " + enemy.name);
         }
         target = tempTarget;
     }
