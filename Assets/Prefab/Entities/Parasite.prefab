@@ -476,6 +476,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: parasite
       objectReference: {fileID: 0}
+    - target: {fileID: 3120044847545093393, guid: 869b0309c4a686b4e9c4bde415969136, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3547141604473398232, guid: 869b0309c4a686b4e9c4bde415969136, type: 3}
       propertyPath: m_Bounds.m_Center.y
       value: -0.00065524876

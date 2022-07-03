@@ -6,13 +6,24 @@ public class Platelet : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     [SerializeField] private float speed = 3f;
+    private List<GameObject> wounds = GameManager.instance.wounds;
     
     private Transform woundPosition;
+    private float closestDistance;
     private bool isClosingWound = false;
 
     private void Update()
     {
-        woundPosition = GameManager.instance.wounds.Peek().transform;
+        closestDistance = float.PositiveInfinity;
+        foreach(GameObject wound in wounds)
+        {
+            float tempDistance = Vector2.Distance(this.transform.position, wound.transform.position);
+            if (tempDistance < closestDistance)
+            {
+                closestDistance = tempDistance;
+                woundPosition = wound.transform;
+            }
+        }
         if (!isClosingWound)
         {
             anim.SetBool("IsMoving", true);

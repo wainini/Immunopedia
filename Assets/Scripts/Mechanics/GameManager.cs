@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public event Action<int> OnReduceLive;
 
     [SerializeField] private int maxLives;
-    [HideInInspector] public Queue<GameObject> wounds;
+    [HideInInspector] public List<GameObject> wounds;
 
     private int currentLives;
     private int score;
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         var woundArr = GameObject.FindGameObjectsWithTag("Wound");
-        wounds = new Queue<GameObject>(woundArr);
+        wounds = new List<GameObject>(woundArr);
         currentLives = maxLives;
         OnReduceLive?.Invoke(currentLives);
     }
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
 
     public void CloseWound(GameObject wound)
     {
-        wounds.Dequeue();
+        wounds.Remove(wound);
     }
 
     private void CheckWinCondition()
