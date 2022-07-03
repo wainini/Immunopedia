@@ -16,8 +16,8 @@ public class EntityStats : MonoBehaviour
     [Header("Fill in this if it is enemy")]
     public int hpSealReduction;
 
-    private SpriteRenderer healthBar;
-    private SpriteRenderer healthFill;
+    private RectTransform healthBar;
+    private RectTransform healthFill;
     private List<SpriteRenderer> sprites;
     private void Awake()
     {
@@ -56,25 +56,28 @@ public class EntityStats : MonoBehaviour
 
     public void TakeDamage(int damage, GameObject target)
     {
-        StartCoroutine(ColorChange());
-        if (damage > defense)
+        if(damage != 0)
         {
-            currentHealth -= (damage - defense);
-            UpdateHealthUI(currentHealth);
+            StartCoroutine(ColorChange());
+            if (damage > defense)
+            {
+                currentHealth -= (damage - defense);
+                UpdateHealthUI(currentHealth);
+            }
         }
-        localTarget = target;
+        if(!localTarget) localTarget = target;
     }
 
-    public void SetHealthUI(SpriteRenderer bar, SpriteRenderer fill)
+    public void SetHealthUI(RectTransform bar, RectTransform fill)
     {
         healthBar = bar;
         healthFill = fill;
-        healthFill.size = healthBar.size;
+        healthFill.sizeDelta = healthBar.sizeDelta;
     }
 
     public void UpdateHealthUI(int currentHealth)
     {
-        healthFill.size = new Vector2(((float)currentHealth / (float)baseStat.maxHealth) * healthBar.size.x, healthFill.size.y);
+        healthFill.sizeDelta = new Vector2(((float)currentHealth / (float)baseStat.maxHealth) * healthBar.sizeDelta.x, healthFill.sizeDelta.y);
     }
 
     IEnumerator ColorChange()

@@ -6,8 +6,8 @@ using UnityEngine;
 public class Macrophage : MonoBehaviour, IEntityBehaviour
 {
     [SerializeField] private Animator anim;
-    [SerializeField] private SpriteRenderer healthFill;
-    [SerializeField] private SpriteRenderer healthBar;
+    [SerializeField] private RectTransform healthFill;
+    [SerializeField] private RectTransform healthBar;
     [SerializeField] private CircleCollider2D radius;
     private EntityStats stats;
 
@@ -38,8 +38,8 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
                 CheckPriority();
                 Taunt();
             }
-            //if(!anim.SetBool("IsAttacking"))
-            transform.parent.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
+            if (!anim.GetBool("IsAttacking") && anim.GetBool("IsMoving"))
+                transform.parent.position = Vector2.MoveTowards(transform.position, target.transform.position, stats.movSpeed * Time.deltaTime);
             //Rotation and Moving Anim
             anim.SetBool("IsMoving", true);
             if (transform.position.x > target.transform.position.x)
@@ -50,7 +50,7 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
             {
                 transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
             }
-            if (Vector2.Distance(transform.position, target.transform.position) < 0.5)
+            if (Vector2.Distance(transform.position, target.transform.position) < 1f)
             {
                 anim.SetBool("IsMoving", false);
                 transform.parent.position = this.transform.position;
@@ -128,7 +128,7 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
             Debug.Log("there are more than 1 enemies detected");
             foreach (GameObject enemy in enemies)
             {
-                if(enemy.GetComponent<Bacteria>() != null && !blockedEnemies.Contains(enemy))
+                if(enemy.GetComponent<Bacteria>() != null && !blockedEnemies.Contains(enemy) || !enemy.GetComponent<EntityStats>().localTarget)
                 {
                     blockedEnemies.Add(enemy);
                 }
@@ -139,7 +139,7 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
         {
             foreach (GameObject enemy in enemies)
             {
-                if (!blockedEnemies.Contains(enemy)) blockedEnemies.Add(enemy);
+                if (!blockedEnemies.Contains(enemy) || !enemy.GetComponent<EntityStats>().localTarget) blockedEnemies.Add(enemy);
 
             }
         }
@@ -162,7 +162,6 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
                 minDistance = Vector2.Distance(enemy.transform.position, gameObject.transform.position);
                 tempTarget = enemy;
             }
-            print("distance: " + minDistance + "\nenemy pos: " + enemy.name);
         }
         target = tempTarget;
     }
