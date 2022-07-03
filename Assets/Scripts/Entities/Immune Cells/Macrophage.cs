@@ -128,7 +128,7 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
             Debug.Log("there are more than 1 enemies detected");
             foreach (GameObject enemy in enemies)
             {
-                if(enemy.GetComponent<Bacteria>() != null && !blockedEnemies.Contains(enemy))
+                if(enemy.GetComponent<Bacteria>() != null && !blockedEnemies.Contains(enemy) && !enemy.GetComponent<EntityStats>().localTarget)
                 {
                     blockedEnemies.Add(enemy);
                 }
@@ -139,7 +139,7 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
         {
             foreach (GameObject enemy in enemies)
             {
-                if (!blockedEnemies.Contains(enemy)) blockedEnemies.Add(enemy);
+                if (!blockedEnemies.Contains(enemy) && !enemy.GetComponent<EntityStats>().localTarget) blockedEnemies.Add(enemy);
 
             }
         }

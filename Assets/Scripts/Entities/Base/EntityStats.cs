@@ -56,11 +56,14 @@ public class EntityStats : MonoBehaviour
 
     public void TakeDamage(int damage, GameObject target)
     {
-        StartCoroutine(ColorChange());
-        if (damage > defense)
+        if(damage != 0)
         {
-            currentHealth -= (damage - defense);
-            UpdateHealthUI(currentHealth);
+            StartCoroutine(ColorChange());
+            if (damage > defense)
+            {
+                currentHealth -= (damage - defense);
+                UpdateHealthUI(currentHealth);
+            }
         }
         if(!localTarget) localTarget = target;
     }
