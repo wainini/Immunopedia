@@ -62,12 +62,13 @@ public class TrainCells : MonoBehaviour
     {
         if(buildingManager.resource < cellData.cost)
         {
-            Debug.Log("You don't have enough resources");
+            AudioManager.instance.PlaySound("TrainFail", SoundOutput.sfx);
             return;
         }
         else
         {
             buildingManager.resource -= cellData.cost;
+            AudioManager.instance.PlaySound("TrainCell", SoundOutput.sfx);
         }
         int listLength = cellsInTrainingList.Count;
         CellUIData sameCell = null;
@@ -126,7 +127,7 @@ public class TrainCells : MonoBehaviour
         int index = cellsInTrainingList.FindIndex((x) => x.cellUI == thisUI);
         if(cellsInTrainingList[index].currentTime > 0)
         {
-            buildingManager.resource += cellsInTrainingList[index].cellData.cost;
+            buildingManager.resource += cellsInTrainingList[index].cellData.cost * cellsInTrainingList[index].amount;
         }
         cellsInTrainingList.RemoveAt(index);
         Destroy(thisUI);
