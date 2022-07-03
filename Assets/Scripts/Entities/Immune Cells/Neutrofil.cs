@@ -6,8 +6,8 @@ using UnityEngine;
 public class Neutrofil : MonoBehaviour, IEntityBehaviour
 {
     [SerializeField] private Animator anim;
-    [SerializeField] private SpriteRenderer healthFill;
-    [SerializeField] private SpriteRenderer healthBar;
+    [SerializeField] private RectTransform healthFill;
+    [SerializeField] private RectTransform healthBar;
     [SerializeField] private CircleCollider2D radius;
     private EntityStats stats;
 

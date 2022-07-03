@@ -5,8 +5,8 @@ using UnityEngine;
 public class Bacteria : MonoBehaviour, IEntityBehaviour
 {
     [SerializeField] private Animator anim;
-    [SerializeField] private SpriteRenderer healthFill;
-    [SerializeField] private SpriteRenderer healthBar;
+    [SerializeField] private RectTransform healthFill;
+    [SerializeField] private RectTransform healthBar;
 
     private EntityStats stats;
     private Transform nextWaypoint;

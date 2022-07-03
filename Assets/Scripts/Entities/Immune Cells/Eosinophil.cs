@@ -6,8 +6,8 @@ using UnityEngine;
 public class Eosinophil : MonoBehaviour, IEntityBehaviour
 {
     [SerializeField] private Animator anim;
-    [SerializeField] private SpriteRenderer healthFill;
-    [SerializeField] private SpriteRenderer healthBar;
+    [SerializeField] private RectTransform healthFill;
+    [SerializeField] private RectTransform healthBar;
     [SerializeField] private CircleCollider2D radius;
     public ImmuneCell cellData;
     [Header("Fill in value in decimals")]

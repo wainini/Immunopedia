@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Parasite : MonoBehaviour, IEntityBehaviour
 {
-    [SerializeField] private SpriteRenderer healthFill;
-    [SerializeField] private SpriteRenderer healthBar;
+    [SerializeField] private RectTransform healthFill;
+    [SerializeField] private RectTransform healthBar;
 
     private EntityStats stats;
     private Transform nextWaypoint;
