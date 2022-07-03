@@ -72,6 +72,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plateletNeeded: 3
   intervalBetweenSpawn: 5
-  initialDelay: 0
+  initialDelay: 5
   enemies:
   - {fileID: 4211011440442647866, guid: c4376718bedf3c646988e837a976db81, type: 3}
