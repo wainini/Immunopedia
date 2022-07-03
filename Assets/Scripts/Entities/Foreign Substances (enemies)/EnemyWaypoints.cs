@@ -6,6 +6,7 @@ public class EnemyWaypoints : MonoBehaviour
 {
     private Transform waypointParent;
     private Queue<Transform> waypoints = new Queue<Transform>();
+    public List<Transform> waypointsss;
 
     public void SetWaypointParent(Transform parent)
     {
@@ -20,6 +21,7 @@ public class EnemyWaypoints : MonoBehaviour
         {
             waypoints.Enqueue(waypoint);
         }
+        waypointsss = new List<Transform>(waypoints);
     }
 
     public Queue<Transform> GetWaypoints()

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Wound : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer woundSr;
+    [SerializeField] private List<Sprite> woundSprites;
     [SerializeField] private int plateletNeeded;
 
     public float intervalBetweenSpawn;
@@ -28,12 +30,14 @@ public class Wound : MonoBehaviour
         var waypoints = GetComponentInChildren<Transform>();
         foreach (Transform waypoint in waypoints)
         {
-            initialWaypoints.Add(waypoint);
+            if(waypoint.GetComponent<SpriteRenderer>() == null)
+                initialWaypoints.Add(waypoint);
         }
         currentPlateletCount = 0;
         isWoundClosed = false;
         tutorialCanvas = GameObject.FindGameObjectWithTag("Tutorial");
         if (tutorialCanvas != null) isTutorialActive = true;
+        else StartCoroutine(Spawn());
     }
 
     private void Update()
@@ -88,6 +92,7 @@ public class Wound : MonoBehaviour
     public void AddPlatelet()
     {
         currentPlateletCount++;
+        woundSr.sprite = woundSprites[currentPlateletCount - 1];
         if (currentPlateletCount == plateletNeeded)
         {
             isWoundClosed = true;

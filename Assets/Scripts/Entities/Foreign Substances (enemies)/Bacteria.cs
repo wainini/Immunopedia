@@ -19,11 +19,20 @@ public class Bacteria : MonoBehaviour, IEntityBehaviour
         stats = GetComponent<EntityStats>();
         stats.SetHealthUI(healthBar, healthFill);
         waypoints = GetComponent<EnemyWaypoints>().GetWaypoints();
-        nextWaypoint = waypoints.Dequeue();
+        Debug.Log(waypoints);
         currentAtkInterval = 0;
     }
     void Update()
     {
+        if (waypoints == null && nextWaypoint == null)
+        {
+            waypoints = GetComponent<EnemyWaypoints>().GetWaypoints();
+            return;
+        }
+        else if(nextWaypoint == null)
+        {
+            nextWaypoint = waypoints.Dequeue();
+        }
         WaitForInterval();
         if (stats.localTarget != null)
         {

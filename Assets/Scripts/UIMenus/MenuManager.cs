@@ -43,7 +43,6 @@ public class MenuManager : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("A");
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -51,7 +50,6 @@ public class MenuManager : MonoBehaviour
     {
         if(instance == this)
         {
-            Debug.Log("b");
             SceneManager.sceneLoaded -= OnSceneLoaded;
         }
     }

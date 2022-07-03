@@ -29,6 +29,10 @@ public class Platelet : MonoBehaviour
                 woundPosition = wound.transform;
             }
         }
+        if(woundPosition == null)
+        {
+            return;
+        }
         if (!isClosingWound)
         {
             anim.SetBool("IsMoving", true);

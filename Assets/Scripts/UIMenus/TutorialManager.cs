@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
-    private Queue<Image> tutorialQueue;
+    private Queue<Image> tutorialQueue = new Queue<Image>();
     private Image currentTutorial;
     void Start()
     {
@@ -13,10 +13,16 @@ public class TutorialManager : MonoBehaviour
         {
             StopTutorial();
         }
-        tutorialQueue = new Queue<Image>(GetComponentsInChildren<Image>());
-        foreach(Image tutorial in tutorialQueue)
+
+        var childs = GetComponentsInChildren<Image>();
+       
+        foreach(Image child in childs)
         {
-            tutorial.gameObject.SetActive(false);
+            if (child.CompareTag("Tutorial"))
+            {
+                tutorialQueue.Enqueue(child);
+                child.gameObject.SetActive(false);
+            }
         }
         if (tutorialQueue.Count != 0)
         {
