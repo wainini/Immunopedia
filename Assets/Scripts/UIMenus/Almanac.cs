@@ -16,8 +16,7 @@ public class Almanac : MonoBehaviour
     [SerializeField] private List<AlmanacCellInfo> almanacCellInfos;
     [SerializeField] private List<AlmanacCellInfo> almanacEnemyInfos;
     [SerializeField] private Transform cellAnimationPos;
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         //PlayerPrefs.SetInt("Neutrofil", 1);
         //PlayerPrefs.SetInt("Platelet", 1);
@@ -25,6 +24,11 @@ public class Almanac : MonoBehaviour
         //PlayerPrefs.SetInt("Eosinophil", 0);
         //PlayerPrefs.SetInt("Parasite", 0);
         //PlayerPrefs.SetInt("Macrophage", 0);
+        foreach(Transform child in buttonLayout.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
         foreach (AlmanacCellInfo cellInfo in almanacCellInfos)
         {
             if (PlayerPrefs.GetInt(cellInfo.cellName, 0) == 1)

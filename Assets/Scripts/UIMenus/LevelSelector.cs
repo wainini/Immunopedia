@@ -18,7 +18,7 @@ public class LevelSelector : MonoBehaviour
     }
 
     [SerializeField] private List<LevelButtons> levelButtons = new List<LevelButtons>();
-    private void Awake()
+    private void OnEnable()
     {
         //PlayerPrefs.SetInt("Level 1", 1);
         //PlayerPrefs.SetInt("Level 2", 1);

@@ -101,6 +101,7 @@ public class GameManager : MonoBehaviour
 
         //this playthrough score vs playthrough sebelumnya
         score = GetComponent<ScoreManager>().GetScore(score);
+        GetComponent<ScoreManager>().SetScore(score);
         totalScores += score;
         PlayerPrefs.SetInt("Total Stars", totalScores);
     }

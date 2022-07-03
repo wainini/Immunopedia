@@ -964,10 +964,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1846341268774510105, guid: 77ee33013d1234c4d9ba45d86556df43, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8535303744905483746, guid: 77ee33013d1234c4d9ba45d86556df43, type: 3}
     - target: {fileID: 4218829395931027844, guid: 77ee33013d1234c4d9ba45d86556df43, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1056,10 +1052,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIMenuCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7886664267227802232, guid: 77ee33013d1234c4d9ba45d86556df43, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8535303744905483746, guid: 77ee33013d1234c4d9ba45d86556df43, type: 3}
     - target: {fileID: 9039774281029869506, guid: 77ee33013d1234c4d9ba45d86556df43, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
