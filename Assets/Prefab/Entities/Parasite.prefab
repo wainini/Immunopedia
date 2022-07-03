@@ -254,7 +254,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -498787423
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8f3136ad4456a28419e33d2ac4699c1c, type: 3}
   m_Color: {r: 1, g: 0, b: 0.009220123, a: 1}
@@ -336,7 +336,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -498787423
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 8f3136ad4456a28419e33d2ac4699c1c, type: 3}
   m_Color: {r: 0, g: 1, b: 0.050736666, a: 1}
@@ -406,7 +406,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: -498787423
+  m_SortingLayerID: -252209951
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &2046528448909581316
@@ -458,7 +458,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 884477127960936917, guid: 869b0309c4a686b4e9c4bde415969136, type: 3}
       propertyPath: m_SortingLayer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 884477127960936917, guid: 869b0309c4a686b4e9c4bde415969136, type: 3}
       propertyPath: m_SortingLayerID
@@ -466,7 +466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2242496380339278897, guid: 869b0309c4a686b4e9c4bde415969136, type: 3}
       propertyPath: m_SortingLayer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2242496380339278897, guid: 869b0309c4a686b4e9c4bde415969136, type: 3}
       propertyPath: m_SortingLayerID
@@ -550,7 +550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8931631738012348216, guid: 869b0309c4a686b4e9c4bde415969136, type: 3}
       propertyPath: m_SortingLayer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8931631738012348216, guid: 869b0309c4a686b4e9c4bde415969136, type: 3}
       propertyPath: m_SortingLayerID
@@ -643,7 +643,7 @@ SortingGroup:
   m_GameObject: {fileID: 5848798139341484204}
   m_Enabled: 1
   m_SortingLayerID: -498787423
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
 --- !u!114 &981740385202558573
 MonoBehaviour:
