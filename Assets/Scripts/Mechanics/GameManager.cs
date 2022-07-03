@@ -100,9 +100,9 @@ public class GameManager : MonoBehaviour
         MenuManager.instance.OpenWinMenu();
 
         //this playthrough score vs playthrough sebelumnya
-        score = GetComponent<ScoreManager>().GetScore(score);
         GetComponent<ScoreManager>().SetScore(score);
-        totalScores += score;
+        int highScore = GetComponent<ScoreManager>().GetScore(score);
+        totalScores += highScore;
         PlayerPrefs.SetInt("Total Stars", totalScores);
     }
 }

@@ -15,7 +15,7 @@ public class Platelet : MonoBehaviour
 
     private void Start()
     {
-        wounds = GameManager.instance.wounds
+        wounds = GameManager.instance.wounds;
     }
     private void Update()
     {

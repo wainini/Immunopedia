@@ -18,6 +18,15 @@ public class WinMenu : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        Image[] stars = starsLayout.GetComponentsInChildren<Image>();
+        foreach (Image star in stars)
+        {
+            star.color = Color.black;
+        }
+    }
+
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
