@@ -109,6 +109,21 @@ MonoBehaviour:
     Volume: 1
     Pitch: 1
     loop: 0
+  - name: ClickBuilding
+    Clip: {fileID: 8300000, guid: 788006602f2fca144b389ab587843485, type: 3}
+    Volume: 1
+    Pitch: 1
+    loop: 0
+  - name: TrainCell
+    Clip: {fileID: 8300000, guid: 10b531014c2ef624b9ef6ba9d7a927b5, type: 3}
+    Volume: 1
+    Pitch: 1
+    loop: 0
+  - name: MinusCell
+    Clip: {fileID: 8300000, guid: 6213f050fb2a8fd46b9ecb69549e135e, type: 3}
+    Volume: 1
+    Pitch: 1
+    loop: 0
 --- !u!1 &6863437259192208105
 GameObject:
   m_ObjectHideFlags: 0

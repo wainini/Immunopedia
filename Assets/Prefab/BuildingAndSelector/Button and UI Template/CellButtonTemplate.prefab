@@ -221,6 +221,8 @@ GameObject:
   - component: {fileID: 7966455208095012655}
   - component: {fileID: 7966455208095012688}
   - component: {fileID: 7966455208095012689}
+  - component: {fileID: 8316250412159803494}
+  - component: {fileID: 3656482412645573857}
   m_Layer: 5
   m_Name: CellButtonTemplate
   m_TagString: Untagged
@@ -246,7 +248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -1.784}
+  m_AnchoredPosition: {x: 0, y: -1.7839966}
   m_SizeDelta: {x: 125, y: 148.6259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7966455208095012655
@@ -330,4 +332,40 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7966455208095012688}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3656482412645573857}
+        m_TargetAssemblyTypeName: TrainCellSound, Assembly-CSharp
+        m_MethodName: OnTrainCell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8316250412159803494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7966455208095012691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fbf7f6f437d054f923e7a32677140f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3656482412645573857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7966455208095012691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac2de44b7dda98045810fd458df7e5d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

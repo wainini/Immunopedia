@@ -221,6 +221,8 @@ GameObject:
   - component: {fileID: 4884295833007577658}
   - component: {fileID: 3292076478674849713}
   - component: {fileID: 2001677883230982915}
+  - component: {fileID: 1395229265186616959}
+  - component: {fileID: 6402012036078072400}
   m_Layer: 5
   m_Name: AlmanacButtonPrefab
   m_TagString: Untagged
@@ -331,3 +333,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1395229265186616959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6034260995938338469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fbf7f6f437d054f923e7a32677140f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6402012036078072400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6034260995938338469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad175f511680d145bf497fd846e6025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

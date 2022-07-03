@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4687929495443868061}
   - component: {fileID: 4687929495443868060}
   - component: {fileID: 4674066044714397967}
+  - component: {fileID: 4458128412764806915}
+  - component: {fileID: 8487735813248058031}
   m_Layer: 5
   m_Name: BuildingSpotClickable
   m_TagString: Untagged
@@ -131,6 +133,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e6ec016fb1d9ba489ec06972fd0b833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4458128412764806915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4687929495443868050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fbf7f6f437d054f923e7a32677140f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8487735813248058031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4687929495443868050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad175f511680d145bf497fd846e6025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5146612308962532476

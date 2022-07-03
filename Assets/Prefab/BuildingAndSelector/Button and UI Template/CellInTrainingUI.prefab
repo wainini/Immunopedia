@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1516548622}
   - component: {fileID: 1516548621}
   - component: {fileID: 1516548620}
+  - component: {fileID: 5031507169457109581}
+  - component: {fileID: 2053148649736909883}
   m_Layer: 5
   m_Name: Minus
   m_TagString: Untagged
@@ -120,7 +122,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1516548621}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2053148649736909883}
+        m_TargetAssemblyTypeName: TrainCellSound, Assembly-CSharp
+        m_MethodName: OnMinusCell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5031507169457109581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516548618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fbf7f6f437d054f923e7a32677140f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2053148649736909883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516548618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac2de44b7dda98045810fd458df7e5d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1907507895
 GameObject:
   m_ObjectHideFlags: 0

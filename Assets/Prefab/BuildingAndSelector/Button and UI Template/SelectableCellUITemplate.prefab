@@ -144,6 +144,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6432273337602874118}
   - component: {fileID: 6432273337602874117}
+  - component: {fileID: 7060115954593237227}
+  - component: {fileID: 2182922998311725415}
   m_Layer: 5
   m_Name: SelectableCellUITemplate
   m_TagString: Untagged
@@ -222,6 +224,30 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &7060115954593237227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6432273337602874119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fbf7f6f437d054f923e7a32677140f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2182922998311725415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6432273337602874119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad175f511680d145bf497fd846e6025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6432273337658684936
 GameObject:
   m_ObjectHideFlags: 0

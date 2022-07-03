@@ -38,7 +38,7 @@ public class MenuManager : MonoBehaviour
     }
     private void SetVolume(string group)
     {
-        mixer.SetFloat(group, Mathf.Log10(PlayerPrefs.GetFloat(group, 1) * 20));
+        mixer.SetFloat(group, Mathf.Log10(PlayerPrefs.GetFloat(group, 1)) * 20);
     }
 
     private void OnEnable()
@@ -92,7 +92,7 @@ public class MenuManager : MonoBehaviour
     public void CloseMenu()
     {
         MenuStack.Pop().SetActive(false);
-        AudioManager.instance.PlaySound("ButtonClick", SoundOutput.sfx, new Vector2(0.8f, 1.2f));
+        //AudioManager.instance.PlaySound("ButtonClick", SoundOutput.sfx, new Vector2(0.8f, 1.2f));
     }
 
     public void CloseAllMenu()

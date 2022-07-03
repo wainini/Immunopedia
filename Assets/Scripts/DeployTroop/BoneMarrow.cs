@@ -19,4 +19,9 @@ public class BoneMarrow : MonoBehaviour
         buildingManager.resource += Time.fixedDeltaTime;
     }
 
+    public void OnBoneMarrowClick()
+    {
+        AudioManager.instance.PlaySound("ClickBuilding", SoundOutput.sfx);
+    }
+
 }
