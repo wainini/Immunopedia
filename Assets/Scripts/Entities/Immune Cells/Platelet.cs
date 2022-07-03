@@ -6,12 +6,17 @@ public class Platelet : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     [SerializeField] private float speed = 3f;
-    private List<GameObject> wounds = GameManager.instance.wounds;
+    private List<GameObject> wounds;
     
     private Transform woundPosition;
     private float closestDistance;
     private bool isClosingWound = false;
 
+
+    private void Start()
+    {
+        wounds = GameManager.instance.wounds
+    }
     private void Update()
     {
         closestDistance = float.PositiveInfinity;
@@ -28,6 +33,14 @@ public class Platelet : MonoBehaviour
         {
             anim.SetBool("IsMoving", true);
             transform.position = Vector2.MoveTowards(transform.position, woundPosition.position, speed * Time.deltaTime);
+            if (transform.position.x > woundPosition.transform.position.x)
+            {
+                transform.rotation = Quaternion.identity;
+            }
+            else if (transform.position.x < woundPosition.transform.position.x)
+            {
+                transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+            }
         }
     }
 
