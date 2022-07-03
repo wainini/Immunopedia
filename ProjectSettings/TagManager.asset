@@ -12,6 +12,7 @@ TagManager:
   - BoneMarrowPopUp
   - LevelButton
   - StarsLayout
+  - Tutorial
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,6 @@ public class TutorialManager : MonoBehaviour
     private Image currentTutorial;
     void Start()
     {
-        PlayerPrefs.SetInt("WantTutorial", 1);
         if(PlayerPrefs.GetInt("WantTutorial", 1) == 0)
         {
             StopTutorial();

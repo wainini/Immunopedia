@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Platelet
   m_EditorClassIdentifier: 
   cellName: Platelet
-  cost: 3
-  trainTime: 1
+  cost: 10
+  trainTime: 2
   cellImage: {fileID: 21300000, guid: 2e46df48dcbbc3a46a409c7f74339e51, type: 3}
+  cellUnlockedImage: {fileID: 0}
   cellPrefab: {fileID: 1121576477427649719, guid: d966d414a47941044a4c440403baccdb, type: 3}

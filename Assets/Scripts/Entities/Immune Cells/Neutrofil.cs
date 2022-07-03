@@ -62,7 +62,6 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
         else
         {
             SetTarget();
-            isAttacking = false;
         }
         if (IsDead())
         {
@@ -121,6 +120,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
 
     public void SetTarget()
     {
+        if (isAttacking) return;
         GameObject tempTarget = null;
         float minDistance = float.PositiveInfinity;
         foreach (GameObject enemy in enemies)
@@ -145,6 +145,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     public void FinishAttackAnim() //Called using animation event
     {
         anim.SetBool("IsAttacking", false);
+        isAttacking = false;
         RestoreInterval();
     }
 

@@ -13,6 +13,9 @@ public class Wound : MonoBehaviour
     private int currentPlateletCount;
     private bool isWoundClosed;
     private List<Transform> initialWaypoints;
+    private GameObject tutorialCanvas;
+
+    bool isTutorialActive = false;
 
     private Wound()
     {
@@ -29,7 +32,17 @@ public class Wound : MonoBehaviour
         }
         currentPlateletCount = 0;
         isWoundClosed = false;
-        StartCoroutine(Spawn());
+        tutorialCanvas = GameObject.FindGameObjectWithTag("Tutorial");
+        if (tutorialCanvas != null) isTutorialActive = true;
+    }
+
+    private void Update()
+    {
+        if (tutorialCanvas == null && isTutorialActive) // tutorial selesai, mulai gamenya
+        {
+            StartCoroutine(Spawn());
+            isTutorialActive = false;
+        }
     }
 
     IEnumerator Spawn()
