@@ -16,4 +16,5 @@ MonoBehaviour:
   cost: 2
   trainTime: 2
   cellImage: {fileID: 21300000, guid: eb5e66b2a7e73fd45ae212fb8b2398d3, type: 3}
+  cellUnlockedImage: {fileID: 21300000, guid: 5c0ad44ee4dc74f4a89649bc022b2473, type: 3}
   cellPrefab: {fileID: 5366047509851145832, guid: a7a044cc628fd9e439e92b37896a5e0e, type: 3}
