@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] private AudioSource bgmSource;
     [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioSource sfxPitchSource;
     [Header("BGM")]
     [SerializeField] private List<SoundClip> bgmClips = new List<SoundClip>();
     [Header("SFX")]
@@ -53,9 +54,9 @@ public class AudioManager : MonoBehaviour
         else if (output == SoundOutput.sfx)
         {
             SoundClip s = sfxClips.Find((sound) => sound.name == name);
-            SetSourceValues(s, sfxSource);
-            sfxSource.pitch = pitch;
-            sfxSource.PlayOneShot(s.Clip);
+            SetSourceValues(s, sfxPitchSource);
+            sfxPitchSource.pitch = pitch;
+            sfxPitchSource.PlayOneShot(s.Clip);
         }
     }
 

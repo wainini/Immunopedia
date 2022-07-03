@@ -62,12 +62,13 @@ public class TrainCells : MonoBehaviour
     {
         if(buildingManager.resource < cellData.cost)
         {
-            Debug.Log("You don't have enough resources");
+            AudioManager.instance.PlaySound("TrainFail", SoundOutput.sfx);
             return;
         }
         else
         {
             buildingManager.resource -= cellData.cost;
+            AudioManager.instance.PlaySound("TrainCell", SoundOutput.sfx);
         }
         int listLength = cellsInTrainingList.Count;
         CellUIData sameCell = null;
