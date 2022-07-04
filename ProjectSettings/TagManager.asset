@@ -62,17 +62,17 @@ TagManager:
   - name: Bulding
     uniqueID: 2930849329
     locked: 0
-  - name: Cell
-    uniqueID: 2399069353
-    locked: 0
-  - name: Cell UI
-    uniqueID: 3248113875
-    locked: 0
   - name: Bacteria
     uniqueID: 3796179873
     locked: 0
   - name: Bacteria UI
     uniqueID: 4042757345
+    locked: 0
+  - name: Cell
+    uniqueID: 2399069353
+    locked: 0
+  - name: Cell UI
+    uniqueID: 3248113875
     locked: 0
   - name: UI
     uniqueID: 769443885

@@ -193,7 +193,7 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
 
     public void WaitForInterval()
     {
-        currentAtkInterval = (currentAtkInterval > 0) ? currentAtkInterval - Time.unscaledDeltaTime : 0;
+        currentAtkInterval = (currentAtkInterval > 0) ? currentAtkInterval - Time.deltaTime : 0;
     }
 
     public void RestoreInterval()
