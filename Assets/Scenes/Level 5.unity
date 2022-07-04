@@ -164,11 +164,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: SEMOGA BERHASIL DAN SELAMAT BERSENANG - SENANG.
+      value: SEMOGA BERHASIL DAN SELAMAT BERSENANG - SENANG!
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
-      value: Eosinofil (6)
+      value: Outro (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_IsActive

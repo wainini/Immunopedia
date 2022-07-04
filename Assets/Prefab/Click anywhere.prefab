@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Click anywhere to continue >>
+  m_text: Tekan di mana saja untuk lanjut >>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e2d09ed70cd13cf43a6656f9489cf3c1, type: 2}
   m_sharedMaterial: {fileID: 3073894052809554947, guid: e2d09ed70cd13cf43a6656f9489cf3c1, type: 2}
