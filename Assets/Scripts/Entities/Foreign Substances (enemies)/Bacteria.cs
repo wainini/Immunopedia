@@ -60,7 +60,7 @@ public class Bacteria : MonoBehaviour, IEntityBehaviour
                 CalculateRotation();
 
             }
-            else
+            else if(Vector2.Distance(transform.position, nextWaypoint.position) <= 0.1f)
             {
                 nextWaypoint = waypoints.Dequeue();
             }
