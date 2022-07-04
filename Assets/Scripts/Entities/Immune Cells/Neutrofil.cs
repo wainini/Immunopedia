@@ -15,6 +15,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
 
     private float currentAtkInterval;
     private bool isAttacking;
+    private bool isAttackingAnim;
     private GameObject target;
     private List<GameObject> enemies = new List<GameObject>();
     private void Start()
@@ -23,14 +24,14 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
         stats.SetHealthUI(healthBar, healthFill);
         radius.radius = cellData.atkRadius / transform.localScale.x; //karena scale badannya gak 1
         target = null;
-        isAttacking = false;
+        isAttacking = isAttackingAnim = false;
         currentAtkInterval = 0;
     }
 
     private void Update()
     {
         ClearDeadEnemies();
-        if (currentAtkInterval > 0) WaitForInterval();
+        WaitForInterval();
         if (target != null)
         {
             if (!isAttacking) CheckPriority();
@@ -54,7 +55,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
                 transform.parent.position = this.transform.position;
                 if (IsReadyToAttack())
                 {
-                    isAttacking = true;
+                    isAttacking = isAttackingAnim = true;
                     anim.SetBool("IsAttacking", true);
                 }
             }
@@ -62,6 +63,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
         else
         {
             SetTarget();
+            isAttacking = false;
         }
         if (IsDead())
         {
@@ -120,7 +122,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
 
     public void SetTarget()
     {
-        if (isAttacking) return;
+        if (isAttackingAnim) return;
         GameObject tempTarget = null;
         float minDistance = float.PositiveInfinity;
         foreach (GameObject enemy in enemies)
@@ -145,7 +147,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     public void FinishAttackAnim() //Called using animation event
     {
         anim.SetBool("IsAttacking", false);
-        isAttacking = false;
+        isAttackingAnim = false;
         RestoreInterval();
     }
 
