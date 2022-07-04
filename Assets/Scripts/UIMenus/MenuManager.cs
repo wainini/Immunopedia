@@ -29,6 +29,7 @@ public class MenuManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this);
         }
+        Screen.SetResolution(Screen.width, Screen.width * 9 / 16, true);
     }
     private void Start()
     {
