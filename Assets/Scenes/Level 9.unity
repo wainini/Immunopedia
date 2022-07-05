@@ -1889,6 +1889,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutorialManager
       objectReference: {fileID: 0}
+    - target: {fileID: 176171861948970907, guid: f6e31e7922b76bd428d9255cd6c0ecfb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 176171861948970909, guid: f6e31e7922b76bd428d9255cd6c0ecfb, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2714,7 +2718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6475107977108262945, guid: 7a7a1bcc25d610144a9d71b2b8c4d608, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -85
+      value: -122
       objectReference: {fileID: 0}
     - target: {fileID: 6475107977108262945, guid: 7a7a1bcc25d610144a9d71b2b8c4d608, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
