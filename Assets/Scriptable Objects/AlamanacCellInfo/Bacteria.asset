@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellName: Bacteria
   cellButtonImage: {fileID: 21300000, guid: b60dc55151ffdc344ae91ec1877de7ed, type: 3}
-  cellDesc: Bacteria
+  cellDesc: Bakteri adalah mikroorganisme bersel satu yang dapat merugikan manusia,
+    namun tidak semua bakteri bersifat merugikan, karena ada yang bersifat oportunistik,
+    dan bahkan ada yang bersifat menguntungkan.
   cellPrefab: {fileID: 4673210084086762389, guid: 20bdd0070b6494743aa3b73dbecb8d7f, type: 3}
   isEnemy: 1
