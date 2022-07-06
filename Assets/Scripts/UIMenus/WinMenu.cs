@@ -39,6 +39,10 @@ public class WinMenu : MonoBehaviour
 
     public void NextLevel()
     {
+        if(SceneManager.GetActiveScene().name == "Level 10")
+        {
+            SceneManager.LoadScene(0);
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
