@@ -370,7 +370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: MAKROFAG JUGA MEMILIKI DURABILITAS YANG LEBIH TINGGI DARI NEUTROFIL.
+      value: MACROPHAGE ALSO HAVE A BETTER DURABILITY THAN NEUTROPHIL
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -952,7 +952,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: TEKAN BONE MARROW.
+      value: 'CLICK THE BONE MARROW
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -1260,6 +1262,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Click anywhere
       objectReference: {fileID: 0}
+    - target: {fileID: 952970506730957467, guid: 5e2a23b74a3e90e48aefd27e1b026f94, type: 3}
+      propertyPath: m_text
+      value: Click Anywhere to Continue>>
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e2a23b74a3e90e48aefd27e1b026f94, type: 3}
 --- !u!1001 &824567862
@@ -1303,7 +1309,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: SEMOGA BERHASIL DAN SELAMAT BERSENANG - SENANG!
+      value: 'GOOD LUCK AND HAVE FUN!
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -1567,7 +1575,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: MAKROFAG DAPAT MENGHADANG 2 MUSUH SEKALIGUS, TERKECUALI PARASIT.
+      value: "MACROPHAGE CAN BLOCK 2 ENEMIES AT ONCE, BUT, JUST LIKE NEUTROPHIL,
+        HIS ATTACKS ARE MEANINGLESS AGAINTS PARASITES \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -2025,7 +2034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: NAMUN MAKROFAG MEMILIKI KECEPATAN YANG LEBIH LAMBAT...
+      value: HOWEVER, MACROPHAGE HAVE SLOWER MOVEMENT
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -2371,7 +2380,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: DAN TIDAK MEMILIKI RADIUS SEBESAR NEUTROFIL.
+      value: 'AND SMALLER ATTACK RADIUS COMPARED TO NEUTROPHIL
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -2775,7 +2786,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: INI ADALAH MAKROFAG.
+      value: 'THIS IS MACROPHAGE
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -3102,7 +3115,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: JENDERAL, ADA SEL BARU YANG DAPAT DIGUNAKAN.
+      value: 'GENERAL, THERE''S A NEW CELL AT YOUR DISPOSAL
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name

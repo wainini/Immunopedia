@@ -512,7 +512,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: SELAMAT DATANG DI IMMUNOPEDIA.
+      value: 'WELCOME TO IMMUNOPEDIA
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -873,7 +875,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: DAN PLATELET UNTUK MENUTUP LUKA.
+      value: 'AND PLATELET TO CLOSE THE OPEN WOUND
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -1018,7 +1022,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: UNTUK MENUTUP LUKA DIPERLUKAN BEBERAPA PLATELET.
+      value: 'TO CLOSE THE WOUND, YOU NEED MULTIPLE PLATELETS
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -1213,7 +1219,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: INI ADALAH LUKA TERBUKA, TEMPAT DIMANA MUSUH - MUSUH AKAN DATANG.
+      value: 'THIS IS AN OPEN WOUND, THE SOURCE WHERE THE ENEMIES ARE COMING FROM
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -1358,7 +1366,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: NEUTROFIL UNTUK MELAWAN MUSUH - MUSUH YANG AKAN DATANG.
+      value: 'NEUTROPHIL TO BLOCK AND DEFEAT THE INVADERS THAT ARE COMING
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -1499,8 +1509,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: ANDA DINYATAKAN MENANG JIKA SUDAH TIDAK ADA MUSUH DAN SEMUA LUKA SUDAH
-        TERTUTUP.
+      value: YOU'RE CONSIDERED VICTORIOUS WHEN THERE ARE NO ENEMIES LEFT AND ALL
+        WOUNDS ARE CLOSED
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -2012,8 +2022,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: KALIAN AKAN BERPERAN SEBAGAI JENDERAL YANG MEMANFAATKAN SEL - SEL UNTUK
-        MELINDUNGI TUBUH KALIAN DARI SERANGAN - SERANGAN ASING.
+      value: 'YOU''RE GOING TO BE A GENERAL THAT USES CELLS AT YOUR DISPOSAL TO PROTECT
+        YOUR BODIES FROM THE INVADERS
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_isRightToLeft
@@ -2241,7 +2253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: NEUTROFIL AKAN MENGHADANG DAN MENYERANG MUSUH DI AREANYA.
+      value: NEUTROPHIL WILL BLOCK AND ATTACK ENEMIES WITHIN HER ATTACK RADIUS
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -2464,7 +2476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: KLIK NEUTROFIL.
+      value: CLICK NEUTROPHIL
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -2884,7 +2896,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: SEMOGA BERHASIL DAN SELAMAT BERSENANG - SENANG!
+      value: 'GOOD LUCK AND HAVE FUN!
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -3079,6 +3093,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Click anywhere
       objectReference: {fileID: 0}
+    - target: {fileID: 952970506730957467, guid: 5e2a23b74a3e90e48aefd27e1b026f94, type: 3}
+      propertyPath: m_text
+      value: Click Anywhere to Continue>>
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e2a23b74a3e90e48aefd27e1b026f94, type: 3}
 --- !u!1001 &1260820711
@@ -3126,7 +3144,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: UNTUK MENGHADANG MUSUH, ANDA HARUS MELETAKKAN SEL.
+      value: 'TO BLOCK THE ENEMIES, YOU HAVE TO DEPLOY A CELL
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -3390,7 +3410,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: MUSUH - MUSUH INI AKAN BERJALAN KE ARAH TEMPAT PERTAHANAN KAMI.
+      value: 'THE ENEMIES WILL WALK TO OUR LAST DEFENSE
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -3609,7 +3631,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: BONE MARROW AKAN MEMPRODUKSI STEM CELL.
+      value: 'BONE MARROW WILL PRODUCE STEM CELLS
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -3754,7 +3778,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: SEMAKIN BANYAK BONE MARROW, SEMAKIN BANYAK STEM CELL YANG DIPRODUKSI.
+      value: 'THE MORE BONE MARROW THERE IS, THE MORE STEM CELLS THAT WILL BE PRODUCED
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -3895,7 +3921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: KLIK DISINI.
+      value: CLICK HERE
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -4036,7 +4062,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: TEMPAT PERTAHANAN KAMI BERADA DI AKHIR JALUR DARI MUSUH - MUSUH TERSEBUT.
+      value: 'OUR LAST DEFENSE IS LOCATED AT THE END OF THEIR ROAD
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -4173,8 +4201,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: UNTUK DAPAT MELINDUNGI TUBUH INI DARI MUSUH - MUSUH, KITA HARUS MEMBANGUN
-        BONE MARROW.
+      value: 'TO PROTECT THIS BODY FROM THE INVADERS, WE HAVE TO BUILD A BONE MARROW
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -4319,7 +4348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: ANDA DINYATAKAN KALAH JIKA NYAWA ANDA MENYENTUH 0.
+      value: "BUT, YOU WILL LOSE WHEN YOUR LIFE COUNT REACHES 0 \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -4464,7 +4493,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: SAAT INI TERDAPAT 2 SEL YANG TERSEDIA.
+      value: 'AT THIS MOMENT, THERE ARE 2 TYPES OF CELLS AVAILABLE
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -4605,7 +4636,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: SEL AKAN MULAI DIBENTUK JIKA STEM CELL MENCUKUPI.
+      value: 'THE BONE MARROW WILL START PRODUCING CELLS WHEN THE STEM CELLS ARE
+        SUFFICIENT
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -4795,7 +4829,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: SEBELUM KAMU MULAI BERMAIN, ADA BEBERAPA HAL YANG PERLU KALIAN KETAHUI.
+      value: 'BEFORE WE START PLAYING, THERE ARE SOME THINGS THAT YOU HAVE TO KNOW
+        FIRST
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -5033,7 +5070,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: BILA MUSUH MEMASUKI PERTAHANAN KAMI, JUMLAH NYAWA AKAN BERKURANG.
+      value: IF THE ENEMY BREACH THROUGH OUR LAST DEFENSE, OUR LIFE COUNT WILL BE
+        REDUCED
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -5174,7 +5212,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: TUNGGU BEBERAPA SAAT DAN NEUTROFIL SUDAH DIBENTUK.
+      value: 'WAIT FOR SOME TIME AND NEUTROPHIL HAS BEEN PRODUCED
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -5461,8 +5501,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: MAKA DARI ITU, SEBAGAI JENDERAL YANG BAIK, PERTAHANKANLAH TUBUH KALIAN
-        DARI SERANGAN - SERANGAN ASING DENGAN SEL - SEL ANDA.
+      value: AND THUS, YOU, AS A RESPONSIBLE GENERAL, DEFEND YOUR BODY FROM THE INVADERS
+        WITH YOUR CELLS
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -5657,7 +5697,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: TEKAN BONE MARROW.
+      value: 'PRESS THE BONE MARROW
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -5790,7 +5832,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: SALAH SATUNYA ADALAH BAKTERI.
+      value: 'ONE OF THEM IS BACTERIA
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -5931,7 +5975,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: KETIKA STEM CELL SUDAH CUKUP, TEKAN TOMBOL SELNYA.
+      value: 'WHEN THERE''RE ENOUGH STEM CELLS, PRESS THE CELL BUTTON
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name

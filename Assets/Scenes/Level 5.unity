@@ -164,7 +164,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: SEMOGA BERHASIL DAN SELAMAT BERSENANG - SENANG!
+      value: 'GOOD LUCK AND HAVE FUN!
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -442,6 +444,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Click anywhere
       objectReference: {fileID: 0}
+    - target: {fileID: 952970506730957467, guid: 5e2a23b74a3e90e48aefd27e1b026f94, type: 3}
+      propertyPath: m_text
+      value: Click Anywhere to Continue>>
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e2a23b74a3e90e48aefd27e1b026f94, type: 3}
 --- !u!1001 &276274354
@@ -485,7 +491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: EOSINOFIL SANGAT EFEKTIF DALAM MELAWAN PARASIT.
+      value: EOSINOPHILS ARE VERY EFFECTIVE AGAINST PARASITES
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -626,7 +632,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: DIBUTUHKAN SETIDAKNYA 3 EOSINOFIL UNTUK MENGHENTIKAN SEEKOR PARASIT.
+      value: 'YOU NEED AT LEAST 3 EOSINOPHILS TO STOP A PARASITE AT IT''S TRACK
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -1337,7 +1345,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: MEREKA TIDAK BISA DISAKITI OLEH NEUTROFIL SAJA.
+      value: 'NEUTROPHIL CAN''T LEAVE A DENT TO THEM.
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -1557,8 +1567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: NAMUN PERLU DIPERHATIKAN BAHWA EOSINOFIL TIDAK TERLALU EFEKTIF DALAM
-        MELAWAN BAKTERI.
+      value: KEEP IN MIND THAT EOSINOPHIL IS NOT VERY EFFECTIVE AGAINST BACTERIA
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -1691,7 +1700,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: MUSUH INI BERNAMA PARASIT.
+      value: 'THIS INVADER IS CALLED PARASITE
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -2497,7 +2508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: HANYA EOSINOFIL YANG DAPAT MENYAKITI PARASIT.
+      value: ONLY EOSINOPHIL CAN HURT THEM
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -2689,7 +2700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: JENDERAL, ADA MUSUH BARU YANG MENYERANG TUBUH INI!
+      value: "GENERAL, THERE'S A NEW INVADER COMING TO ATTACK THIS BODY! \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -2834,7 +2845,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: MEREKA TIDAK BISA MENYERANG, TETAPI...
+      value: 'THEY CANNOT ATTACK, BUT...
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -2975,7 +2988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: DAN DIBUTUHKAN SETIDAKNYA 5 EOSINOFIL UNTUK MENYAKITI PARASIT.
+      value: AND YOU NEED AT LEAST 5 EOSINOPHILS TO HURT A PARASITE
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
@@ -3280,7 +3293,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155927187853011115, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_text
-      value: TEKAN BONE MARROW.
+      value: 'CLICK THE BONE MARROW
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7155927189204534340, guid: 574e827a47ce07849bf59f0135d1de52, type: 3}
       propertyPath: m_Name
