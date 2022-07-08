@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellName: Parasite
   cellButtonImage: {fileID: 21300000, guid: 55d2c8b9adecb4341a000526ce1e931d, type: 3}
-  cellDesc: Parasit merupakan organisme bersel banyak (multiselular) yang dapat memasuki
-    tubuh manusia dan merugikan tubuh kita dengan cara namun tidak terbatas pada
-    racun, pencurian nutrisi, dan pembolongan organ.
+  cellDesc: 'Parasites are multicellular organisms that can enter the human body
+    and harm it with poisons, nutrient theft, organ leakage, or various other means. '
   cellPrefab: {fileID: 4673210084086762389, guid: 2ada8a3b92e4aab4eac16dbd05ee346f, type: 3}
   isEnemy: 1

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellName: Macrophage
   cellButtonImage: {fileID: 21300000, guid: ffe2d613b4f13e940a16381c74c0c60b, type: 3}
-  cellDesc: Macrophage memiliki ukuran yang lebih besar dibandingkan dengan sel lainnya.
-    Tugas mereka berkisar dari memakan bakteri dan virus, memberikan informasi protein
-    yang telah difagositosis ke Dendritic Cell, sampai melakukan "pembersihan" dengan
-    cara memakan sel badan yang sudah mati.
+  cellDesc: Macrophage has a relative big size compared to the other white blood
+    cells. Their duties are ranging from phagocytosis bacteria and virus, sending
+    protein information that has been phagocytosis to Dendritic Cell, up to doing
+    "cleaning" by eating dead host cells.
   cellPrefab: {fileID: 4673210084086762389, guid: ec8cb6e375f5ff04a8a851ab79679ffe, type: 3}
   isEnemy: 0
