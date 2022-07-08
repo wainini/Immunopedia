@@ -29,7 +29,11 @@ public class MenuManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this);
         }
+<<<<<<< Updated upstream
         Screen.SetResolution(Screen.width, Screen.width * 9 / 16, true);
+=======
+        //Screen.SetResolution(Screen.width, Screen.width * 9 / 16, false);
+>>>>>>> Stashed changes
     }
     private void Start()
     {
