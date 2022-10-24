@@ -19,8 +19,15 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
     private GameObject target;
     private List<GameObject> enemies = new List<GameObject>();
     private List<GameObject> blockedEnemies = new List<GameObject>();
+
+    string key = "MacrophageUpLvl";
+
     private void Start()
     {
+        if (!PlayerPrefs.HasKey(key))
+        {
+            PlayerPrefs.SetInt(key, 0);
+        }
         stats = GetComponent<EntityStats>();
         stats.SetHealthUI(healthBar, healthFill);
         radius.radius = cellData.atkRadius;
@@ -199,5 +206,26 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
     public void RestoreInterval()
     {
         currentAtkInterval = stats.atkInterval;
+    }
+
+    public void Upgrade()
+    {
+        int upgradeLevel = PlayerPrefs.GetInt(key);
+        if (upgradeLevel < 2)
+        {
+            stats.UpgradeStats(upgradeLevel);
+        }
+        else
+        {
+            SpecialUpgrade();
+        }
+        PlayerPrefs.SetInt(key, ++upgradeLevel);
+    }
+
+    void SpecialUpgrade()
+    {
+        Debug.Log("Special Upgrade");
+        //stats.atkUp += 30;
+        //stats.blockCount++;
     }
 }

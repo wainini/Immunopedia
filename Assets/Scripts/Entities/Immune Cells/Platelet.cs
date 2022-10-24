@@ -6,15 +6,22 @@ public class Platelet : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     [SerializeField] private float speed = 3f;
+    [SerializeField] private CellTrainingData trainData;
+    [SerializeField] private GameObject woundPrefab;
     private List<GameObject> wounds;
     
     private Transform woundPosition;
     private float closestDistance;
     private bool isClosingWound = false;
 
+    string key = "PlateletUpLvl";
 
     private void Start()
     {
+        if (!PlayerPrefs.HasKey(key))
+        {
+            PlayerPrefs.SetInt(key, 0);
+        }
         wounds = GameManager.instance.wounds;
     }
     private void Update()
@@ -69,5 +76,27 @@ public class Platelet : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         isClosingWound = false;
+    }
+
+    public void Upgrade()
+    {
+        int upgradeLevel = PlayerPrefs.GetInt(key);
+        if (upgradeLevel < 2)
+        {
+            trainData.cost--;
+        }
+        else
+        {
+            SpecialUpgrade();
+        }
+        PlayerPrefs.SetInt(key, ++upgradeLevel);
+    }
+
+    void SpecialUpgrade()
+    {
+        Debug.Log("Special Upgrade");
+        woundPrefab.GetComponent<Wound>().plateletNeeded--;
+        //stats.atkUp += 30;
+        //stats.blockCount++;
     }
 }

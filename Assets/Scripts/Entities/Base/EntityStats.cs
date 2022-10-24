@@ -10,8 +10,12 @@ public class EntityStats : MonoBehaviour
     public int defense { get; private set; }
     public float atkInterval { get; private set; }
     public float movSpeed { get; private set; }
-    public int blockCount { get; private set; }
+    public int blockCount;
     public GameObject localTarget { get; private set; }
+
+    public int atkUp;
+    public int defUp;
+    public int hpUp;
 
     [Header("Fill in this if it is enemy")]
     public int hpSealReduction;
@@ -19,11 +23,12 @@ public class EntityStats : MonoBehaviour
     private RectTransform healthBar;
     private RectTransform healthFill;
     private List<SpriteRenderer> sprites;
+
     private void Awake()
     {
-        currentHealth = baseStat.maxHealth;
-        atk = baseStat.atk;
-        defense = baseStat.defense;
+        currentHealth = baseStat.maxHealth + (baseStat.maxHealth * hpUp / 100);
+        atk = baseStat.atk + (baseStat.atk * atkUp / 100);
+        defense = baseStat.defense + (baseStat.defense * defUp / 100);
         atkInterval = baseStat.atkInterval;
         movSpeed = baseStat.movSpeed;
         blockCount = baseStat.blockCount;
@@ -93,5 +98,24 @@ public class EntityStats : MonoBehaviour
         {
             sprite.color = Color.white;
         }
+    }
+
+    public void UpgradeStats(int upgradeLvl)
+    {
+        Debug.Log("Upgrade " + upgradeLvl);
+        //switch (upgradeLvl)
+        //{
+        //    case 0:
+        //        atkUp += 20;
+        //        break;
+
+        //    case 1:
+        //        defUp += 20;
+        //        break;
+
+        //    case 2:
+        //        hpUp += 50;
+        //        break;
+        //}
     }
 }

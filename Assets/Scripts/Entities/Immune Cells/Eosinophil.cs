@@ -20,9 +20,15 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
     private EntityStats stats;
     private GameObject target;
     [SerializeField]private List<GameObject> enemies = new List<GameObject>();
-    
+
+    string key = "EosinophilUpLvl";
+
     private void Start()
     {
+        if (!PlayerPrefs.HasKey(key))
+        {
+            PlayerPrefs.SetInt(key, 0);
+        }
         stats = GetComponent<EntityStats>();
         stats.SetHealthUI(healthBar, healthFill);
         radius.radius = cellData.atkRadius / transform.localScale.x; //karena scale badannya gak 1
@@ -172,5 +178,26 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
     public void RestoreInterval()
     {
         currentAtkInterval = stats.atkInterval;
+    }
+
+    public void Upgrade()
+    {
+        int upgradeLevel = PlayerPrefs.GetInt(key);
+        if (upgradeLevel < 2)
+        {
+            stats.UpgradeStats(upgradeLevel);
+        }
+        else
+        {
+            SpecialUpgrade();
+        }
+        PlayerPrefs.SetInt(key, ++upgradeLevel);
+    }
+
+    void SpecialUpgrade()
+    {
+        Debug.Log("Special Upgrade");
+        //stats.atkUp += 30;
+        //movSpeedReduction = 0.5;
     }
 }
