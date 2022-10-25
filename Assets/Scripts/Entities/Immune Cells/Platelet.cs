@@ -6,16 +6,15 @@ public class Platelet : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     [SerializeField] private float speed = 3f;
+    [SerializeField] private CellTrainingData trainData;
     [SerializeField] private GameObject woundPrefab;
     private List<GameObject> wounds;
-
-    [HideInInspector] public CellTrainingData trainData;
     
     private Transform woundPosition;
     private float closestDistance;
     private bool isClosingWound = false;
 
-    [HideInInspector] public string key = "PlateletUpLvl";
+    string key = "PlateletUpLvl";
 
     private void Start()
     {
@@ -82,7 +81,7 @@ public class Platelet : MonoBehaviour
     public void Upgrade()
     {
         int upgradeLevel = PlayerPrefs.GetInt(key);
-        if (upgradeLevel < 3)
+        if (upgradeLevel < 2)
         {
             trainData.cost--;
         }
@@ -97,10 +96,7 @@ public class Platelet : MonoBehaviour
     {
         Debug.Log("Special Upgrade");
         woundPrefab.GetComponent<Wound>().plateletNeeded--;
-    }
-
-    public void Revert()
-    {
-        woundPrefab.GetComponent<Wound>().plateletNeeded++;
+        //stats.atkUp += 30;
+        //stats.blockCount++;
     }
 }

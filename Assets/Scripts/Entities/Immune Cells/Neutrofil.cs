@@ -9,10 +9,8 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     [SerializeField] private RectTransform healthFill;
     [SerializeField] private RectTransform healthBar;
     [SerializeField] private CircleCollider2D radius;
-    
-    public CellTrainingData trainData;
-    
-    [HideInInspector] public EntityStats stats;
+    [SerializeField] private CellTrainingData trainData;
+    private EntityStats stats;
 
     public ImmuneCell cellData;
 
@@ -22,7 +20,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     private GameObject target;
     private List<GameObject> enemies = new List<GameObject>();
 
-    [HideInInspector] public string key = "NeutrofilUpLvl";
+    string key = "NeutrofilUpLvl";
     private void Start()
     {
         if (!PlayerPrefs.HasKey(key))
@@ -184,7 +182,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     public void Upgrade()
     {
         int upgradeLevel = PlayerPrefs.GetInt(key);
-        if(upgradeLevel < 3)
+        if(upgradeLevel < 2)
         {
             stats.UpgradeStats(upgradeLevel);
         }
