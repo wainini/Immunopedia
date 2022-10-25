@@ -11,12 +11,21 @@ public class SkillDescriptionPanelResize : MonoBehaviour
     void Start()
     {
         panelTransform = gameObject.GetComponent<RectTransform>();
+        RectTransform skillDescTransform = skillDescription.GetComponent<RectTransform>();
         TextMeshProUGUI tmp = skillDescription.GetComponent<TextMeshProUGUI>();
         tmp.ForceMeshUpdate();
 
+        
+
         Vector3 newPanelSize = tmp.textBounds.size;
-        newPanelSize.x += skillDescription.GetComponent<RectTransform>().localPosition.x * 2;
-        newPanelSize.y += skillDescription.GetComponent<RectTransform>().localPosition.y * 2;
+        newPanelSize.x += Mathf.Abs(skillDescTransform.localPosition.x * 2);
+
+        if (tmp.textInfo.lineCount == 1)
+        {
+            newPanelSize.y *= 2;
+        }
+        newPanelSize.y += Mathf.Abs(skillDescTransform.localPosition.y * 2);
+
         panelTransform.sizeDelta = newPanelSize;
     }
 }
