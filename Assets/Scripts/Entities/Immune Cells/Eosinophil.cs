@@ -17,11 +17,11 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
     private float currentAtkInterval;
     private bool isAttacking;
     private bool isAttackingAnim;
-    private EntityStats stats;
+    [HideInInspector] public EntityStats stats;
     private GameObject target;
-    [SerializeField]private List<GameObject> enemies = new List<GameObject>();
+    [SerializeField] private List<GameObject> enemies = new List<GameObject>();
 
-    string key = "EosinophilUpLvl";
+    [HideInInspector] public string key = "EosinophilUpLvl";
 
     private void Start()
     {
@@ -183,7 +183,7 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
     public void Upgrade()
     {
         int upgradeLevel = PlayerPrefs.GetInt(key);
-        if (upgradeLevel < 2)
+        if (upgradeLevel < 3)
         {
             stats.UpgradeStats(upgradeLevel);
         }
@@ -198,6 +198,6 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
     {
         Debug.Log("Special Upgrade");
         //stats.atkUp += 30;
-        //movSpeedReduction = 0.5;
+        //movSpeedReduction = 0.5f;
     }
 }

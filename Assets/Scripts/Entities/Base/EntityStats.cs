@@ -118,4 +118,11 @@ public class EntityStats : MonoBehaviour
         //        break;
         //}
     }
+
+    public void ResetStats()
+    {
+        atkUp = 0;
+        defUp = 0;
+        hpUp = 0;
+    }
 }
