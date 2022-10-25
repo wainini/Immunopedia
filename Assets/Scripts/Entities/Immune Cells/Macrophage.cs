@@ -9,7 +9,6 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
     [SerializeField] private RectTransform healthFill;
     [SerializeField] private RectTransform healthBar;
     [SerializeField] private CircleCollider2D radius;
-    private EntityStats stats;
 
     public ImmuneCell cellData;
 
@@ -20,7 +19,8 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
     private List<GameObject> enemies = new List<GameObject>();
     private List<GameObject> blockedEnemies = new List<GameObject>();
 
-    string key = "MacrophageUpLvl";
+    [HideInInspector] public EntityStats stats;
+    [HideInInspector] public string key = "MacrophageUpLvl";
 
     private void Start()
     {
@@ -211,7 +211,7 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
     public void Upgrade()
     {
         int upgradeLevel = PlayerPrefs.GetInt(key);
-        if (upgradeLevel < 2)
+        if (upgradeLevel < 3)
         {
             stats.UpgradeStats(upgradeLevel);
         }
