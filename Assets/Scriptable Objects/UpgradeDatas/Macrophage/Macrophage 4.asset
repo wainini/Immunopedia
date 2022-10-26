@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50d5526e2d5a960479320a43ef0ced7c, type: 3}
   m_Name: Macrophage 4
   m_EditorClassIdentifier: 
-  upgradeTitle: Increased Efficiency (Macrophage)
-  upgradeDescription: Increase Macrophage's Attack by 30% and Increase the Block
-    Count by 1
+  upgradeTitle: INCREASED EFFICIENCY (MACROPHAGE)
+  upgradeDescription: INCREASE MACROPHAGE'S ATTACK BY 30% AND INCREASE THE BLOCK
+    COUNT BY 1
   upgradeCost: 5

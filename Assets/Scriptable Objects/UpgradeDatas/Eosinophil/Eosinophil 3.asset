@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Eosinophil 3
   m_EditorClassIdentifier: 
   upgradeTitle: HP UP
-  upgradeDescription: Increase Eosinophil's HP by 50%
+  upgradeDescription: INCREASE EOSINOPHIL'S HP BY 50%
   upgradeCost: 2

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50d5526e2d5a960479320a43ef0ced7c, type: 3}
   m_Name: Macrophage 1
   m_EditorClassIdentifier: 
-  upgradeTitle: Attack UP
-  upgradeDescription: Increase Macrophage's Attack by 20%
+  upgradeTitle: ATTACK UP
+  upgradeDescription: INCREASE MACROPHAGE'S ATTACK BY 20%
   upgradeCost: 2

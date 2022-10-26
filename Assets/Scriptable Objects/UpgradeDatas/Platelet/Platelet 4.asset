@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50d5526e2d5a960479320a43ef0ced7c, type: 3}
   m_Name: Platelet 4
   m_EditorClassIdentifier: 
-  upgradeTitle: Increased Efficiency (Platelet)
-  upgradeDescription: Reduce Platelet Needed for Closing the Wound by 1
+  upgradeTitle: INCREASED EFFICIENCY (PLATELET)
+  upgradeDescription: REDUCE PLATELET NEEDED FOR CLOSING THE WOUND BY 1
   upgradeCost: 5
