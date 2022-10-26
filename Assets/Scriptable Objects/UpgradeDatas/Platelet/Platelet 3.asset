@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50d5526e2d5a960479320a43ef0ced7c, type: 3}
   m_Name: Platelet 3
   m_EditorClassIdentifier: 
-  upgradeTitle: 
-  upgradeDescription: 
-  upgradeCost: 0
+  upgradeTitle: Cost Down
+  upgradeDescription: Reduce Platelet's Stem Cell Cost by 1
+  upgradeCost: 3
