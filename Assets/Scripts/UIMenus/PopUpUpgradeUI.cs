@@ -7,10 +7,11 @@ using TMPro;
 public class PopUpUpgradeUI : MonoBehaviour
 {
     public GameObject popUpPrefab;
+    public RectTransform position;
     
     public void PopUp(UpgradeData data)
     {
-        GameObject popUp = Instantiate(popUpPrefab);
+        GameObject popUp = Instantiate(popUpPrefab, position);
         TextMeshProUGUI[] texts = popUp.GetComponentsInChildren<TextMeshProUGUI>();
 
         texts[0].text = data.upgradeTitle;

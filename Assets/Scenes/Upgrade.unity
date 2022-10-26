@@ -410,6 +410,38 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 267723305}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PopUpUpgradeUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 77768114d1b91814dae2374ac672bfda, type: 2}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UpgradeData, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3479940790585709036, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_Type
       value: 1
@@ -682,7 +714,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 183.95465}
+  m_AnchoredPosition: {x: 0, y: 183.95506}
   m_SizeDelta: {x: 760, y: 573.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &267723299
@@ -697,6 +729,7 @@ GameObject:
   - component: {fileID: 267723302}
   - component: {fileID: 267723301}
   - component: {fileID: 267723300}
+  - component: {fileID: 267723305}
   - component: {fileID: 267723304}
   m_Layer: 5
   m_Name: Canvas
@@ -827,6 +860,20 @@ MonoBehaviour:
   - {fileID: 852263514}
   - {fileID: 557963436}
   - {fileID: 1084125334}
+--- !u!114 &267723305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267723299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7a9862846c3e04fb15a4fa561636c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUpPrefab: {fileID: 1423978528624426910, guid: 14a6161d70d389544a2abe792fb5f861, type: 3}
+  position: {fileID: 267723303}
 --- !u!1001 &440832860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2957,8 +3004,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 602378108}
   m_HandleRect: {fileID: 602378107}
   m_Direction: 3
-  m_Value: 0
-  m_Size: 0.3588196
+  m_Value: -0.000001161281
+  m_Size: 0.35880065
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
