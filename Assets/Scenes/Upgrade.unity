@@ -834,7 +834,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 183.9555}
+  m_AnchoredPosition: {x: 0, y: 183.95566}
   m_SizeDelta: {x: 760, y: 573.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &267723299
@@ -1814,7 +1814,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 759596721}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 267723304}
+        m_TargetAssemblyTypeName: PowerUpUI, Assembly-CSharp
+        m_MethodName: GoToLevelSelector
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &759596721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3572,8 +3584,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 602378108}
   m_HandleRect: {fileID: 602378107}
   m_Direction: 3
-  m_Value: -0.0000022396139
-  m_Size: 0.35874128
+  m_Value: -0.0000026543566
+  m_Size: 0.35881963
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

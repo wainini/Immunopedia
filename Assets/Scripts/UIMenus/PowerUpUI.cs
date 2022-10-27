@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class PowerUpUI : MonoBehaviour
@@ -114,5 +115,10 @@ public class PowerUpUI : MonoBehaviour
             m.stats.blockCount--;
         }
         PlayerPrefs.SetInt(m.key, 0);
+    }
+
+    public void GoToLevelSelector()
+    {
+        SceneManager.LoadScene(0);
     }
 }
