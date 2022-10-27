@@ -17,7 +17,7 @@ public class SkillNamePanelResize : MonoBehaviour
 
         Vector3 newPanelSize = tmp.textBounds.size;
         newPanelSize.x += Mathf.Abs(textRectTransform.localPosition.x * 2);
-        print(newPanelSize.y);
+        //print(newPanelSize.y);
         newPanelSize.y += 20f;
         panelTransform.sizeDelta = newPanelSize;
 
