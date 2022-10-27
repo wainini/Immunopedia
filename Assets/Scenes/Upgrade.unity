@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ffe2d613b4f13e940a16381c74c0c60b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 95facc7eca2539641b16429e671e26bf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -382,6 +382,38 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 267723305}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PopUpUpgradeUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 7535dbe5c637a6641943002dbe141fe1, type: 2}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UpgradeData, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1701837324280026493, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -444,12 +476,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3479940790585709036, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_Type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3479940790585709036, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 21300000, guid: 616b7543c4f3d0f4884267ff6f309b82, type: 3}
+    - target: {fileID: 3485439312737792605, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485439312737792605, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 939d804a6e02f4042a7d56d13e2fba58, type: 3}
     - target: {fileID: 3550294697443385762, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -474,9 +514,49 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4357358099249951529, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357358099249951529, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: af6c4bf9d766169439e1bddb054c359d, type: 3}
     - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_Interactable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 267723305}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PopUpUpgradeUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 5375a39c0c8660344b89fed87efa57f9, type: 2}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UpgradeData, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5520901850132485224, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_AnchorMax.y
@@ -530,9 +610,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: Neutrophil
       objectReference: {fileID: 0}
+    - target: {fileID: 7888161899990472536, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888161899990472536, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1ac712fc2c208304db0283302673c5c8, type: 3}
     - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_Interactable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 267723305}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PopUpUpgradeUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: cc163a01f03ef974ea1a2b6df1ff265f, type: 2}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UpgradeData, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 716f788e62122d24a9e885d853090610, type: 3}
@@ -714,7 +834,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 183.95506}
+  m_AnchoredPosition: {x: 0, y: 183.9555}
   m_SizeDelta: {x: 760, y: 573.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &267723299
@@ -981,6 +1101,38 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 267723305}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PopUpUpgradeUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: a70011a9e372b474a8c20848d2dd6e90, type: 2}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UpgradeData, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1701837324280026493, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1009,14 +1161,54 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 267723305}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PopUpUpgradeUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 8eb2b51e307163a458488ee268d807c8, type: 2}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UpgradeData, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3479940790585709036, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_Type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3479940790585709036, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 21300000, guid: 616b7543c4f3d0f4884267ff6f309b82, type: 3}
+    - target: {fileID: 3485439312737792605, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485439312737792605, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 939d804a6e02f4042a7d56d13e2fba58, type: 3}
     - target: {fileID: 3550294697443385762, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1041,9 +1233,49 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4357358099249951529, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357358099249951529, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ae37d53c4ba255e48a6246424360746c, type: 3}
     - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_Interactable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 267723305}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PopUpUpgradeUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 29b3da3c13698d14bb705a5eaef1e596, type: 2}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UpgradeData, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5520901850132485224, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1097,9 +1329,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: Macrophage
       objectReference: {fileID: 0}
+    - target: {fileID: 7888161899990472536, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888161899990472536, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1ac712fc2c208304db0283302673c5c8, type: 3}
     - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_Interactable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 267723305}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PopUpUpgradeUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 8a6b4112a0001bd47b62d2d6cb09baac, type: 2}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UpgradeData, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 716f788e62122d24a9e885d853090610, type: 3}
@@ -1294,7 +1566,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eb5e66b2a7e73fd45ae212fb8b2398d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e4a8696d5464d9442bf1a5242dc7c3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1660,7 +1932,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2e46df48dcbbc3a46a409c7f74339e51, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0d38f41c4892b754e81511d07d54e1a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2263,6 +2535,38 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 267723305}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PopUpUpgradeUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 465a3ebc693563f4586992c89e34946b, type: 2}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UpgradeData, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1701837324280026493, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2291,14 +2595,54 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 267723305}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PopUpUpgradeUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 420f31e1e158fff4b82f9f344e7ad083, type: 2}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UpgradeData, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3479940790585709036, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_Type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3479940790585709036, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 21300000, guid: 616b7543c4f3d0f4884267ff6f309b82, type: 3}
+    - target: {fileID: 3485439312737792605, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485439312737792605, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 939d804a6e02f4042a7d56d13e2fba58, type: 3}
     - target: {fileID: 3550294697443385762, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2323,9 +2667,49 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4357358099249951529, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357358099249951529, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 58d3c90a5674adc48968c08ecfdc3b87, type: 3}
     - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_Interactable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 267723305}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PopUpUpgradeUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 69989d28629345d4c83a8f48fa9db1f9, type: 2}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UpgradeData, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5520901850132485224, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2379,9 +2763,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: Eosinophil
       objectReference: {fileID: 0}
+    - target: {fileID: 7888161899990472536, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888161899990472536, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1ac712fc2c208304db0283302673c5c8, type: 3}
     - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_Interactable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 267723305}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PopUpUpgradeUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 95fdae832d4567f4f9a081eebd8109f7, type: 2}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UpgradeData, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 716f788e62122d24a9e885d853090610, type: 3}
@@ -2605,7 +3029,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3d6488594f5aa2e4a87130570a04c690, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f29e95cb52cd3c3468f28b0e0679bf88, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2717,6 +3141,38 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 267723305}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PopUpUpgradeUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 0f820dd7431e11e4aac74221f9c80e63, type: 2}
+    - target: {fileID: 877110534408589480, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UpgradeData, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1701837324280026493, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2745,14 +3201,54 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 267723305}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PopUpUpgradeUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: b2cfe3befef58b44fa79c750e2468f81, type: 2}
+    - target: {fileID: 2348760369860423248, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UpgradeData, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3479940790585709036, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_Type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3479940790585709036, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 21300000, guid: 1ccfc7df17944ec4b9a6affcb0485e3f, type: 3}
+    - target: {fileID: 3485439312737792605, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485439312737792605, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1ccfc7df17944ec4b9a6affcb0485e3f, type: 3}
     - target: {fileID: 3550294697443385762, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2780,6 +3276,38 @@ PrefabInstance:
     - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_Interactable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 267723305}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PopUpUpgradeUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: d21dfd0cd3fa95d4191d5e028de05597, type: 2}
+    - target: {fileID: 4390145632590614899, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UpgradeData, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5520901850132485224, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2833,9 +3361,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platelet
       objectReference: {fileID: 0}
+    - target: {fileID: 7888161899990472536, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888161899990472536, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1ccfc7df17944ec4b9a6affcb0485e3f, type: 3}
     - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
       propertyPath: m_Interactable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 267723305}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PopUpUpgradeUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 942669fe9af98e645ae54e94a7c3e7a2, type: 2}
+    - target: {fileID: 8144710841401781554, guid: 716f788e62122d24a9e885d853090610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UpgradeData, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 716f788e62122d24a9e885d853090610, type: 3}
@@ -3004,8 +3572,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 602378108}
   m_HandleRect: {fileID: 602378107}
   m_Direction: 3
-  m_Value: -0.000001161281
-  m_Size: 0.35880065
+  m_Value: -0.0000022396139
+  m_Size: 0.35874128
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
