@@ -19,7 +19,7 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
     private List<GameObject> enemies = new List<GameObject>();
     private List<GameObject> blockedEnemies = new List<GameObject>();
 
-    [HideInInspector] public EntityStats stats;
+    public EntityStats stats;
     [HideInInspector] public string key = "MacrophageUpLvl";
 
     private void Start()

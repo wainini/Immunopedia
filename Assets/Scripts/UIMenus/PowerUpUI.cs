@@ -77,7 +77,8 @@ public class PowerUpUI : MonoBehaviour
 
     void ResetNeutrophil()
     {
-        Neutrofil n = neutro.GetComponent<Neutrofil>();
+        Neutrofil n = neutro.GetComponentInChildren<Neutrofil>();
+        Debug.Log(n);
         n.stats.ResetStats();
         if (PlayerPrefs.GetInt(n.key) >= 4)
         {
@@ -88,7 +89,7 @@ public class PowerUpUI : MonoBehaviour
 
     void ResetEosinophil()
     {
-        Eosinophil e = eosi.GetComponent<Eosinophil>();
+        Eosinophil e = eosi.GetComponentInChildren<Eosinophil>();
         e.stats.ResetStats();
         if (PlayerPrefs.GetInt(e.key) >= 4)
         {
@@ -111,7 +112,7 @@ public class PowerUpUI : MonoBehaviour
 
     void ResetMacrophage()
     {
-        Macrophage m = macro.GetComponent<Macrophage>();
+        Macrophage m = macro.GetComponentInChildren<Macrophage>();
         m.stats.ResetStats();
         if (PlayerPrefs.GetInt(m.key) >= 4)
         {

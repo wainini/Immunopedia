@@ -13,9 +13,9 @@ public class EntityStats : MonoBehaviour
     public int blockCount;
     public GameObject localTarget { get; private set; }
 
-    public int atkUp;
-    public int defUp;
-    public int hpUp;
+    [HideInInspector] public int atkUp;
+    [HideInInspector] public int defUp;
+    [HideInInspector] public int hpUp;
 
     [Header("Fill in this if it is enemy")]
     public int hpSealReduction;

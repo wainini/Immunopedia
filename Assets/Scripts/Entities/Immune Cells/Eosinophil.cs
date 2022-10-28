@@ -21,7 +21,7 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
     private bool isAttackingAnim;
     private GameObject target;
 
-    [HideInInspector] public EntityStats stats;
+    public EntityStats stats;
     [HideInInspector] public string key = "EosinophilUpLvl";
 
     private void Start()

@@ -18,7 +18,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     private GameObject target;
     private List<GameObject> enemies = new List<GameObject>();
 
-    [HideInInspector] public EntityStats stats;
+    public EntityStats stats;
     [HideInInspector] public CellTrainingData trainData;
     [HideInInspector] public string key = "NeutrofilUpLvl";
 

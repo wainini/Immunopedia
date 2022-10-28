@@ -519,6 +519,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseStat: {fileID: 11400000, guid: 12a2e11bc20570a48b85f51de8415959, type: 2}
+  blockCount: 0
+  atkUp: 0
+  defUp: 0
+  hpUp: 0
   hpSealReduction: 0
 --- !u!114 &1667169261
 MonoBehaviour:
@@ -536,7 +540,9 @@ MonoBehaviour:
   healthFill: {fileID: 2509143830288915513}
   healthBar: {fileID: 2785750860377024000}
   radius: {fileID: 1667169258}
+  enemies: []
   cellData: {fileID: 11400000, guid: 12a2e11bc20570a48b85f51de8415959, type: 2}
   defenseReduction: 0.2
   movSpeedReduction: 0.33
-  enemies: []
+  stats: {fileID: 1667169260}
+  key: EosinophilUpLvl

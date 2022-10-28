@@ -13,11 +13,15 @@ public class ApplyUpgrade : MonoBehaviour
 
     public void UpgradeCell()
     {
+        if(PlayerPrefs.GetInt("Total Stars") < upCost)
+        {
+            return;
+        }
         //Debug.Log(cellType);
         switch (cellType)
         {
             case "Neutrophil":
-                neutrofil.GetComponent<Neutrofil>().Upgrade();
+                neutrofil.GetComponentInChildren<Neutrofil>().Upgrade();
                 break;
 
             case "Platelet":
@@ -25,11 +29,11 @@ public class ApplyUpgrade : MonoBehaviour
                 break;
 
             case "Eosinophil":
-                eosinophil.GetComponent<Eosinophil>().Upgrade();
+                eosinophil.GetComponentInChildren<Eosinophil>().Upgrade();
                 break;
 
             case "Macrophage":
-                macrophage.GetComponent<Macrophage>().Upgrade();
+                macrophage.GetComponentInChildren<Macrophage>().Upgrade();
                 break;
         }
         int totalStars = PlayerPrefs.GetInt("Total Stars");
@@ -40,5 +44,7 @@ public class ApplyUpgrade : MonoBehaviour
 
         PlayerPrefs.SetInt("Total Stars", totalStars);
         PlayerPrefs.SetInt("Stars Used", usedStars);
+
+        Destroy(gameObject);
     }
 }

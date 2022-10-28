@@ -591,5 +591,7 @@ MonoBehaviour:
   healthFill: {fileID: 7221475040063889261}
   healthBar: {fileID: 6680050980631814541}
   radius: {fileID: 2759845611248695397}
-  trainData: {fileID: 11400000, guid: f63c5db75faaf3f44a3815d7bf9d02d8, type: 2}
   cellData: {fileID: 11400000, guid: d4e0243d471849a44b9163b1fc7527c9, type: 2}
+  stats: {fileID: 1407194340}
+  trainData: {fileID: 11400000, guid: f63c5db75faaf3f44a3815d7bf9d02d8, type: 2}
+  key: NeutrofilUpLvl
