@@ -30,7 +30,7 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
         {
             PlayerPrefs.SetInt(key, 0);
         }
-        stats = GetComponent<EntityStats>();
+        //stats = GetComponent<EntityStats>();
         stats.SetHealthUI(healthBar, healthFill);
         radius.radius = cellData.atkRadius / transform.localScale.x; //karena scale badannya gak 1
         target = null;

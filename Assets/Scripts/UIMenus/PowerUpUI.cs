@@ -24,13 +24,13 @@ public class PowerUpUI : MonoBehaviour
 
     void Start()
     {
-        UpdateStarsQty();
-        EnableButtons();
-
         nKey = "NeutrofilUpLvl";
         pKey = "PlateletUpLvl";
         eKey = "EosinophilUpLvl";
         mKey = "MacrophageUpLvl";
+
+        UpdateStarsQty();
+        EnableButtons();
     }
 
     public void UpdateStarsQty()

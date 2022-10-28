@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EntityStats : MonoBehaviour
 {
-    [SerializeField] private Entity baseStat;
+    [SerializeField] public Entity baseStat;
     public int currentHealth { get; private set; }
     public int atk { get; private set; }
     public int defense { get; private set; }
@@ -103,20 +103,20 @@ public class EntityStats : MonoBehaviour
     public void UpgradeStats(int upgradeLvl)
     {
         Debug.Log("Upgrade " + upgradeLvl);
-        //switch (upgradeLvl)
-        //{
-        //    case 0:
-        //        atkUp += 20;
-        //        break;
+        switch (upgradeLvl)
+        {
+            case 0:
+                atkUp += 20;
+                break;
 
-        //    case 1:
-        //        defUp += 20;
-        //        break;
+            case 1:
+                defUp += 20;
+                break;
 
-        //    case 2:
-        //        hpUp += 50;
-        //        break;
-        //}
+            case 2:
+                hpUp += 50;
+                break;
+        }
     }
     public void ResetStats()
     {
