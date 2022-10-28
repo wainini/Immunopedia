@@ -300,7 +300,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1423978528150087975}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7421439495716532214}
+        m_TargetAssemblyTypeName: ApplyUpgrade, Assembly-CSharp
+        m_MethodName: UpgradeCell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1423978528316883141
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +590,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1423978528624426911}
+  - component: {fileID: 7421439495716532214}
   m_Layer: 5
   m_Name: Popup UI
   m_TagString: Untagged
@@ -606,3 +619,20 @@ RectTransform:
   m_AnchoredPosition: {x: 192.9, y: -111.6}
   m_SizeDelta: {x: 400, y: 210.4}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &7421439495716532214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423978528624426910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a131af879aefc4293705732bdd5cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellType: 
+  neutrofil: {fileID: 4681344161063326597, guid: 9195eae06c8b4464399aa69a1d2b3dd4, type: 3}
+  platelet: {fileID: 1121576477427649719, guid: d966d414a47941044a4c440403baccdb, type: 3}
+  eosinophil: {fileID: 5366047509851145832, guid: a7a044cc628fd9e439e92b37896a5e0e, type: 3}
+  macrophage: {fileID: 4020359142723056604, guid: 90658e308c2e9a243b7fb2daf4256a1a, type: 3}

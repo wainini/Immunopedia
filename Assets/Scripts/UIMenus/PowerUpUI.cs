@@ -22,12 +22,7 @@ public class PowerUpUI : MonoBehaviour
 
     void Start()
     {
-        int total = 0;
-        for(int i = 1; i <= sceneCount; i++)
-        {
-            total += PlayerPrefs.GetInt("Level " + i);
-        }
-        totalStars.text = total.ToString();
+        totalStars.text = PlayerPrefs.GetInt("Total Stars").ToString();
 
 
         string nKey = "NeutrofilUpLvl";
@@ -65,11 +60,12 @@ public class PowerUpUI : MonoBehaviour
 
     public void ResetUpgrades()
     {
-        Debug.Log("Reset all upgrades");
-        //ResetNeutrophil();
-        //ResetEosinophil();
-        //ResetPlatelet();
-        //ResetMacrophage();
+        //Debug.Log("Reset all upgrades");
+        ResetNeutrophil();
+        ResetEosinophil();
+        ResetPlatelet();
+        ResetMacrophage();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void ResetNeutrophil()

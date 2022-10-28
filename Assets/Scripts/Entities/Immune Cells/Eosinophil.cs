@@ -183,6 +183,7 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
 
     public void Upgrade()
     {
+        //Debug.Log("Upgrade");
         int upgradeLevel = PlayerPrefs.GetInt(key);
         if (upgradeLevel < 3)
         {
@@ -197,8 +198,8 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
 
     void SpecialUpgrade()
     {
-        Debug.Log("Special Upgrade");
-        //stats.atkUp += 30;
-        //movSpeedReduction = 0.5f;
+        //Debug.Log("Special Upgrade");
+        stats.atkUp += 30;
+        movSpeedReduction = 0.5f;
     }
 }

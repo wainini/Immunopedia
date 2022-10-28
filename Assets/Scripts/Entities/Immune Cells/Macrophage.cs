@@ -210,6 +210,7 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
 
     public void Upgrade()
     {
+        //Debug.Log("Upgrade");
         int upgradeLevel = PlayerPrefs.GetInt(key);
         if (upgradeLevel < 3)
         {
@@ -224,8 +225,8 @@ public class Macrophage : MonoBehaviour, IEntityBehaviour
 
     void SpecialUpgrade()
     {
-        Debug.Log("Special Upgrade");
-        //stats.atkUp += 30;
-        //stats.blockCount++;
+        //Debug.Log("Special Upgrade");
+        stats.atkUp += 30;
+        stats.blockCount++;
     }
 }

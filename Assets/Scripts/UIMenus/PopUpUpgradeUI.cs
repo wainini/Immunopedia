@@ -19,7 +19,7 @@ public class PopUpUpgradeUI : MonoBehaviour, IPointerDownHandler
             Destroy(popUp);
             popUp = null;
         }
-        Debug.Log(eventData.pointerPress);
+        //Debug.Log(eventData.pointerPress);
     }
 
     public void PopUp(UpgradeData data)
@@ -27,6 +27,8 @@ public class PopUpUpgradeUI : MonoBehaviour, IPointerDownHandler
         if(popUp == null)
         {
             popUp = Instantiate(popUpPrefab, position);
+            GameObject parentName = EventSystem.current.currentSelectedGameObject;
+            popUp.GetComponent<ApplyUpgrade>().cellType = parentName.transform.parent.name;
         }
         TextMeshProUGUI[] texts = popUp.GetComponentsInChildren<TextMeshProUGUI>();
 

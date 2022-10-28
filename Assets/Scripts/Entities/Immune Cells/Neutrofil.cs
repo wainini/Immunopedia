@@ -182,8 +182,9 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
 
     public void Upgrade()
     {
+        //Debug.Log("Upgrade");
         int upgradeLevel = PlayerPrefs.GetInt(key);
-        if(upgradeLevel < 3)
+        if (upgradeLevel < 3)
         {
             stats.UpgradeStats(upgradeLevel);
         }
@@ -196,8 +197,8 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
 
     void SpecialUpgrade()
     {
-        Debug.Log("Special Upgrade");
-        //stats.atkUp += 30;
-        //trainData.cost--;
+        //Debug.Log("Special Upgrade");
+        stats.atkUp += 30;
+        trainData.cost--;
     }
 }

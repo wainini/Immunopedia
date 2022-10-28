@@ -81,6 +81,7 @@ public class Platelet : MonoBehaviour
 
     public void Upgrade()
     {
+        //Debug.Log("Upgrade");
         int upgradeLevel = PlayerPrefs.GetInt(key);
         if (upgradeLevel < 3)
         {
@@ -95,10 +96,8 @@ public class Platelet : MonoBehaviour
 
     void SpecialUpgrade()
     {
-        Debug.Log("Special Upgrade");
+        //Debug.Log("Special Upgrade");
         woundPrefab.GetComponent<Wound>().plateletNeeded--;
-        //stats.atkUp += 30;
-        //stats.blockCount++;
     }
 
     public void Revert()
