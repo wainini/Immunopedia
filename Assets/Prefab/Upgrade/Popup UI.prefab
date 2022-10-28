@@ -651,4 +651,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillNamePanel: {fileID: 1423978527105903810}
-  skillDescriptionPanel: {fileID: 1423978528543369340}
+  skillDescriptionPanel: {fileID: 1423978527687456419}
