@@ -20,19 +20,30 @@ public class PowerUpUI : MonoBehaviour
     public Button[] eosiUpBtn;
     public Button[] macroUpBtn;
 
+    string nKey, pKey, eKey, mKey;
+
     void Start()
     {
+        UpdateStarsQty();
+        EnableButtons();
+
+        nKey = "NeutrofilUpLvl";
+        pKey = "PlateletUpLvl";
+        eKey = "EosinophilUpLvl";
+        mKey = "MacrophageUpLvl";
+    }
+
+    public void UpdateStarsQty()
+    {
         totalStars.text = PlayerPrefs.GetInt("Total Stars").ToString();
-        if(!PlayerPrefs.HasKey("Stars Used"))
+        if (!PlayerPrefs.HasKey("Stars Used"))
         {
             PlayerPrefs.SetInt("Stars Used", 0);
         }
+    }
 
-
-        string nKey = "NeutrofilUpLvl";
-        string pKey = "PlateletUpLvl";
-        string eKey = "EosinophilUpLvl";
-        string mKey = "MacrophageUpLvl";
+    public void EnableButtons()
+    {
         //Enable button Neutrofil
         int idx = PlayerPrefs.GetInt(nKey);
         for (int i = 0; i < idx + 1; i++)

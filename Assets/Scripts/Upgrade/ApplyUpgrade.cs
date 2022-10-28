@@ -45,6 +45,13 @@ public class ApplyUpgrade : MonoBehaviour
         PlayerPrefs.SetInt("Total Stars", totalStars);
         PlayerPrefs.SetInt("Stars Used", usedStars);
 
+        UpdateUI();
         Destroy(gameObject);
+    }
+
+    private void UpdateUI()
+    {
+        GameObject canvas = gameObject.transform.parent.gameObject;
+        canvas.GetComponent<UpdateUI>().RefreshUI();
     }
 }
