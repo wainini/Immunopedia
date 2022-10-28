@@ -34,5 +34,6 @@ public class PopUpUpgradeUI : MonoBehaviour, IPointerDownHandler
 
         texts[0].text = data.upgradeTitle;
         texts[1].text = data.upgradeDescription;
+        popUp.GetComponent<ApplyUpgrade>().upCost = data.upgradeCost;
     }
 }

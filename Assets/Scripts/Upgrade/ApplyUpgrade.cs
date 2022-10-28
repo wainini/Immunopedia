@@ -5,6 +5,7 @@ using UnityEngine;
 public class ApplyUpgrade : MonoBehaviour
 {
     [HideInInspector] public string cellType;
+    [HideInInspector] public int upCost;
     [SerializeField] private GameObject neutrofil;
     [SerializeField] private GameObject platelet;
     [SerializeField] private GameObject eosinophil;
@@ -12,7 +13,7 @@ public class ApplyUpgrade : MonoBehaviour
 
     public void UpgradeCell()
     {
-        Debug.Log(cellType);
+        //Debug.Log(cellType);
         switch (cellType)
         {
             case "Neutrophil":
@@ -31,5 +32,13 @@ public class ApplyUpgrade : MonoBehaviour
                 macrophage.GetComponent<Macrophage>().Upgrade();
                 break;
         }
+        int totalStars = PlayerPrefs.GetInt("Total Stars");
+        totalStars -= upCost;
+
+        int usedStars = PlayerPrefs.GetInt("Stars Used");
+        usedStars += upCost;
+
+        PlayerPrefs.SetInt("Total Stars", totalStars);
+        PlayerPrefs.SetInt("Stars Used", usedStars);
     }
 }

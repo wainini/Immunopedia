@@ -23,6 +23,10 @@ public class PowerUpUI : MonoBehaviour
     void Start()
     {
         totalStars.text = PlayerPrefs.GetInt("Total Stars").ToString();
+        if(!PlayerPrefs.HasKey("Stars Used"))
+        {
+            PlayerPrefs.SetInt("Stars Used", 0);
+        }
 
 
         string nKey = "NeutrofilUpLvl";
@@ -65,6 +69,9 @@ public class PowerUpUI : MonoBehaviour
         ResetEosinophil();
         ResetPlatelet();
         ResetMacrophage();
+        int revertStars = PlayerPrefs.GetInt("Total Stars") + PlayerPrefs.GetInt("Stars Used");
+        PlayerPrefs.SetInt("Stars Used", 0);
+        PlayerPrefs.SetInt("Total Stars", revertStars);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
