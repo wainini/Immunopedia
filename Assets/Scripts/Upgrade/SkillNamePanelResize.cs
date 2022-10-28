@@ -10,6 +10,11 @@ public class SkillNamePanelResize : MonoBehaviour
 
     void Start()
     {
+        ResizePanel();
+    }
+
+    public void ResizePanel()
+    {
         panelTransform = gameObject.GetComponent<RectTransform>();
         RectTransform textRectTransform = skillName.GetComponent<RectTransform>();
         TextMeshProUGUI tmp = skillName.GetComponent<TextMeshProUGUI>();
@@ -20,6 +25,5 @@ public class SkillNamePanelResize : MonoBehaviour
         //print(newPanelSize.y);
         newPanelSize.y += 20f;
         panelTransform.sizeDelta = newPanelSize;
-
     }
 }

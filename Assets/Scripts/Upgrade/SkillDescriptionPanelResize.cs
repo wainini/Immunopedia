@@ -10,12 +10,15 @@ public class SkillDescriptionPanelResize : MonoBehaviour
     
     void Start()
     {
+        ResizePanel();
+    }
+
+    public void ResizePanel()
+    {
         panelTransform = gameObject.GetComponent<RectTransform>();
         RectTransform skillDescTransform = skillDescription.GetComponent<RectTransform>();
         TextMeshProUGUI tmp = skillDescription.GetComponent<TextMeshProUGUI>();
         tmp.ForceMeshUpdate();
-
-        
 
         Vector3 newPanelSize = tmp.textBounds.size;
         newPanelSize.x += Mathf.Abs(skillDescTransform.localPosition.x * 2);
