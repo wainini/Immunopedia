@@ -185,15 +185,18 @@ public class Eosinophil : MonoBehaviour, IEntityBehaviour
     {
         //Debug.Log("Upgrade");
         int upgradeLevel = PlayerPrefs.GetInt(key);
-        if (upgradeLevel < 3)
+        if(upgradeLevel < 4)
         {
-            stats.UpgradeStats(upgradeLevel);
+            if (upgradeLevel < 3)
+            {
+                stats.UpgradeStats(upgradeLevel);
+            }
+            else
+            {
+                SpecialUpgrade();
+            }
+            PlayerPrefs.SetInt(key, ++upgradeLevel);
         }
-        else
-        {
-            SpecialUpgrade();
-        }
-        PlayerPrefs.SetInt(key, ++upgradeLevel);
     }
 
     void SpecialUpgrade()

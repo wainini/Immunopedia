@@ -46,30 +46,56 @@ public class PowerUpUI : MonoBehaviour
     {
         //Enable button Neutrofil
         int idx = PlayerPrefs.GetInt(nKey);
-        for (int i = 0; i < idx + 1; i++)
+        idx = (idx == 4) ? 3 : idx;
+        for (int i = 0; i <= idx; i++)
         {
             neutroUpBtn[i].interactable = true;
+            if(i < PlayerPrefs.GetInt(nKey))
+            {
+                neutroUpBtn[i].onClick = null;
+            }
         }
 
         //Enable button Platelet
         idx = PlayerPrefs.GetInt(pKey);
-        for (int i = 0; i < idx + 1; i++)
+        idx = (idx == 4) ? 3 : idx;
+        for (int i = 0; i <= idx; i++)
         {
             plateletUpBtn[i].interactable = true;
+            if (i < PlayerPrefs.GetInt(pKey))
+            {
+                plateletUpBtn[i].onClick = null;
+            }
         }
 
         //Enable button Eosinophil
-        idx = PlayerPrefs.GetInt(eKey);
-        for (int i = 0; i < idx + 1; i++)
+        if(PlayerPrefs.GetInt("Eosinophil", 0) == 1)
         {
-            eosiUpBtn[i].interactable = true;
+            idx = PlayerPrefs.GetInt(eKey);
+            idx = (idx == 4) ? 3 : idx;
+            for (int i = 0; i <= idx; i++)
+            {
+                eosiUpBtn[i].interactable = true;
+                if (i < PlayerPrefs.GetInt(eKey))
+                {
+                    eosiUpBtn[i].onClick = null;
+                }
+            }
         }
 
         //Enable button Macrophage
-        idx = PlayerPrefs.GetInt(mKey);
-        for (int i = 0; i < idx + 1; i++)
+        if(PlayerPrefs.GetInt("Macrophage", 0) == 1)
         {
-            macroUpBtn[i].interactable = true;
+            idx = PlayerPrefs.GetInt(mKey);
+            idx = (idx == 4) ? 3 : idx;
+            for (int i = 0; i <= idx; i++)
+            {
+                macroUpBtn[i].interactable = true;
+                if (i < PlayerPrefs.GetInt(mKey))
+                {
+                    macroUpBtn[i].onClick = null;
+                }
+            }
         }
     }
 
@@ -113,7 +139,7 @@ public class PowerUpUI : MonoBehaviour
     {
         Platelet p = platelet.GetComponent<Platelet>();
         int costReduction = (PlayerPrefs.GetInt(p.key) >= 4) ? 3 : PlayerPrefs.GetInt(p.key);
-        p.trainData.cost -= costReduction;
+        p.trainData.cost += costReduction;
         if (PlayerPrefs.GetInt(p.key) >= 4)
         {
             p.Revert();

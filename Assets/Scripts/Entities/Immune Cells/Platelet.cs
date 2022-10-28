@@ -83,15 +83,18 @@ public class Platelet : MonoBehaviour
     {
         //Debug.Log("Upgrade");
         int upgradeLevel = PlayerPrefs.GetInt(key);
-        if (upgradeLevel < 3)
+        if(upgradeLevel < 4)
         {
-            trainData.cost--;
+            if (upgradeLevel < 3)
+            {
+                trainData.cost--;
+            }
+            else
+            {
+                SpecialUpgrade();
+            }
+            PlayerPrefs.SetInt(key, ++upgradeLevel);
         }
-        else
-        {
-            SpecialUpgrade();
-        }
-        PlayerPrefs.SetInt(key, ++upgradeLevel);
     }
 
     void SpecialUpgrade()
