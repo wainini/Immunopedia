@@ -6,7 +6,7 @@ public class Wound : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer woundSr;
     [SerializeField] private List<Sprite> woundSprites;
-    [SerializeField] private int plateletNeeded;
+    public int plateletNeeded;
 
     public float intervalBetweenSpawn;
     public float initialDelay;

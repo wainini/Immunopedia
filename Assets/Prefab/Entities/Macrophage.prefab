@@ -511,6 +511,8 @@ MonoBehaviour:
   healthBar: {fileID: 5053207109887325056}
   radius: {fileID: 8912914951415963655}
   cellData: {fileID: 11400000, guid: bc30a114ca0cea94585dd5919b435e95, type: 2}
+  stats: {fileID: 8441168084019882587}
+  key: MacrophageUpLvl
 --- !u!114 &8441168084019882587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,4 +526,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseStat: {fileID: 11400000, guid: bc30a114ca0cea94585dd5919b435e95, type: 2}
+  blockCount: 0
+  atkUp: 0
+  defUp: 0
+  hpUp: 0
   hpSealReduction: 0

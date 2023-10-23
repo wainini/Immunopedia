@@ -17,5 +17,5 @@ MonoBehaviour:
   defense: 15
   movSpeed: 0.7
   atkInterval: 2
-  blockCount: 2
+  blockCount: 3
   atkRadius: 7

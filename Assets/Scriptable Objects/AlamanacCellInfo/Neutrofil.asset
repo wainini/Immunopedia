@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellName: Neutrofil
   cellButtonImage: {fileID: 21300000, guid: 3d6488594f5aa2e4a87130570a04c690, type: 3}
-  cellDesc: Neutrophil adalah sel darah putih yang paling banyak di badan kita. Mereka
-    adalah pertahanan pertama ketika kita diserang dengan infeksi. Melawan bakteri
-    dan virus dengan memakan mereka (fagositosis)
+  cellDesc: Neutrophils are the most abundant white blood cells in our body. They
+    are the first line of defense when we are attacked with infection. Neutrophils
+    fights bacteria and viruses by eating them (phagocytosis).
   cellPrefab: {fileID: 4673210084086762389, guid: 88560d442c1e8744fa0adf0969c188d3, type: 3}
   isEnemy: 0

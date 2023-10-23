@@ -9,7 +9,6 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     [SerializeField] private RectTransform healthFill;
     [SerializeField] private RectTransform healthBar;
     [SerializeField] private CircleCollider2D radius;
-    private EntityStats stats;
 
     public ImmuneCell cellData;
 
@@ -18,9 +17,18 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     private bool isAttackingAnim;
     private GameObject target;
     private List<GameObject> enemies = new List<GameObject>();
+
+    public EntityStats stats;
+    [HideInInspector] public CellTrainingData trainData;
+    [HideInInspector] public string key = "NeutrofilUpLvl";
+
     private void Start()
     {
-        stats = GetComponent<EntityStats>();
+        if (!PlayerPrefs.HasKey(key))
+        {
+            PlayerPrefs.SetInt(key, 0);
+        }
+        //stats = GetComponent<EntityStats>();
         stats.SetHealthUI(healthBar, healthFill);
         radius.radius = cellData.atkRadius / transform.localScale.x; //karena scale badannya gak 1
         target = null;
@@ -97,6 +105,7 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     {
         enemies = enemies.Where(i => i != null).ToList();
     }
+
     private void CheckPriority()
     {
         float minDistance = float.PositiveInfinity;
@@ -169,5 +178,30 @@ public class Neutrofil : MonoBehaviour, IEntityBehaviour
     public void RestoreInterval()
     {
         currentAtkInterval = stats.atkInterval;
+    }
+
+    public void Upgrade()
+    {
+        //Debug.Log("Upgrade");
+        int upgradeLevel = PlayerPrefs.GetInt(key);
+        if(upgradeLevel < 4)
+        {
+            if (upgradeLevel < 3)
+            {
+                stats.UpgradeStats(upgradeLevel);
+            }
+            else
+            {
+                SpecialUpgrade();
+            }
+            PlayerPrefs.SetInt(key, ++upgradeLevel);
+        }
+    }
+
+    void SpecialUpgrade()
+    {
+        //Debug.Log("Special Upgrade");
+        stats.atkUp += 30;
+        trainData.cost--;
     }
 }

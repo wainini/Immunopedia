@@ -19,13 +19,15 @@ public class BGMManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(SceneManager.GetActiveScene().buildIndex == 0)
+        if(SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 11)
         {
             AudioManager.instance.PlaySound("MainMenuBGM", SoundOutput.bgm);
         }
         else
         {
-            AudioManager.instance.PlaySound("GameplayBGM", SoundOutput.bgm);
+            AudioManager.instance.PlaySound("GameplayBGM", SoundOutput.bgm, true);
         }
+
+        
     }
 }

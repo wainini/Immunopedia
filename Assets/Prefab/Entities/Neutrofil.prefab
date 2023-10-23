@@ -555,7 +555,7 @@ SortingGroup:
   m_GameObject: {fileID: 9198777459622432236}
   m_Enabled: 1
   m_SortingLayerID: -1895897943
-  m_SortingLayer: 5
+  m_SortingLayer: 7
   m_SortingOrder: 0
 --- !u!114 &1407194340
 MonoBehaviour:
@@ -570,6 +570,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseStat: {fileID: 11400000, guid: d4e0243d471849a44b9163b1fc7527c9, type: 2}
+  blockCount: 0
+  atkUp: 0
+  defUp: 0
+  hpUp: 0
   hpSealReduction: 0
 --- !u!114 &577076963236934962
 MonoBehaviour:
@@ -588,3 +592,6 @@ MonoBehaviour:
   healthBar: {fileID: 6680050980631814541}
   radius: {fileID: 2759845611248695397}
   cellData: {fileID: 11400000, guid: d4e0243d471849a44b9163b1fc7527c9, type: 2}
+  stats: {fileID: 1407194340}
+  trainData: {fileID: 11400000, guid: f63c5db75faaf3f44a3815d7bf9d02d8, type: 2}
+  key: NeutrofilUpLvl

@@ -70,4 +70,9 @@ public class LevelSelector : MonoBehaviour
     {
         MenuManager.instance.CloseMenu();
     }
+
+    public void GoToUpgrade()
+    {
+        SceneManager.LoadScene(11);
+    }
 }

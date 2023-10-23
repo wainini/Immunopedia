@@ -28,11 +28,28 @@ public class AudioManager : MonoBehaviour
     }
     public void PlaySound(string name, SoundOutput output)
     {
-        if(output == SoundOutput.bgm)
+        PlaySound(name, output, false);
+    }
+
+    public void PlaySound(string name, SoundOutput output, bool forcedRestart)
+    {
+        if (output == SoundOutput.bgm)
         {
+            AudioClip playingBgm = GetPlayingClip(bgmSource);
+            if (playingBgm != null)
+            {
+                if (playingBgm.name == name)
+                {
+                    return;
+                }
+            }
+
             SoundClip s = bgmClips.Find((sound) => sound.name == name);
             SetSourceValues(s, bgmSource);
-            bgmSource.Play();
+            if (!bgmSource.clip.Equals(playingBgm) || forcedRestart)
+            {
+                bgmSource.Play();
+            }
         }
         else if (output == SoundOutput.sfx)
         {
@@ -41,6 +58,7 @@ public class AudioManager : MonoBehaviour
             sfxSource.PlayOneShot(s.Clip);
         }
     }
+
     public void PlaySound(string name, SoundOutput output, Vector2 randomPitch)
     {
         float pitch = UnityEngine.Random.Range(randomPitch.x, randomPitch.y);
@@ -83,5 +101,10 @@ public class AudioManager : MonoBehaviour
         source.volume = s.Volume;
         source.pitch = s.Pitch;
         source.loop = s.loop;
+    }
+
+    private AudioClip GetPlayingClip(AudioSource source)
+    {
+        return source.clip;
     }
 }
